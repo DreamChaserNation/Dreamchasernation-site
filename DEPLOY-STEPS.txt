@@ -1,0 +1,28 @@
+Dream Chaser Nation — Full Site (Printify Pop‑Up linked)
+
+This package contains your full website with:
+- All original pages and assets intact.
+- "Shop" (nav) and "Wear the Mission Apparel" buttons linked to:
+  https://dreamchasernation.printify.me/
+- /assets/js/printify-links.js injected on every page for reliability.
+- /shop/index.html redirects to your Printify Pop‑Up.
+
+To publish on GitHub:
+1) Open a terminal/command prompt in THIS folder.
+2) Run (replace YOUR-USERNAME/REPO):
+   git init
+   git add .
+   git commit -m "Initial site with Printify Pop-Up"
+   git branch -M main
+   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
+   git push -u origin main
+
+To deploy on Netlify:
+1) In Netlify → Add new site → Import from Git → pick your repo.
+2) Build command: (leave blank)
+3) Publish directory: /
+4) Deploy.
+
+If your Pop‑Up URL changes later, update it in:
+- /assets/js/printify-links.js
+- /shop/index.html

@@ -1,0 +1,40 @@
+
+:root{
+  --dcn-bg: #0c0f19;
+  --dcn-panel: rgba(15,18,31,0.92);
+  --dcn-border: rgba(255,255,255,0.08);
+  --dcn-text: #e9ecf3;
+  --dcn-muted: #bac3d6;
+  --dcn-grad: linear-gradient(135deg,#5b4ae6 0%, #3a7bd5 100%);
+  --dcn-cta: #f7d96e;
+  --dcn-cta-deep: #e7c55f;
+  --dcn-cta-text: #111418;
+}
+.dcn-popup-overlay{ position:fixed; inset:0; display:none; background:rgba(0,0,0,.55); backdrop-filter: blur(2px); align-items:center; justify-content:center; z-index:9999; }
+.dcn-popup{ width:min(92vw,560px); border-radius:18px; overflow:hidden; background: var(--dcn-panel); border:1px solid var(--dcn-border); box-shadow: 0 18px 60px rgba(0,0,0,.45); color: var(--dcn-text); position:relative; }
+.dcn-popup-header{ background: var(--dcn-grad); padding: 18px 20px; }
+.dcn-popup-title{ margin:0; font-size:1.35rem; font-weight:800; letter-spacing:.2px; color: #121212; background: linear-gradient(90deg,#fff,#fef3c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.dcn-popup-body{ padding: 18px 20px; }
+.dcn-sub{ font-weight:700; margin:8px 0 10px 0; }
+.dcn-bodycopy{ line-height:1.45; color: var(--dcn-muted); margin: 6px 0 14px 0; }
+.dcn-row{ display:grid; gap:12px; margin:10px 0; }
+.dcn-row.two{ grid-template-columns: 1fr 1fr; }
+.dcn-input, .dcn-textarea{ width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--dcn-border); background: rgba(255,255,255,.06); color: var(--dcn-text); font: inherit; outline: none; }
+.dcn-input::placeholder, .dcn-textarea::placeholder{ color: rgba(233,236,243,.55); }
+.dcn-actions{ display:flex; gap:10px; align-items:center; margin-top:12px; }
+.dcn-btn{ padding:12px 16px; border-radius:14px; border:0; background: var(--dcn-cta); color: var(--dcn-cta-text); font-weight:800; cursor:pointer; box-shadow: inset 0 -2px 0 rgba(0,0,0,.15), 0 1px 0 rgba(255,255,255,.15); transition: transform .12s ease, box-shadow .12s ease, background .12s ease; }
+.dcn-btn:hover{ background: var(--dcn-cta-deep); transform: translateY(-1px); }
+.dcn-btn.secondary{ background: transparent; color: var(--dcn-text); border:1px solid var(--dcn-border) }
+.dcn-close{ position:absolute; right:12px; top:10px; background:transparent; border:0; color:#fff; font-size:20px; cursor:pointer; opacity:.9; }
+.success-state{ display:none; text-align:center; padding: 18px 10px; }
+.success-state h3{ margin:0 0 8px 0; }
+@media (max-width:560px){ .dcn-row.two{ grid-template-columns: 1fr; } }
+
+.dcn-fineprint{font-size:.8rem;color:rgba(233,236,243,.6);margin:6px 0 0 0}
+
+.dcn-note{font-size:.85rem;color:rgba(233,236,243,.75);margin:10px 0 6px}
+
+
+/* Tighten spacing between description and bullet list inside pricing cards */
+.pricing .card p + ul { margin-top: 0 !important; }
+

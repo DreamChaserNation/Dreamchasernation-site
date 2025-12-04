@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>DREAM CHASER NATION — Pricing Page</title>
+<meta content="DREAM CHASER NATION — bigger, bolder static preview" name="description"/>
+<style>
+
+/* --- Lifestyle grid tweak: smaller tiles & full face/logo visible --- */
+.lifestyle-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:14px;
+  max-width:980px;
+  margin: 6px auto 0 auto;
+}
+.lifestyle-grid .tile{
+  position:relative;
+  border-radius:12px;
+  overflow:hidden;
+  aspect-ratio: 3 / 4; /* portraitish to keep faces & hoodies in view */
+  border:1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.03);
+}
+.lifestyle-grid .tile img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top; /* show faces/logos */
+  display:block;
+}
+.lifestyle-grid .tile.placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  color: var(--muted);
+  border-style:dashed;
+  background: rgba(255,255,255,.02);
+}
+/* Mobile: 2 across, slightly smaller */
+@media (max-width: 720px){
+  .lifestyle-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap:10px; }
+  .lifestyle-grid .tile{ border-radius:10px; }
+}
+
+@media (max-width: 720px){
+  .lifestyle-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap:12px; }
+  .lifestyle-grid .tile{ border-radius:12px; }
+}
+
+:root{
+  --bg:#0b1020;
+  --panel:#0f172a;
+  --ink:#e2e8f0;
+  --muted:#94a3b8;
+  --brand:#7c3aed;
+  --brand2:#22d3ee;
+  --accent:#fbbf24;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 22px;border-radius:18px;font-weight:900;letter-spacing:.2px;box-shadow:0 10px 24px rgba(0,0,0,.25);transition:transform .15s ease,opacity .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#ffe58a);color:#111827}
+.btn-ghost{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06)}
+.badge{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.12)}
+.section{padding:80px 0}
+.section-tight{padding:56px 0}
+.grid{display:grid;gap:22px}
+.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:22px;backdrop-filter:blur(6px)}
+.hero{position:relative;overflow:hidden}
+.hero .g1{position:absolute;inset:-20%;background:radial-gradient(800px 800px at 20% 10%, rgba(124,58,237,.5), transparent 60%), radial-gradient(900px 900px at 80% 0%, rgba(34,211,238,.45), transparent 60%), radial-gradient(800px 800px at 50% 80%, rgba(251,191,36,.35), transparent 60%);filter:blur(20px);}
+.hero .g2{position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.12) 1px, transparent 1px);background-size:20px 20px;opacity:.25}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.15), rgba(0,0,0,.4))}
+.hero .inner{position:relative;padding:110px 0 80px}
+h1{font-size:64px;line-height:1.05;margin:0;font-weight:1000;letter-spacing:.2px;text-shadow:0 2px 0 rgba(0,0,0,.3)}
+h2{font-size:36px;margin:0 0 10px;font-weight:900}
+p.lead{font-size:20px;color:var(--ink);opacity:.92;max-width:820px}
+.stat{display:grid;gap:4px;text-align:center}
+.stat .v{font-size:40px;font-weight:1000}
+.stat .l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.navbar{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.6);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.navbar .row{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+
+/* navbar hardening */
+.navbar .row > div:last-child{ display:flex; gap:16px; align-items:center; flex-wrap:nowrap!important; }
+.navbar .logo{ white-space:nowrap; }
+@media (max-width:1200px){
+  .navbar .row > div:last-child{ gap:12px; }
+}
+
+.logo{font-weight:1000;font-size:22px;letter-spacing:.2px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px}
+.img-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.img-grid .img{border-radius:20px;overflow:hidden;aspect-ratio: 3/4;box-shadow:0 10px 24px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.1)}
+.img-grid img{width:100%;height:100%;object-fit:contain}
+.quote{font-size:20px;line-height:1.5}
+.quote b{font-weight:900}
+
+/* ✨ Featured Tree Quote — purple outline + soft glow */
+.card.quote.quote-feature{
+  border-color: rgba(124,58,237,.55) !important;           /* var(--brand) outline */
+  box-shadow:
+    0 0 0 2px rgba(124,58,237,.28) inset,                  /* crisp inner ring */
+    0 0 22px rgba(124,58,237,.18);                         /* soft outer glow */
+}
+
+.tile{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 16px 36px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.1)}
+.tile .img{height:260px;background:#0b1020}
+.tile .img img{width:100%;height:100%;object-fit:contain;background:#000;display:block}
+.tile .overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.55), transparent 40%)}
+.tile .txt{position:absolute;left:20px;right:20px;bottom:20px}
+.kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.12);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.btn-small{padding:10px 14px;border-radius:12px;font-size:14px;font-weight:800}
+.footer{margin-top:60px;padding:28px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);text-align:center}
+input,textarea{width:100%;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);color:var(--ink)}
+form .row{display:grid;gap:14px}
+form .row.cols-2{grid-template-columns:1fr 1fr}
+@media (max-width:980px){
+  h1{font-size:48px}
+  .cols-2,.cols-3,.cols-4{grid-template-columns:1fr}
+  .img-grid{grid-template-columns:1fr 1fr}
+}
+
+.hero .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000 no-repeat center;opacity:.25;filter:saturate(115%) contrast(105%);}
+@media (max-width:640px){.hero .hero-photo{opacity:.28}}
+
+.navbar .container>div:last-child{flex-wrap:nowrap;white-space:nowrap;overflow:hidden}
+
+/* family section layout restore */
+.fam-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.fam-card{ padding:22px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); box-shadow:0 10px 24px rgba(0,0,0,.22); backdrop-filter: blur(6px); }
+.fam-card .title{ font-weight:800; margin-bottom:6px; }
+.fam-cta{ margin-top: 22px; }
+@media (max-width: 1000px){
+  .fam-grid{ grid-template-columns: 1fr; }
+}
+
+.fam-grid{justify-items:center}
+.fam-wrap,.fam-grid{max-width:1200px;margin:0 auto}
+.btn-purple{background:linear-gradient(135deg,#7c3aed,#a855f7);box-shadow:0 8px 24px rgba(124,58,237,.42);} 
+
+
+/* === Hero Background Slideshow (ghosted) === */
+.hero{ position:relative; overflow:hidden; }
+.hero .hero-slideshow{
+  position:absolute; inset:0; z-index:0;
+}
+.hero .hero-slideshow .slide{
+  position:absolute; inset:0;
+  background-position:center;
+  background-size:contain; background-position:center; background-repeat:no-repeat;
+  background-repeat:no-repeat;
+  opacity:0; 
+  transition: opacity 900ms ease;
+  filter: saturate(0.9) brightness(0.8) contrast(1.05) blur(0px);
+}
+.hero .hero-slideshow .slide.show{ opacity:0.36; } /* ghosted */
+.hero .hero-slideshow::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(80,40,140,0.42) 0%,rgba(18,18,28,0.88) 20%,rgba(18,20,28,0.75) 35%,rgba(255,210,80,0.10) 50%,rgba(18,20,28,0.75) 65%,rgba(12,22,32,0.88) 80%,rgba(20,160,180,0.38) 100%);}
+.hero > .container.inner{ position:relative; z-index:1; }
+
+/* --- Quote Card (Paul) --- */
+.quote-card{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 34px 28px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  backdrop-filter: blur(2px);
+}
+.quote-card .quote-head{
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 14px 0;
+  color: white;
+}
+.quote-card .quote-body{
+  font-size: clamp(18px, 2.4vw, 22px);
+  line-height: 1.6;
+  margin: 0 0 14px 0;
+  color: rgba(255,255,255,.95);
+}
+.quote-card .quote-sign{
+  margin: 10px 0 0 0;
+  font-style: italic;
+  opacity: .9;
+  font-size: 18px;
+}
+
+/* Subtle gradient border glow */
+.quote-card{
+  position: relative;
+}
+.quote-card:before{
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(168,85,247,0.95), rgba(139,92,246,0.85));
+  z-index: -1;
+  filter: blur(12px);
+  opacity: .35;
+}
+
+/* --- Scroll reveal --- */
+.reveal-on-scroll{ opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+.reveal-on-scroll.is-visible{ opacity: 1; transform: none; }
+
+
+.subhead {
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 500;
+  margin: 10px 0 14px 0;
+  color: white;
+  opacity: 0.92;
+}
+
+
+/* --- CCC Logo placeholder --- */
+.ccc-logo-placeholder { margin: 8px 0 10px 0; display:flex; justify-content:center; }
+.ccc-logo-placeholder .logo-box{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height: 56px; min-width: 320px; padding: 10px 14px;
+  border:1px dashed rgba(255,255,255,.28); border-radius: 12px;
+  color: rgba(255,255,255,.82); font-weight:700; letter-spacing:.2px;
+  background: rgba(255,255,255,.02);
+}
+.italic { font-style: italic; }
+
+
+.inspiration-quote {
+  margin-top: 18px;
+  margin-bottom: 12px;
+  text-align: center;
+  flex-basis: 100%;
+  width: 100%;
+  align-self: center;
+}
+
+
+.inspiration-quote .quote-text {
+  font-size: clamp(1rem, 1.7vw, 1.4rem);
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.25;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+
+.inspiration-quote strong { font-weight: 800; }
+.inspiration-quote em { font-style: italic; }
+.inspiration-quote .quote-author {
+  font-size: 1rem;
+  margin-top: 8px;
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+
+.elite-cta, .cta, .cta-row {
+  flex-wrap: wrap;
+}
+
+</style>
+<style>
+/* Ensure Family cards are white boxes on dark background */
+    /* Force Family section fonts to white */
+    /* --- DCN: Reusable dark section styles --- */
+.dcn-dark-section, .dcn-dark-section * { color: #ffffff !important; }
+.dcn-card {
+  background: radial-gradient(100% 100% at 50% 0%, #0ea5a5 0%, #0f766e 60%, #0b5253 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.18), 0 2px 10px rgba(2,6,23,0.25);
+  color: #ffffff;
+}
+.dcn-card .title { color: #ffffff; font-weight: 800; letter-spacing: .2px; }
+.dcn-card .desc  { color: rgba(255,255,255,0.9); }
+/* --- Family section overrides --- */
+</style>
+
+<!-- =============================== -->
+<!-- SURGICAL FIXES ARE ONLY IN HERE -->
+<!-- =============================== -->
+<style>
+/* Books grid responsive */
+/* Responsive books grid (home page) */
+.books-grid{
+  display:grid;
+  gap:18px;
+  grid-template-columns: repeat(5, minmax(140px,1fr));
+}
+@media (max-width:1200px){
+  .books-grid{ grid-template-columns: repeat(3, minmax(140px,1fr)); }
+}
+@media (max-width:800px){
+  .books-grid{ grid-template-columns: repeat(2, minmax(140px,1fr)); }
+}
+@media (max-width:480px){
+  .books-grid{ grid-template-columns: 1fr; }
+}
+
+/* NOTE: removed the stray extra "}" that was here and breaking centering */
+
+.book-card{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:center;
+  padding:14px;
+  border-radius:16px;
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.06);
+}
+.book-card .cover{
+  width:100%;
+  aspect-ratio: 3/4;
+  border-radius:14px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.08);
+
+  /* NEW: force perfect centering */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+/* Book cover image — centered + individually scalable */
+.book-card .cover img{
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+
+  /* individually adjustable per book via inline --cover-scale */
+  max-width: var(--cover-scale, 80%);
+  max-height: var(--cover-scale, 80%);
+
+  width:auto;
+  height:auto;
+  margin:0; /* flex handles centering */
+}
+
+/* Glow variants (non-yellow) */
+.glow-blue{ box-shadow: 0 12px 40px rgba(88,143,255,.35), 0 0 0 2px rgba(88,143,255,.18) inset; }
+.glow-purple{ box-shadow: 0 12px 40px rgba(170,120,255,.35), 0 0 0 2px rgba(170,120,255,.18) inset; }
+.glow-teal{ box-shadow: 0 12px 40px rgba(60,220,200,.35), 0 0 0 2px rgba(60,220,200,.18) inset; }
+.glow-pink{ box-shadow: 0 12px 40px rgba(255,120,200,.35), 0 0 0 2px rgba(255,120,200,.18) inset; }
+.glow-green{ box-shadow: 0 12px 40px rgba(110,220,140,.35), 0 0 0 2px rgba(110,220,140,.18) inset; }
+.book-card .title{ font-weight:700; text-align:center; }
+</style>
+
+<style>
+.books-strip{ display:flex; gap:24px; align-items:flex-end; flex-wrap:wrap; }
+.book-poster{ flex:1 1 280px; height:320px; border-radius:18px; border:1px solid rgba(255,255,255,.08); }
+.poster-blue{  background:linear-gradient(180deg,#bfe0ff 0%, #5a8cff 100%); box-shadow: 0 20px 50px rgba(90,140,255,.25); }
+.poster-purple{background:linear-gradient(180deg,#d9c2ff 0%, #a98aff 100%); box-shadow: 0 20px 50px rgba(169,138,255,.25); }
+.poster-green{ background:linear-gradient(180deg,#bff3d8 0%, #57c088 100%); box-shadow: 0 20px 50px rgba(87,192,136,.25); }
+@media (max-width: 800px){ .book-poster{ height:240px; } }
+</style>
+<style>
+.home-books-grid{
+  display:grid;
+  gap:18px;
+  grid-template-columns: repeat(5, minmax(120px,1fr));
+  align-items:start;
+  margin-top:8px;
+}
+@media (max-width: 1200px){ .home-books-grid{ grid-template-columns: repeat(3, minmax(120px,1fr)); } }
+@media (max-width: 700px){ .home-books-grid{ grid-template-columns: repeat(2, minmax(120px,1fr)); } }
+@media (max-width: 480px){ .home-books-grid{ grid-template-columns: 1fr; } }
+.home-books-grid > * { min_width:0; }
+
+@media (max-width:1200px){ .home-books-grid{ grid-template-columns: repeat(3, minmax(120px,1fr)); } }
+@media (max-width:700px){ .home-books-grid{ grid-template-columns: repeat(2, minmax(120px,1fr)); } }
+
+.cover-wrap{ display:block; text-decoration:none; }
+.home-book-cover{
+  width:100%; aspect-ratio: 3/4;
+  border-radius:14px;
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+/* Base glows */
+.glow-pink  { box-shadow: 0 10px 26px rgba(255,120,200,.32), 0 0 0 2px rgba(255,120,200,.18) inset; }
+.glow-blue  { box-shadow: 0 10px 26px rgba(88,143,255,.32), 0 0 0 2px rgba(88,143,255,.18) inset; }
+.glow-silver{ box-shadow: 0 10px 26px rgba(210,220,230,.36), 0 0 0 2px rgba(210,220,230,.20) inset; }
+.glow-teal  { box_shadow: 0 10px 26px rgba(60,220,200,.32), 0 0 0 2px rgba(60,220,200,.18) inset; }
+.glow-green { box-shadow: 0 10px 26px rgba(110,220,140,.32), 0 0 0 2px rgba(110,220,140,.18) inset; }
+/* Hover: slight lift + brighter glow */
+.cover-wrap:hover .home-book-cover{
+  transform: scale(1.05);
+}
+.cover-wrap:hover .glow-pink  { box-shadow: 0 16px 40px rgba(255,120,200,.46), 0 0 0 3px rgba(255,120,200,.22) inset; }
+.cover-wrap:hover .glow-blue  { box-shadow: 0 16px 40px rgba(88,143,255,.46), 0 0 0 3px rgba(88,143,255,.22) inset; }
+.cover-wrap:hover .glow-silver{ box-shadow: 0 16px 40px rgba(210,220,230,.52), 0 0 0 3px rgba(210,220,230,.26) inset; }
+.cover-wrap:hover .glow-teal  { box-shadow: 0 16px 40px rgba(60,220,200,.46), 0 0 0 3px rgba(60,220,200,.22) inset; }
+.cover-wrap:hover .glow-green { box-shadow: 0 16px 40px rgba(110,220,140,.46), 0 0 0 3px rgba(110,220,140,.22) inset; }
+</style>
+<!-- pricing lead capture -->
+<style>
+/* pricing-lead-capture */
+#leadGate{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:9999; }
+#leadGate.show{ display:flex; }
+#leadGate .overlay{ position:absolute; inset:0; background:rgba(0,0,0,.55); backdrop-filter:blur(2px); }
+#leadGate .panel{ position:relative; width:min(520px, 92vw); border-radius:16px; padding:22px; background:rgba(20,23,33,.96);
+  border:1px solid rgba(255,255,255,.08); box-shadow: 0 20px 80px rgba(0,0,0,.45); }
+#leadGate h3{ margin:0 0 6px 0; font-size:22px; }
+#leadGate p{ margin:0 0 14px 0; opacity:.9; }
+#leadGate label{ display:block; font-size:14px; margin:10px 0 6px; }
+#leadGate input[type="email"], #leadGate input[type="text"]{
+  width:100%; padding:12px 12px; border-radius:10px; border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04); color:#fff; outline:none;
+}
+#leadGate .row{ display:flex; gap:10px; }
+#leadGate .row > *{ flex:1; }
+#leadGate .actions{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
+#leadGate .btn{ padding:12px 16px; border-radius:12px; text-decoration:none; font-weight:700; border:none; cursor:pointer; }
+#leadGate .btn-primary{ background:linear-gradient(180deg,#f4da79,#deb13e); color:#000; }
+#leadGate .btn-ghost{ background:rgba(255,255,255,.08); color:#fff; }
+#leadGate .muted{ font-size:12px; opacity:.75; margin-top:8px; }
+#leadGate .closeX{ position:absolute; right:10px; top:10px; background:transparent; border:none; color:#fff; font-size:22px; cursor:pointer; }
+</style>
+<style id="family-fix">
+/* Family section small patch */
+#family, #family h2, #family .fam-sub, #family .fam-card, #family * { color:#fff !important; }
+#family .fam-card { background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); color:#fff !important; border-radius:14px; }
+#family .fam-card .title, #family .fam-card .desc { color:#ffffff !important; }
+#family .fam-cta a { background: rgba(255,255,255,0.12) !important; color:#fff !important; border-radius:12px; padding:14px 18px; font-weight:700; }
+#family h2.section-title::after { content:' — Coming Soon'; color:#ffd975; font-weight:700; font-size:0.6em; margin-left:8px; vertical-align:baseline; }
+</style>
+<style>
+/* footer baseline */
+.site-footer{padding:40px 0 56px;border-top:1px solid rgba(255,255,255,.06);}
+.site-footer .wrap{max-width:1100px;margin:0 auto;text-align:center}
+.site-footer .footer-lines{margin:0 0 14px;color:#cfd7e0}
+.site-footer .footer-mark img{width:56px;height:56px;object-fit:contain;margin:8px auto 18px;opacity:.95}
+.site-footer .footer-socials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.site-footer .pill{display:inline-block;padding:10px 16px;border:1px solid rgba(255,255,255,.18);border-radius:12px;color:#e6ebf2;text-decoration:none}
+.site-footer .pill:hover{border-color:rgba(255,255,255,.28)}
+.site-footer .copy{margin:10px 0 6px;font-weight:500}
+.site-footer .footer-small{margin:0;color:#b6c0cc}
+@media (max-width:560px){
+  .site-footer{padding:36px 0 44px}
+  .site-footer .pill{font-size:14px}
+}
+</style>
+<style>
+/* === DCN: Home card glow restore (Pink, Blue, Silver, Teal, Green cycle) === */
+:root{--pink:#ff5fb8;--blue:#7fb2ff;--silver:#cfd6e6;--teal:#59e0c8;--green:#7fe283;}
+.row .card{border-radius:18px;border:1px solid rgba(255,255,255,.08);background:#0f1421}
+.row .card{--c:var(--pink);box-shadow:0 0 0 2px color-mix(in oklab, var(--c) 70%, transparent), 0 12px 28px color-mix(in oklab, var(--c) 22%, transparent), 0 36px 70px color-mix(in oklab, var(--c) 16%, transparent)}
+.row .card:nth-of-type(2){--c:var(--blue)}
+.row .card:nth-of-type(3){--c:var(--silver)}
+.row .card:nth-of-type(4){--c:var(--teal)}
+.row .card:nth-of-type(5){--c:var(--green)}
+@supports not (color: color-mix(in oklab, white, black)){
+  .row .card{box-shadow:0 0 0 2px rgba(255,95,184,.55), 0 12px 28px rgba(255,95,184,.22), 0 36px 70px rgba(255,95,184,.16)}
+  .row .card:nth-of-type(2){box-shadow:0 0 0 2px rgba(127,178,255,.55), 0 12px 28px rgba(127,178,255,.22), 0 36px 70px rgba(127,178,255,.16)}
+  .row .card:nth-of-type(3){box-shadow:0 0 0 2px rgba(207,214,230,.60), 0 12px 28px rgba(207,214,230,.24), 0 36px 70px rgba(207,214,230,.18)}
+  .row .card:nth-of-type(4){box-shadow:0 0 0 2px rgba(89,224,200,.55), 0 12px 28px rgba(89,224,200,.22), 0 36px 70px rgba(89,224,200,.16)}
+  .row .card:nth-of-type(5){box-shadow:0 0 0 2px rgba(127,226,131,.55), 0 12px 28px rgba(127,226,131,.22), 0 36px 70px rgba(127,226,131,.16)}
+}
+</style><style>
+/* Live Events Section (safe injection) */
+.live-events {
+  background: url('assets/live-bg-placeholder.jpg') center/cover no-repeat;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.live-events::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+.live-events .container {
+  position: relative;
+  z-index: 1;
+}
+.live-events h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 16px;
+}
+.live-events .lead {
+  font-size: clamp(16px, 2.2vw, 20px);
+  max-width: 640px;
+  margin: 0 auto 28px auto;
+  opacity: .9;
+}
+
+</style>
+<style>
+/* Live Events – visual tune: no full-width dark bar; enforce purple CTA */
+.live-events { 
+  background: none !important; 
+  padding: 72px 20px; 
+}
+.live-events::before { 
+  background: transparent !important; 
+}
+.live-events .btn { 
+  background: #7a3bc4 !important; 
+  color: #fff !important; 
+  border: 1px solid rgba(122,59,196,.55);
+  box-shadow:
+    0 0 0.5rem rgba(122, 59, 196, 0.6),
+    0 0 1.25rem rgba(122, 59, 196, 0.45),
+    0 0 2.2rem rgba(122, 59, 196, 0.35);
+}
+</style>
+<style data-dcn="v6-textlink">.dcn-textlink{background:none;border:0;padding:0 0 0 12px;font-weight:700;cursor:pointer;color:#9bb0ff;text-decoration:underline} .dcn-textlink:hover{opacity:.9;text-decoration:none}</style>
+<style>
+@media (max-width: 1200px){ .home-books-grid{ grid-template-columns: repeat(3, minmax(140px,1fr)) !important; } }
+@media (max-width: 800px){ .home-books-grid{ grid-template-columns: repeat(2, minmax(140px,1fr)) !important; } }
+@media (max-width: 520px){ .home-books-grid{ grid-template-columns: 1fr !important; } }
+.home-books-grid > * { min-width:0 !important; }
+body { overflow-x: hidden; }
+</style>
+<link href="assets/css/login-modal.css" rel="stylesheet"/><style id="loginModalInlineCSS">
+/* Login Modal Styles - lightweight, matches site's card look */
+#loginOverlay { position: fixed; inset: 0; background: rgba(7,10,20,0.75); backdrop-filter: blur(2px); display: none; z-index: 9998; }
+#loginModal { position: fixed; inset: 0; display: none; z-index: 9999; align-items: center; justify-content: center; }
+.login-card { width: min(680px, 92vw); background: linear-gradient(180deg, rgba(35,34,59,0.85), rgba(25,24,45,0.92)); border: 1px solid rgba(167,139,250,0.35);
+  border-radius: 20px; box-shadow: 0 24px 80px rgba(0,0,0,0.45), 0 0 40px rgba(167,139,250,0.15); color: #e5e7eb; padding: 28px 28px 24px; }
+.login-card h2 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.1; margin: 0 0 .2em; color: #ffffff; }
+.login-card p.sub { font-size: clamp(1rem, 2.2vw, 1.125rem); color: #cbd5e1; margin: 0 0 1rem; }
+.login-form { display: grid; gap: 12px; margin-top: 10px; }
+.login-input { width: 100%; border-radius: 12px; padding: 14px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(148,163,184,0.25); color: #e5e7eb; }
+.login-input::placeholder { color: #94a3b8; }
+.login-btn { margin-top: 6px; width: 100%; padding: 14px 18px; border-radius: 12px; font-weight: 800; font-size: 1.05rem;
+  background: linear-gradient(180deg, #facc15, #eab308); border: 1px solid rgba(250,204,21,0.35); color: #1f2937; box-shadow: 0 8px 32px rgba(250,204,21,0.35); cursor: pointer; }
+.login-btn:hover { filter: brightness(1.03); }
+.login-meta { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; font-size: .95rem; color: #cbd5e1; }
+.login-meta a { color: #a78bfa; text-decoration: none; }
+.login-close { position: absolute; right: 14px; top: 14px; background: transparent; border: 0; color: #e2e8f0; font-size: 1.25rem; cursor: pointer; }
+@media (max-width: 480px) {
+  .login-card { padding: 22px 18px 18px; }
+  .login-meta { flex-direction: column; gap: 6px; }
+}
+
+
+/* Excitement emoji animations */
+.emoji-burst { display: inline-block; transform-origin: center; animation: popGlow 1.2s ease-out infinite alternate; filter: drop-shadow(0 0 10px rgba(250,204,21,0.4)); }
+.emoji-burst-small { display: inline-block; transform-origin: center; animation: popGlowSmall 1.3s ease-in-out infinite alternate; filter: drop-shadow(0 0 6px rgba(167,139,250,0.35)); }
+@keyframes popGlow { from { transform: translateY(0) scale(1); } to { transform: translateY(-2px) scale(1.08); } }
+@keyframes popGlowSmall { from { transform: translateY(0) scale(1); opacity: .9; } to { transform: translateY(-1px) scale(1.06); opacity: 1; } }
+/* Make modal container clickable to close when clicking backdrop area */
+#loginModal { cursor: default; }
+#loginModal.backdrop-close { cursor: pointer; }
+#loginModal.backdrop-close .login-card { cursor: default; }
+</style>
+
+<style>
+  .ribbon{
+    position:absolute; top:10px; right:-8px;
+    background:#F6C453; color:#1b1f2a;
+    font-weight:800; font-size:12px; letter-spacing:.06em;
+    padding:6px 10px; border-radius:999px;
+    transform: rotate(14deg);
+    box-shadow: 0 6px 16px rgba(0,0,0,.35);
+    z-index:3; pointer-events:none;
+  }
+</style>
+
+<style>
+  /* ============================= */
+  /* COMMUNITY SECTION RESPONSIVE FIX */
+  /* ============================= */
+
+ /* Community layout — 1 column on phones, 2 columns on desktop */
+.community-grid{
+  display:grid;
+  gap:24px;
+  grid-template-columns: 1fr;            /* default: stack */
+}
+
+/* Tablet+ → 2 across */
+@media (min-width: 880px){
+  .community-grid{
+    grid-template-columns: 1fr 1fr !important; /* override anything earlier */
+  }
+}
+
+  @media (max-width: 520px) {
+    .community-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<!-- ====== MOBILE NAV HIDE + CLEAN HEADER (surgical) ====== -->
+<style>
+/* mobile brand bar (shown only on phones) */
+.mobile-brandbar{
+  display:none;
+  padding:14px 16px 6px;
+  font-weight:1000;
+  font-size:22px;
+  letter-spacing:.2px;
+}
+.mobile-brandbar .nation{ color: var(--brand); }
+
+@media (max-width: 640px){
+  .navbar{ 
+    display:none !important;  /* HIDE NAV BAR ENTIRELY ON MOBILE */
+  }
+  .mobile-brandbar{ 
+    display:block;            /* SHOW ONLY THE “Dream Chaser Nation” HEADER */
+  }
+}
+</style>
+
+<!-- ====== MODAL CENTER + FULL SCROLL ON MOBILE (surgical) ====== -->
+<style>
+/* Desktop / larger screens: center modal, no forced inner scroll */
+.dcn-popup-overlay{
+  align-items:center !important;
+  justify-content:center !important;
+  padding:24px 16px !important;
+  /* no overlay scrolling needed on desktop */
+  overflow-y:visible !important;
+}
+
+.dcn-popup{
+  margin:auto !important;
+  max-height:none !important;      /* allow full height */
+  overflow:visible !important;     /* no inner scrollbar on desktop */
+}
+
+/* Phones: allow scrolling + fit inside viewport */
+@media (max-width:640px){
+  .dcn-popup-overlay{
+    align-items:flex-start !important;
+    padding-top:18px !important;
+    overflow-y:auto !important;
+    -webkit-overflow-scrolling:touch;
+  }
+  .dcn-popup{
+    width:100% !important;
+    max-height: calc(100vh - 48px) !important;
+    overflow:auto !important;      /* scroll INSIDE modal on mobile */
+  }
+}
+</style>
+
+
+</head>
+<body>
+
+<!-- clean mobile header (shows only on phones) -->
+<div class="mobile-brandbar">
+  ✨ Dream Chaser <span class="nation">Nation</span>
+</div>
+
+<!-- NAV -->
+<div class="navbar">
+<div class="container row">
+<div class="logo" style="font-size:26px">✨Dream Chaser <span style="color:var(--brand)">Nation</span></div>
+<div style="display:flex;gap:12px;align-items:center;font-weight:700;font-size:14px;flex-wrap:nowrap;white-space:nowrap">
+  <a href="#apparel" style="opacity:.9">Apparel</a>
+  <a href="index.html#books" style="opacity:.9">Books</a>
+  <a href="#coaching" style="opacity:.9">Dream Chaser University</a>
+  <a href="#community" style="opacity:.9">Community</a>
+  <a href="about.html" style="opacity:.9">About</a>
+  <a href="faq.html" style="opacity:.9">FAQ/Support</a>
+  <a class="btn btn-ghost btn-small"
+   href="#newsletter"
+   data-dcn-open="dcn-newsletter">
+  Join Newsletter
+</a>
+
+  <a class="btn btn-primary btn-small" href="https://dreamchasernation.printify.me/" rel="noopener" target="_blank">Shop</a>
+</div>
+</div>
+</div>
+<!-- HERO -->
+<section class="hero">
+<div aria-hidden="true" class="hero-slideshow">
+<div class="slide" style="background-image:url('assets/slide1.png')"></div>
+<div class="slide" style="background-image:url('assets/slide2.png')"></div>
+<div class="slide" style="background-image:url('assets/slide3.png')"></div>
+<div class="slide" style="background-image:url('assets/slide4.png')"></div>
+<div class="slide" style="background-image:url('assets/slide-soccer-01.png')"></div>
+</div>
+
+<div class="container inner">
+<div class="badge">DREAM CHASER NATION</div>
+<h1>Build the <span style="color:var(--accent);text-shadow:0 2px 0 rgba(0,0,0,.3)">Lifestyle</span> you chase.</h1>
+<p class="lead">A global community for ambitious creators and entrepreneurs. Join our coaching program (Dream Chaser University), get the books, wear the colors, and run with us.</p>
+<div class="hero-cta">
+<a class="btn btn-primary" href="#coaching" style="box-shadow:0 0 18px 6px rgba(124,58,237,.7),0 0 28px 12px rgba(251,191,36,.55)">Explore Coaching</a>
+<a class="btn btn-ghost" href="#books">Get the Books</a>
+<a class="btn btn-ghost" href="#apparel">Apparel</a>
+</div>
+<div class="grid cols-3" style="margin-top:30px">
+<div class="stat"><div class="v">Growing</div><div class="l">Community</div></div>
+<div class="stat"><div class="v">5-part</div><div class="l">Sales Logic Series</div></div>
+<div class="stat"><div class="v">100%</div><div class="l">Ethical Coaching</div></div>
+</div>
+</div>
+</section>
+
+<!-- MOTIVATION BANNER -->
+<section class="section-tight" style="padding-top:24px;padding-bottom:24px">
+<div class="container">
+<div class="card" style="text-align:center;padding:28px;background:linear-gradient(135deg, rgba(124,58,237,.35), rgba(34,211,238,.28));border-color:rgba(255,255,255,.28)">
+<div style="font-size:34px;font-weight:1000;letter-spacing:.4px;line-height:1.2">Dream. Chase. Crush. <span style="color:var(--accent)">Chase Again.</span></div>
+<div style="margin-top:8px;font-size:18px;opacity:.9">“Be The Hero in your story.”</div>
+</div>
+</div>
+</section>
+<!-- LIFESTYLE GRID -->
+<section class="section">
+<div class="container" style="align-items:center;gap:28px">
+<div>
+<h2>Live it loud.</h2>
+<p class="lead" style="opacity:.85">Momentum loves bold action. We showcase the lifestyle because mindset + community + execution beats perfection.</p>
+</div></div>
+<div class="img" style="margin-top:18px"></div><div class="img" style="margin-top:18px"></div>
+<div class="img" style="margin-top:18px"></div><div class="img" style="margin-top:18px"></div>
+<!-- LIFESTYLE PHOTOS GRID (6 images + 2 placeholders) -->
+<div class="lifestyle-grid">
+<div class="tile"><img alt="" decoding="async" loading="lazy" src="assets/hoodie_dcu_blue@1x.webp" srcset="assets/hoodie_dcu_blue@1x.webp 1x, assets/hoodie_dcu_blue@2x.webp 2x"/></div>
+<div class="tile"><img alt="" decoding="async" loading="lazy" src="assets/hoodie_grey_nation@1x.webp" srcset="assets/hoodie_grey_nation@1x.webp 1x, assets/hoodie_grey_nation@2x.webp 2x"/></div>
+<div class="tile"><img alt="" decoding="async" loading="lazy" src="assets/hoodie_blue_confetti@1x.webp" srcset="assets/hoodie_blue_confetti@1x.webp 1x, assets/hoodie_blue_confetti@2x.webp 2x"/></div>
+<div class="tile"><img alt="" decoding="async" loading="lazy" src="assets/hoodie_black_suit@1x.webp" srcset="assets/hoodie_black_suit@1x.webp 1x, assets/hoodie_black_suit@2x.webp 2x"/></div>
+<div class="tile placeholder"><span><img src="assets/lifestyle-center-01.png" alt="Dream Chaser Nation lifestyle dinner" class="w-full h-full object-cover rounded-xl" loading="lazy"></span></div>
+<div class="tile placeholder"><span><img src="assets/lifestyle-right-01.png" alt="Dream Chaser Nation business lifestyle" class="w-full h-full object-cover rounded-xl" loading="lazy"></span></div>
+</div>
+</section>
+
+<!-- QUOTES -->
+<section class="section-tight">
+<div class="container" style="margin:0 auto 18px auto;max-width:1040px">
+<div class="card quote quote-feature" style="text-align:center;">
+      “The best time to plant a tree was 20 years ago. The second best time is <span style="color:#facc15;font-weight:600">today</span>.”
+      <div class="small" style="margin-top:6px;color:var(--muted)">— Chinese Proverb</div>
+</div>
+</div>
+<div class="container grid cols-3">
+<!-- Replaced with Aristotle -->
+<div class="card quote">“We are what we <b>repeatedly do</b>. <b>Excellence</b>, then, is not an act, but a <b>habit</b>.” <div class="small" style="margin-top:6px;color:var(--muted)">— Aristotle</div></div>
+<!-- Replaced with Zig Ziglar -->
+<div class="card quote">“You don’t have to be great to <b>start</b>, but you have to <b>start</b> to <b>be great</b>.” <div class="small" style="margin-top:6px;color:var(--muted)">— Zig Ziglar</div></div>
+<!-- Replaced with Walt Disney -->
+<div class="card quote">“The way to <b>get started</b> is to quit talking and <b>begin doing</b>.” <div class="small" style="margin-top:6px;color:var(--muted)">— Walt Disney</div></div>
+<div class="card quote">“Dream. Chase. Crush. <b>Chase Again.</b>” <div class="small" style="margin-top:6px;color:var(--muted)">— DCN</div></div>
+<div class="card quote">“<b>Be The Hero</b> in your story.” <div class="small" style="margin-top:6px;color:var(--muted)">— DCN</div></div>
+<!-- Added Jim Rohn as the 6th card -->
+<div class="card quote">“The <b>successful person</b> does what the unsuccessful person is <b>not willing</b> to do.” <div class="small" style="margin-top:6px;color:var(--muted)">— Jim Rohn</div></div>
+</div>
+</section>
+
+
+<!-- ✨ BEGIN: SURGICAL TEXT REPLACEMENT (your exact copy) -->
+<!-- COACHING (HIGH TICKET) -->
+<section class="section-tight" id="coaching">
+  <div class="container">
+    <div class="card" style="padding:20px;border-radius:16px;background:linear-gradient(135deg, rgba(99,102,241,.22), rgba(168,85,247,.18));border:1px solid rgba(255,255,255,.18);color:#fff">
+      <h2 style="font-size: clamp(2.3rem, 6vw, 3.5rem); line-height: 1.1; margin-bottom: 0.2em; font-weight: 900; color:#ffffff;">
+  Dream Chaser University
+</h2>
+<h2 style="font-size:44px;margin:6px 0 8px 0;font-weight:800;color:#ffffff;">
+  <span style="color:#facc15;">Elite</span> Coaching
+</h2>
+
+
+      <!-- ✨ DCU CONTENT BLOCK (ALL YOUR WORDS, WITH STYLING ONLY) -->
+      <div class="card" style="margin-top:8px;padding:14px;border:2px solid var(--brand2);background:transparent;border-radius:12px">
+  <div style="font-weight:900;color:#facc15;font-size:18px;">Your Path to Mastery</div>
+
+        <div class="small" style="margin-top:6px;line-height:1.7;">
+          <p><strong>Dream Chaser University is where dreamers become builders.</strong></p>
+          <p>It’s the place to <strong>turn dreaming into dream chasing and eventually dream crushing</strong> — combining logic, emotion, and clarity to help you create, grow, and lead with purpose.</p>
+          <p>Every lesson in every course in every program <strong>moves you one step closer towards achieving your dreams.</strong></p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:8px;padding:14px;border:2px solid var(--brand2);background:transparent;border-radius:12px">
+  <div style="font-weight:900;color:#facc15;font-size:18px;">What’s Inside</div>
+
+        <div class="small" style="margin-top:6px;line-height:1.7;">
+
+          <p><span style="color:#facc15;font-weight:900;">Join the Nation Accelerator</span> — Stop only dreaming and <strong>start taking action</strong>! Learn how to <strong>build a business from the ground up</strong> —  We guide you to get up and running so your dream is <strong>actively being chased</strong>. We assist you with setting up your business online in ways that incur as few expenses as possible - including step-by-step guidance on free (or minimal cost) options that give you a <strong>professional operation right from the start</strong>.  We can help guide you to create your website (yes, you can find ways to do this virtually free), your CRM (managing your customers), building a database, choosing your business structure (LLC, C-Corp, S-Corp), and all the details that matter when creating something real. This is great for beginners, but it's not just for beginners. You’ll also learn how to <strong>scale and apply next-level tactics</strong> if you already have a business. There’s a lot packed into this accelerator — it’s your <strong>complete foundation and growth system.</strong></p>
+
+          <p><span style="color:#facc15;font-weight:900;">Sales Mastery</span> — <strong>Master human decision-making at its core.</strong> Learn sales logic in a way you’ve never been taught before. We deep dive into the Dynamic trilogy that drives the sales process. We flip some of how you've always learned sales on its head, and show you some new and refreshing perspectives. We show you how to implement our <strong>Sell This to Your Mom</strong> philosophy - tons of objections handling scenarios with a deep dive into the human psychology element of decision making. Lots of treats for you in this course, whether you are a sales professional, sales manager, or business owner.  Entrepreneurs - mastery of sales is the critical piece of every successful business. We connect to create results that feel natural, not forced.</p>
+
+          <p><span style="color:#facc15;font-weight:900;">AI Mastermind</span> — Go <strong>extremely deep into how AI truly works from the ground up</strong> — then use it to supercharge your ideas, productivity, and content creation. This journey takes you from 0 % knowledge at the beginner level to understanding AI better than <strong>99 % of the population</strong>. (Be in the <strong>top 1 % of AI knowledge</strong> after completing this program.) If you want to understand AI, truly understand AI, you have found the perfect program. </p>
+
+          <p><span style="color:#facc15;font-weight:900;">The Dynamic Trilogy</span> — <strong>Logic. Emotion. Feelings.</strong> The <strong>three pillars behind every action and decision.</strong> Learn how mastering all three ties your mindset, message, and momentum together. This Dynamic Trilogy not only drives the Sales Mastery, it drives the <strong>mastery of you</strong> - and your dream chasing journey. This trilogy is one of the core elements in Join the Accelerator Nation and Sales Mastery. </p>
+
+          <p><span style="color:#facc15;font-weight:900;">And More</span> — Keep scrolling — check out further down on this page for <strong>Family Access</strong> and <strong>Lil Dream Chaser University</strong>. Plus much more is being added to Dream Chaser University that we can't wait to share with you — make sure you come back often or sign up for updates!</p>
+        </div>
+      </div>
+
+      <!-- FLIPPED COLUMNS: WHO IT’S FOR (LEFT) / WHAT YOU’LL GAIN (RIGHT) -->
+      <div class="grid cols-2" style="margin-top:14px;gap:12px">
+
+        <!-- LEFT: WHO IT'S FOR -->
+        <div class="card" style="padding:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:12px">
+  <div style="font-weight:900;color:#facc15;font-size:18px;">Who It’s For</div>
+
+          <ul class="small" style="margin-top:6px;line-height:1.6;padding-left:18px">
+            <li><strong>Entrepreneurs</strong> ready to <strong>build something real</strong></li>
+            <li><strong>Sales Professional</strong> ready to <strong>master sales knowledge</strong>, as we go deep into sales through a much different light than you’ve ever gone through before</li>
+            <li><strong>Sales Managers and Business owners</strong> looking to completely take in a <strong>whole new perspective</strong> to their sales process and take the best of the best of what you master in this program and combine it with the program you currently have running. Or use whats here as a foundation to build a brand new program from the ground up. </li>
+            <li><strong>Individuals who are extremely intrigued by AI</strong> and want a <strong>one-stop learning program</strong> that starts with no experience and takes them to the top of the mountain. Those who are passionate about learning AI, whether they want to lay the groundwork to jump-start their career in AI or use AI in a masterful way in all aspects of professional and personal life. </li>
+            <li><strong>Really, all types of dream chasers</strong> are welcome here. We focus on these core elements, but join the community and connect with other dreamers – whether it's becoming the world’s best guitar player - on stage performing for thousands of people or staying at home crocheting a blanket, whatever that dream is – <strong>go chase it!</strong> </li>
+            <li><strong>Creators</strong> turning <strong>passion into purpose</strong></li>
+            <li><strong>Students and dreamers</strong> <strong>ready to rise</strong></li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: WHAT YOU’LL GAIN -->
+       <div class="card" style="padding:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:12px">
+  <div style="font-weight:900;color:#facc15;font-size:18px;">What You’ll Gain</div>
+  <ul class="small" style="margin-top:6px;line-height:1.6;padding-left:18px;">
+    <li>
+      A <strong>deep knowledge</strong> of Sales Mastery, AI, or starting a business with Join the Nation Accelerator
+      (which includes a significant focus on Sales Mastery and AI aspects!). So much knowledge to gain that you will
+      have to <strong>pick and choose what to focus on</strong>, but the knowledge will be there forever in the books.
+    </li>
+    <li>
+      A <strong>step-by-step action plan</strong> to make your dream a reality. We take steps together.
+      It’s all about <strong>action at Dream Chaser University</strong>, not just learning.
+    </li>
+    <li>
+      To walk out of Dream Chaser University <strong>transformed</strong> — walking out, forget that,
+      <strong>run out</strong> on a momentous path towards chasing your dreams. Appreciate what you have going for you,
+      use your skills and passion to get you to the next level, and keep <strong>running with momentum</strong>,
+      even if you can’t physically run. <strong>Your dreams are worth chasing!</strong> Go get them!
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+
+      <div class="small" style="margin-top:14px;color:rgba(255,255,255,.85)">
+        Learn how to connect emotion, feelings, and purpose — and use them to move any dream forward.<br/>
+         
+      </div>
+      <!-- ✨ END DCU CONTENT BLOCK -->
+      <div class="hero-cta" style="margin-top:18px;display:flex;gap:18px;flex-wrap:wrap">
+        <a data-dcn-open="dcn-comm-books-pricing" href="#" style="background: linear-gradient(180deg, #fde047 0%, #f59e0b 100%);color:#111;font-weight:900;font-size: 1.28rem;padding: 24px 52px;border-radius:18px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;text-shadow: 0 1px 1px rgba(0,0,0,0.35), 0 0 1px rgba(0,0,0,0.35);box-shadow: 0 0 26px rgba(147,51,234,0.65), 0 22px 48px rgba(147,51,234,0.5), 0 0 90px rgba(255,255,255,0.45);transition:transform .15s ease, box-shadow .15s ease;">See Pricing</a>
+        <a href="https://dreamchaseru.com/login.html"
+   style="background:rgba(255,255,255,.1);color:#fff;font-weight:800;font-size:1.2rem;
+          padding:22px 48px;border-radius:18px;text-decoration:none;display:inline-flex;
+          align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.35);
+          box-shadow:0 8px 22px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.08);
+          transition:transform .15s ease, box-shadow .15s ease;">
+  Member Login
+</a>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ✨ END: SURGICAL TEXT REPLACEMENT -->
+
+<!-- SHOP TILES -->
+<section class="section-tight" id="shop">
+<div class="container grid cols-2">
+<a class="tile" data-shop-link="Tile: Wear the Mission" href="https://dreamchasernation.printify.me/?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=apparel&amp;utm_content=index_tile_wear_the_mission" rel="noreferrer noopener" target="_blank">
+<div class="img"><img alt="Apparel" src="assets/signature_hoodie.png"/></div>
+<div class="txt">
+<div class="kicker">Apparel</div>
+<div style="font-size:28px;font-weight:1000;margin-top:6px">Wear the Mission</div>
+<div class="small" style="opacity:.9;margin-top:4px">Hoodies, tees, varsity — screen-print ready designs.</div>
+</div>
+</a>
+<a class="tile" href="#books">
+<div class="img"><img alt="Books" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&amp;w=1600&amp;auto=format&amp;fit=crop"/></div>
+<div class="txt">
+<div class="kicker">Books</div>
+<div style="font-size:28px;font-weight:1000;margin-top:6px">Sales Logic Series</div>
+<div class="small" style="opacity:.9;margin-top:4px">5-part series + AI add-on. Bundle with coaching.</div>
+</div>
+</a>
+</div>
+</section>
+<!-- APPAREL GRID -->
+<section class="section-tight" id="apparel">
+<div class="container">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+<h2 style="font-size:40px">Featured Apparel</h2>
+<a class="small" data-shop-link="Featured: View all" href="https://dreamchasernation.printify.me/?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=apparel&amp;utm_content=index_featured_view_all" rel="noreferrer noopener" style="color:var(--brand2)" target="_blank">View all →</a>
+</div>
+<div class="grid cols-4">
+<div class="card"><div style="height:260px;border-radius:16px;overflow:hidden;margin-bottom:12px"><a href="https://dreamchasernation.printify.me/product/24118193/signature-dream-chaser-nation-unisex-garment-dyed-hoodie" target="_blank" rel="noopener"><img alt="Hoodie 1" src="assets/signature_hoodie.png" style="width:100%;height:100%;object-fit:contain;background:#000"/></a></div><div style="font-weight:800;display:flex;align-items:center;gap:10px">Signature Hoodie<span class="badge" style="background:linear-gradient(135deg,#06b6d4,#a78bfa);color:#0b1020;font-weight:900">Signature</span></div><div class="small" style="color:var(--muted)">Royal/Pink gradient</div><div style="margin-top:10px;font-weight:900">$65</div></div>
+<div class="card"><div style="height:260px;border-radius:16px;overflow:hidden;margin-bottom:12px"><a href="https://dreamchasernation.printify.me/product/24118193/signature-dream-chaser-nation-unisex-garment-dyed-hoodie" target="_blank" rel="noopener"><img alt="Hoodie 2" src="assets/ChatGPT_Image_Sep_12,_2025,_09_15_19_AM.png" style="width:100%;height:100%;object-fit:contain;background:#000"/></a></div><div style="font-weight:800">DCN Hoodie #2</div><div class="small" style="color:var(--muted)">Royal/Pink gradient</div><div style="margin-top:10px;font-weight:900">$65</div></div>
+<div class="card" style="position:relative;"><div class="ribbon">COMING&nbsp;SOON</div><div style="height:260px;border-radius:16px;overflow:hidden;margin-bottom:12px"><div class="media-wrap-coming" style="position:relative;overflow:visible;display:block;"><div class="img-wrap-coming" style="position:relative;display:block;overflow:visible;"><img alt="Hoodie 3" src="assets/Cyclist_in_Action__Dream_Crusher_Moment.png" style="width:100%;height:100%;object-fit:contain;background:#000"/></div></div></div><div style="font-weight:800">Dream Crusher Tee</div><div class="small" style="color:var(--muted)">Black • Red/White print</div><div style="margin-top:10px;font-weight:900">$25</div></div>
+<div class="card"><div style="height:260px;border-radius:16px;overflow:hidden;margin-bottom:12px"><a href="https://dreamchasernation.printify.me/product/24104282/dream-chaser-nation-hoodie-unisex-fleece-pullover-casual-streetwear-gift-for-sporty-friends-cozy-layer-for-all-seasons" target="_blank" rel="noopener"><img src="assets/adidas-dcn-royal-blue.png" alt="Adidas DCN Hoodie" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" /></a></div><div style="font-weight:800">Adidas DCN Hoodie</div><div class="small" style="color:var(--muted)">Royal Blue</div><div style="margin-top:10px;font-weight:900">$65</div></div>
+</div>
+</div>
+</section>
+<!-- CRUSHER LINE -->
+<section class="section-tight" id="crusher">
+<div class="container">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+<h2 style="font-size:40px">Crusher Line</h2>
+<span class="badge" style="background:linear-gradient(135deg,#ef4444,#111827);color:#fff;font-weight:900">NEW</span>
+</div>
+<div class="grid cols-2" style="align-items:center">
+<div class="card" style="background:linear-gradient(135deg, rgba(239,68,68,.15), rgba(17,24,39,.35));border-color:rgba(255,255,255,.18)">
+<div style="height:360px;border-radius:16px;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center">
+<img alt="Dream Crusher Nation Hoodie" src="assets/crusher_hoodie.png" style="max-height:100%;max-width:100%;object-fit:contain"/>
+</div>
+<div style="margin-top:12px;display:flex;align-items:center;gap:12px">
+<div style="font-weight:900;font-size:20px">Dream Crusher Nation Hoodie</div>
+<span class="badge" style="background:#ef4444;color:#fff;font-weight:900">Crusher</span>
+</div>
+<div class="small" style="color:var(--muted)">Black • Red/White print</div>
+<div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+<a class="dcn-btn"
+   href="#crusher-notify"
+   data-dcn-open="dcn-crusher-notify"
+   style="display:inline-block;min-width:0;
+          background:rgba(255,255,255,.06);
+          color:#f9fafb;
+          border:1px solid rgba(148,163,184,.6);
+          box-shadow:none;text-align:center;">
+  Notify Me
+</a>
+
+<a class="dcn-btn"
+   href="#crusher-comingsoon"
+   data-dcn-open="dcn-crusher-comingsoon"
+   style="display:inline-block;text-align:center;">
+  Coming Soon
+</a>
+
+
+</div>
+</div>
+<div class="card">
+<div style="font-weight:900;font-size:22px;margin-bottom:6px">What is the Crusher Line?</div>
+<p class="lead" style="opacity:.85">A bold, high-energy drop under the Dream Chaser brand — built for competition days and statement moments. Clean typography meets impact graphics.</p>
+<ul style="margin-top:10px">
+<li>Limited runs, premium fleece</li>
+<li>Red/black identity, tougher vibe</li>
+<li>Pairs with Dream Chaser Nation and University collections</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- BOOKS -->
+<section class="section" id="books">
+<div class="container" style="display:flex;flex-direction:column;gap:18px">
+<div>
+<h2 style="font-size:40px">Books that power the program</h2>
+<p class="lead" style="opacity:.85">The coaching includes the full Sales Logic series plus a practical AI companion. Browse the collection to see details on each title or grab the bundle.</p>
+<div class="books-grid" style="display:grid;gap:18px;margin-top:22px">
+<div class="book-card">
+  <div class="cover glow-pink" style="--cover-scale:96%;">
+    <img 
+      src="assets/Sell This to your mom book cover.png"
+      alt="Sell This to Your Mom"
+    >
+  </div>
+  <div class="title">Sell This to Your Mom</div>
+</div>
+
+
+<div class="book-card"><div class="cover glow-blue"></div><div class="title">Sales Logic</div></div>
+<div class="book-card"><div class="cover glow-silver"></div><div class="title">AI Mastermind</div></div>
+<div class="book-card"><div class="cover glow-teal"></div><div class="title">Emotions and Feelings</div></div>
+<div class="book-card"><div class="cover glow-green"></div><div class="title">Energy</div></div>
+</div>
+<div class="hero-cta" style="margin-top:12px">
+<a class="btn btn-ghost" href="books.html">Browse Books</a>
+<a class="btn btn-primary" data-dcn-open="dcn-comm-books-pricing" href="#">Bundle with Coaching</a>
+</div>
+</div>
+<div class="home-books-grid">
+<a class="cover-wrap" href="books.html"></a>
+<a class="cover-wrap" href="books.html"></a>
+<a class="cover-wrap" href="books.html"></a>
+<a class="cover-wrap" href="books.html"></a>
+<a class="cover-wrap" href="books.html"></a>
+</div>
+</div>
+</section>
+<!-- COMMUNITY + YOUTUBE -->
+<section class="section" id="community"><div class="community-wrap" style="max-width:1200px;margin:0 auto;padding:0 16px;"><h2 style="margin:0 0 16px 0;">Inside the Community and Set the Mood!</h2>
+<div class="community-grid" style="display:grid; gap:24px; align-items:stretch;">
+
+<div class="card community-text" style="background:rgba(255,255,255,0.06);padding:20px 22px;border-radius:18px;border:1px solid rgba(255,255,255,0.12);display:flex;flex-direction:column">
+<h3 style="margin-top:0; font-size:1.56em; line-height:1.18; margin-bottom:20px;">🚀 Ready to go back to Skool?</h3>
+<p style="margin:0 0 10px 0; margin-top:10px; line-height:1.6;">Step into the Dream Chaser Nation community — powered by Skool.</p>
+<p style="margin:0 0 10px 0; margin-top:12px; line-height:1.6;">Here you’ll chase, connect, and continuously learn and grow — pushing yourself not only to chase your dreams, but to crush them.</p>
+<p style="margin:0 0 10px 0; margin-top:12px; line-height:1.6;">The chase itself — the risks you take, the work you put in — will all take you to that one moment when you realize you’re not only chasing those dreams for yourself, but for others as well.</p>
+<p style="margin:0 0 16px 0; margin-top:12px; line-height:1.6; font-size:1em;">That’s when the true destination becomes crystal clear. The chase — the journey — will cross you into a newer world of discovering meaning and relentlessly pursuing the reward worth fighting for.</p>
+<div class="hero-cta" style="margin-top:auto">
+<a class="btn btn-primary" data-dcn-open="dcn-comm" href="/join">Join the Community</a>
+</div>
+</div>
+
+<!-- ▼▼▼ REPLACED: community video embed (works, plays on site) ▼▼▼ -->
+<div class="card community-video" style="background:rgba(255,255,255,0.06);padding:22px;border-radius:18px;border:1px solid rgba(255,255,255,0.12);display:flex;flex-direction:column">
+  <h3 style="margin-top:0; font-size:1.56em; line-height:1.18; margin-bottom:10px;">C’Mon – Get Excited! Have Some Fun! Get That Energy Pumping and Press Play!</h3>
+  <p style="margin-top:6px; margin-bottom:8px; line-height:1.5;">🎶 Dance, Listen, and <span style="opacity:.85;">Dream While You Scroll.</span></p>
+  <h4 style="margin:10px 0 12px 0; font-weight:800; letter-spacing:.2px; margin-top:8px; margin-bottom:10px; line-height:1.25;">Today could be <em><strong>THAT DAY</strong></em> that changes everything.</h4>
+  <div class="video-embed" style="position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;">
+    <iframe
+      title="YouTube video player"
+      style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+          src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+<!-- ▲▲▲ END REPLACED BLOCK ▲▲▲ -->
+
+</div>
+</div></section>
+<!-- Family & Lil Dream Chaser University — Full-Width Feature (scoped CSS) -->
+<section class="dcn-dark-section" id="family">
+<div class="fam-wrap">
+<div class="fam-inner">
+<div class="card family-head" style="background:rgba(255,255,255,0.06);padding:22px;border-radius:18px;border:1px solid rgba(255,255,255,0.12);margin-top:8px;margin-bottom:14px;"><h2 style="font-weight:800;color:#ffffff; font-weight:800;">Family Life: The Exciting Future of Dream Chaser University!</h2>
+<div class="fam-sub">Lil Dream Chaser University</div>
+<p class="fam-lead">
+            The movement doesn’t stop with you — it grows at home. Lil Dream Chaser University gives kids a fun,
+            values-first path to build confidence, discipline, and resilience while you lead the way.
+          </p></div>
+<div class="fam-grid">
+<div class="fam-card dcn-card">
+<div class="title">Kids Lessons</div>
+<div class="desc">Short, interactive modules that teach mindset, habits, and healthy goals.</div>
+</div>
+<div class="fam-card dcn-card">
+<div class="title">Family Challenges</div>
+<div class="desc">Weekly activities you can do together to make learning real and fun.</div>
+</div>
+<div class="fam-card dcn-card">
+<div class="title">Lil DCU Workbook</div>
+<div class="desc">Printable pages &amp; prompts to track progress and celebrate wins.</div>
+</div>
+<!-- Extra placeholders to grow later -->
+<div class="fam-card dcn-card">
+<div class="title">Progress Path</div>
+<div class="desc">Collect badges, track streaks, and celebrate milestones as a family.</div>
+</div>
+<div class="fam-card dcn-card">
+<div class="title">Habits Toolkit</div>
+<div class="desc">Simple routines for mornings, study time, and wind-down that kids enjoy.</div>
+</div>
+<div class="fam-card dcn-card">
+  <div class="title">Dream Lab</div>
+  <div class="desc">
+    A mix of core learning and creative projects that build confidence, curiosity, and early life skills &mdash; from money basics to entrepreneurial thinking &mdash; all designed to support your child’s unique dreams.
+  </div>
+</div>
+
+<div class="fam-cta">
+<a class="btn btn-primary" href="lil-dream-chaser-u.html" style="background:linear-gradient(180deg,#fde047,#f59e0b) !important; color:#111 !important; padding:14px 18px; border-radius:14px; font-weight:800; text-decoration:none; border:none; box-shadow:none !important;">Explore Lil Dream Chaser U</a>
+</div>
+</div>
+</div>
+</section>
+<!-- LIVE EVENTS SECTION -->
+<section class="section live-events" id="live-events">
+<div class="container center">
+<h2>Dream Chaser Nation — Live</h2>
+<div class="ccc-logo-placeholder">
+  <img src="assets/Chase and Crush Con.png"
+       alt="Chaser & Crusher Con Logo"
+       style="max-width:320px; width:100%; border-radius:12px;">
+</div>
+<p class="subhead">Imagine being immersed in the excitement together at <strong><em>Chase</em> &amp; Crush Con</strong>.</p>
+<p class="lead">
+      The energy of Dream Chaser Nation doesn’t stop online.
+      Imagine the power of this community when we step into the same room together.
+      Stay tuned — the next level is coming.
+    </p>
+<a class="btn btn--purple btn--purple-glow" href="chaser-crusher-con.html">
+      Explore <em>Chase</em> &amp; Crush Con here
+    </a>
+</div>
+</section>
+<!-- QUOTE CARD: Paul -->
+<section class="section" id="vision-quote">
+<div class="container center">
+<div class="quote-card reveal-on-scroll">
+<p class="quote-head">“I have a vivid vision of what I want this place to be and where I want this thing to go.”</p>
+<p class="quote-body">
+        “I'm relentlessly building this thing to be a place where all dream chasers can come together and share in the excitement together. As a family. A Dream Chaser Nation Family. I hope you get out of it everything that you put into it. Let's build this together. Together, we will create Dream Chaser Nation.”
+      </p>
+<p class="quote-sign">— Paul</p>
+</div>
+</div>
+</section>
+<!-- NEWSLETTER -->
+<!-- BIG CTA -->
+<section class="section-tight" style="padding:80px 0">
+<div class="container" style="text-align:center">
+<div style="font-size:46px;font-weight:1000;margin-bottom:20px;text-shadow:0 2px 6px rgba(0,0,0,.4)">Ready to Chase?</div>
+<a class="btn btn-primary" data-dcn-open="dcn-comm" href="/join" style="font-size:22px;padding:20px 34px;border-radius:28px;box-shadow:0 0 24px 10px rgba(124,58,237,.7),0 0 36px 14px rgba(251,191,36,.6)">Join the Nation</a></div>
+</section>
+<!-- FOOTER -->
+<script>
+  (function(){
+    var yEl = document.getElementById('year');
+    if(yEl && !yEl.textContent) yEl.textContent = new Date().getFullYear();
+  })();
+</script><footer class="site-footer"><div class="wrap"><p class="footer-lines">General inquiries: <a href="mailto:info@dreamchasernation.com">info@dreamchasernation.com</a><br/>Support: <a href="mailto:support@dreamchasernation.com">support@dreamchasernation.com</a></p><div class="footer-mark"><img alt="Dream Chaser Nation mark" src="assets/dcu-logo.png" style="width:56px;height:56px;object-fit:contain;display:block;margin:8px auto 18px;opacity:.95"/></div><div class="footer-socials" style="margin-top:12px; opacity:.7; font-size:14px;"><a href="#">YouTube</a> · <a href="#">Instagram</a> · <a href="#">TikTok</a></div><div class="footer-talent"><a class="pill pill-soft" href="got-talent.html">Got Talent?</a></div><p class="copy">© 2025 Dream Chaser Nation, Inc. All Rights Reserved.</p><p class="footer-small"> 6 Liberty Square #2521, Boston, MA 02109 </p></div></footer>
+<script>
+(function(){
+  const root = document.querySelector('.hero-slideshow');
+  if(!root) return;
+  const slides = Array.from(root.querySelectorAll('.slide'));
+  if(slides.length === 0) return;
+  let i = 0;
+  // Pre-show first
+  slides[0].classList.add('show');
+  setInterval(()=>{
+    const prev = i;
+    i = (i + 1) % slides.length;
+    slides[prev].classList.remove('show');
+    slides[i].classList.add('show');
+  }, 5000);
+})();
+</script>
+<script>
+(function(){
+  if (!('IntersectionObserver' in window)) {
+    // If not supported, just show the content
+    document.querySelectorAll('.reveal-on-scroll').forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.14});
+  document.querySelectorAll('.reveal-on-scroll').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="/assets/js/printify-links.js"></script>
+<!-- Community Popup (brand-matched, final copy) -->
+<link href="assets/css/dcn-comm-popup.css" rel="stylesheet"/>
+<div aria-modal="true" class="dcn-popup-overlay" id="dcn-comm" role="dialog">
+<div class="dcn-popup" role="document">
+<button aria-label="Close" class="dcn-close" data-dcn-close="dcn-comm">✕</button>
+<div class="dcn-popup-header">
+<h2 class="dcn-popup-title" style="font-size:1.85rem;">🌌 One Community. One Movement.</h2>
+</div>
+<div class="success-state">
+<h3>✨ Thanks for joining!</h3>
+<p class="dcn-bodycopy">We’re so excited you decided to join us on your journey!</p>
+</div>
+<div class="dcn-popup-body form-state">
+<p class="dcn-sub">🚀 Don’t get left behind — the only thing missing is you.</p>
+<p class="dcn-bodycopy">Don’t Chase Alone. Inside the Nation, you’ll unlock FREE, EXCLUSIVE access to a fun and supportive community — where we celebrate wins, share lessons, and strategize in ways that never happen in public. Whether you join the conversation or listen in, you’ll find the inspiration and strategy to keep moving forward together.</p>
+<form action="/thank-you.html" data-dcn-redirect-skool="" id="join-the-nation-form" method="POST" name="dcn-community" target="dcn-submission">
+<input id="choice" name="choice" type="hidden" value=""/><div class="dcn-row two"><input class="dcn-input" name="firstname" placeholder="First name" required="True"/><input class="dcn-input" name="lastname" placeholder="Last name" required="True"/></div><div class="dcn-row"><input class="dcn-input" name="email" placeholder="you@dreamchasernation.com" required="True" type="email"/></div>
+<label class="dcn-bodycopy">Let us send you cool stuff. By subscribing, you agree to receive our monthly-ish newsletter and occasional updates. No clutter, no spam — just the good stuff: tools, inspiration, live event updates, and the occasional surprise opportunity. You can unsubscribe anytime.</label>
+<div class="dcn-actions">
+<button class="dcn-btn" style="" type="submit">Get FREE Community Access</button>
+</div><div class="dcn-extra" style="margin-top:16px;margin-top:18px">🌱 <strong>Joining the Nation is planting your first seed.</strong><br/>
+Or maybe your seed is already in the ground — and this is the moment to give it what it needs to grow stronger, faster. Or maybe your tree has been growing, but you can feel it deep inside — it’s destined to <strong>rise even higher</strong>.<br/><br/>
+With the right <strong>Growth Accelerator</strong>, you can fuel your tree to grow faster, broader, and to heights you never imagined possible. If you want that growth to happen <strong>EXPONENTIALLY FASTER</strong>, you can fuel it with <strong>ELITE TRAINING &amp; COACHING</strong> — from the books that <strong>lay the foundation</strong> to the <strong>HIGHEST levels of personalized mentorship</strong>.</div><button class="dcn-btn" data-go="pricing" style="display:block;width:100%;margin-top:14px;background:linear-gradient(135deg,#5b4ae6 0%, #3a7bd5 100%);color:white;box-shadow: 0 14px 34px rgba(91,74,230,0.38);padding:14px 18px;font-size:1rem" type="submit">Get FREE Community Access + See Elite Programs</button>
+<!-- Hidden fields for HubSpot mapping -->
+<input id="interest_level_hidden" name="interest_level" type="hidden" value=""/>
+<input id="choice_hidden" name="choice" type="hidden" value=""/>
+</form>
+</div>
+</div>
+</div>
+<script async="" defer="" id="hs-script-loader" src="https://js.hs-scripts.com/PORTAL_ID.js"></script>
+<script src="assets/js/dcn-comm-popup.js"></script>
+<!-- Home: Books CTA Popup (Version 2: Start with Books) -->
+<div aria-modal="true" class="dcn-popup-overlay" id="dcn-comm-books-home" role="dialog">
+<div class="dcn-popup" role="document">
+<button aria-label="Close" class="dcn-close" data-dcn-close="dcn-comm-books-home">✕</button>
+<div class="dcn-popup-header">
+<h2 class="dcn-popup-title" style="font-size:1.85rem;">📚 Books + Coaching</h2>
+</div>
+<div class="success-state">
+<h3>✨ Thanks for joining!</h3>
+<p class="dcn-bodycopy">We’re so excited you decided to join us on your journey!</p>
+</div>
+<div class="dcn-popup-body form-state">
+<p class="dcn-sub">Don’t Chase Alone.</p>
+<p class="dcn-bodycopy">Inside the Nation, you’ll unlock <strong>FREE, EXCLUSIVE access</strong> to a fun and supportive community — where we celebrate wins, share lessons, and strategize in ways that never happen in public. Whether you join the conversation or listen in, you’ll find the inspiration and strategy to keep moving forward together.</p>
+<form action="/thank-you.html" data-dcn-redirect-skool="" method="post">
+<div class="row">
+<input name="first_name" placeholder="First name" required="" type="text"/>
+<input name="last_name" placeholder="Last name" required="" type="text"/>
+</div>
+<div class="row">
+<input name="email" placeholder="you@dreamchasernation.com" required="" type="email"/>
+</div>
+<label class="dcn-bodycopy">Let us send you cool stuff. By subscribing, you agree to receive our monthly-ish newsletter and occasional updates. No clutter, no spam — just the good stuff: tools, inspiration, live event updates, and the occasional surprise opportunity. You can unsubscribe anytime.</label>
+<div class="dcn-actions">
+<button class="dcn-btn" style="" type="submit">Get FREE Community Access</button>
+</div>
+<div class="dcn-extra" style="margin-top:18px;">
+          🌱 <strong>Joining the Nation is planting your first seed.</strong><br/>
+          Or maybe your seed is already in the ground — and this is the moment to give it what it needs to grow stronger, faster.
+          Or maybe your tree has been growing, but you can feel it deep inside — it’s destined to <strong>rise even higher</strong>.<br/><br/>
+          With the right <strong>Growth Accelerator</strong>, you can fuel your tree to grow faster, broader, and to heights you never imagined possible.
+          If you want that growth to happen <strong>EXPONENTIALLY FASTER</strong>, you can fuel it with <strong>ELITE TRAINING &amp; COACHING</strong> — whether you <strong>start with the books</strong> or <strong>rise all the way up</strong> to the <strong>HIGHEST levels of personalized mentorship</strong>.
+        <div class="dcn-actions" style="margin-top:10px;">
+<button class="dcn-btn" style="background: linear-gradient(90deg,#6C63FF,#3B82F6); color:#fff;" type="submit">Get FREE Community Access + See Elite Programs
+                  </button>
+</div>
+</div>
+</form>
+<div class="dcn-actions" style="margin-top:14px;">
+</div>
+</div>
+</div>
+</div>
+<style>
+  /* === DCN uniform form spacing === */
+  .dcn-popup-body form .row { margin-top: 12px; margin-bottom: 12px; }
+  .dcn-popup-body form .row:first-child { margin-top: 0; }
+  .dcn-popup-body form .row:last-child  { margin-bottom: 0; }
+</style>
+<!-- Injected: Books Pricing / Coaching Bundle Modal for Home CTA -->
+<div aria-modal="true" class="dcn-popup-overlay" id="dcn-comm-books-pricing" role="dialog" style="display:none;">
+<div class="dcn-popup" role="document">
+<button aria-label="Close" class="dcn-close" data-dcn-close="dcn-comm-books-pricing">✕</button>
+<div class="dcn-popup-header">
+<h2 class="dcn-popup-title" style="font-size:1.85rem;">⚡ Time to Chase the Dream! Chase and Crush it with the Book + Coaching Bundle!</h2>
+</div>
+<div class="success-state">
+<h3>✨ Thanks! You're in.</h3>
+<p class="dcn-bodycopy">We’ll send updates and unlock your access.</p>
+</div>
+<div class="dcn-popup-body form-state">
+<p class="dcn-sub"><strong>Leave your old world behind.</strong></p>
+<p class="dcn-bodycopy">
+        Step into a new world — a world of chasing your dreams and crushing them with relentless momentum.
+      </p>
+<p class="dcn-bodycopy">
+        This isn’t just about learning. It’s about <em>doing.</em> With the <strong>Books + Coaching Bundle</strong>, you’ll unlock:
+      </p>
+<ul class="dcn-bodycopy" style="margin-left:1.25rem; line-height:1.6;">
+<li>📚 The complete 5-book Dream Chaser series — your foundation for growth</li>
+<li>🧠 Coaching that ignites your action, keeps you accountable, and accelerates your results</li>
+<li>🌍 A private community where wins, lessons, and strategies fuel each other daily</li>
+</ul>
+<p class="dcn-bodycopy">
+        Drop your info to get <strong>exclusive early access</strong> to pricing &amp; perks.
+      </p>
+<form action="/thank-you.html" id="comm-books-form-pricing" method="post">
+<div class="row">
+<input name="first_name" placeholder="Your first name" required="" style="margin-bottom:12px;" type="text"/>
+<input name="last_name" placeholder="Your last name" required="" style="margin-bottom:12px;" type="text"/>
+</div>
+<div class="row">
+<input name="email" placeholder="you@dreamchasernation.com" required="" style="margin-bottom:12px;" type="email"/>
+</div>
+<label class="dcn-bodycopy" style="margin-top:16px; display:block;">
+          Let us send you cool stuff. By subscribing, you agree to receive our monthly-ish newsletter and occasional updates.
+          No clutter, no spam — just the good stuff: tools, inspiration, live event updates, and the occasional surprise opportunity.
+          You can unsubscribe anytime.
+        </label>
+<div class="dcn-actions" style="margin-top:14px;">
+<button class="dcn-btn" id="cbp-btn-join-pricing" type="submit">Join the Free Community + Check Out Pricing</button>
+</div>
+<div class="dcn-extra" style="margin-top:18px;">
+          🌱 <strong>Joining the Nation is planting your first seed.</strong><br/>
+          Or maybe your seed is already in the ground — and this is the moment to give it what it needs to grow stronger, faster.
+          Or maybe your tree has been growing, but you can feel it deep inside — it’s destined to <strong>rise even higher</strong>.<br/><br/>
+          With the right <strong>Growth Accelerator</strong>, you can fuel your tree to grow faster, broader, and to heights you never imagined possible.
+          If you want that growth to happen <strong>EXPONENTIALLY FASTER</strong>, you can fuel it with <strong>ELITE TRAINING &amp; COACHING</strong> — whether you
+          <strong>start with the books</strong> or <strong>rise all the way up</strong> to the <strong>HIGHEST levels of personalized mentorship</strong>.
+        </div>
+<div class="dcn-actions" style="margin-top:12px;">
+<button class="dcn-btn" id="cbp-btn-purple" style="background: linear-gradient(90deg,#6C63FF,#3B82F6); color:#fff;" type="submit">
+            Get FREE Community Access + See Elite Programs &amp; Pricing
+          </button>
+</div>
+</form>
+<div class="dcn-actions" style="margin-top:12px;">
+<a class="dcn-btn dcn-btn-secondary" href="pricing.html" id="cbp-btn-skip" style="text-align:center;">
+          Take Me Right to Pricing
+        </a>
+</div>
+</div>
+</div>
+<!-- Start of HubSpot Embed Code -->
+<script async="" defer="" id="hs-script-loader" src="https://js-na2.hs-scripts.com/243879652.js" type="text/javascript"></script>
+<!-- End of HubSpot Embed Code -->
+<script>
+// ==== Global HubSpot Non-HubSpot forms wiring (Community/Elite) ====
+// (unchanged JS)
+(function() {
+  var SKOOL_URL = "https://www.skool.com/dreamseekers-4847/about?ref=a79141dd0a864cab8249aeeae5ab54bb";
+  var ELITE_URL = "pricing.html";
+  var submitChoice = null;
+
+  function findForm() {
+    var f = document.querySelector('#join-the-nation-form');
+    if (f) return f;
+    return document.querySelector('form');
+  }
+
+  
+function tagButtons(form) {
+  var buttons = form.querySelectorAll('button[type="submit"], input[type="submit"]');
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var ds = (btn.dataset && btn.dataset.choice) ? btn.dataset.choice : null;
+      var txt = (btn.textContent || btn.value || '').toLowerCase();
+      submitChoice = ds ? ds : ((txt.indexOf('elite') !== -1) ? 'Elite' : 'Community');
+      var il = form.querySelector('#interest_level_hidden');
+      var ch = form.querySelector('#choice_hidden');
+      if (il) il.value = submitChoice;
+      if (ch) ch.value = submitChoice;
+    }, { capture: true });
+  });
+}
+
+
+  function wire(form) {
+    form.addEventListener('submit', function() {
+      // Allow native submit (HubSpot must detect it). Delay navigation.
+      var il = form.querySelector('#interest_level_hidden');
+      var choice = (il && il.value) ? il.value : (submitChoice || 'Community');
+      var il = form.querySelector('#interest_level_hidden');
+      var choice = (il && il.value) ? il.value : (submitChoice || 'Community');
+      if (choice === 'Elite') {
+        setTimeout(function(){ try { window.location.href = ELITE_URL; } catch(e) {} }, 1500);
+      } else if (choice === 'Community') {
+        setTimeout(function(){ try { window.location.href = SKOOL_URL; } catch(e) {} }, 1500);
+      } else {
+        // For 'Lil' or other choices, do not redirect; remain on success state.
+      }
+      
+    }, false);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = findForm();
+    if (!form) return;
+    tagButtons(form);
+    wire(form);
+  });
+})();
+// ==== End wiring ====
+</script>
+</div>
+<script>
+(function(){
+  function trackShopClick(label){
+    try{
+      window._hsq = window._hsq || [];
+      window._hsq.push(['trackEvent', { id: 'shop_click', value: label }]);
+    }catch(e){}
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('[data-shop-link]').forEach(function(el){
+      el.addEventListener('click', function(){
+        var label = el.getAttribute('data-shop-link') || (el.textContent||'').trim();
+        trackShopClick(label);
+      }, {passive:true});
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-music-link]');
+    if(!a) return;
+    try{ window._hsq = window._hsq || []; window._hsq.push(['trackEvent', { id: 'music_click', value: a.getAttribute('data-music-link') }]); }catch(err){}
+  }, {passive:true});
+})();</script><script src="assets/js/login-modal.js"></script>
+<div aria-hidden="true" id="loginOverlay"></div>
+<div aria-labelledby="loginTitle" aria-modal="true" id="loginModal" role="dialog">
+<div class="login-card">
+<button aria-label="Close" class="login-close">✕</button>
+<h2 id="loginTitle">Welcome Back! <span class="emoji-burst">⚡</span></h2>
+<p class="sub">Ready to Crush Some More Today? <span class="emoji-burst-small">🚀</span> Sign in to access your dashboard.</p>
+<form action="#" class="login-form" id="loginForm" method="post">
+<input autocomplete="username" class="login-input" id="login-username" name="username" placeholder="Username" required=""/>
+<input autocomplete="current-password" class="login-input" id="login-password" name="password" placeholder="Password" required="" type="password"/>
+<button class="login-btn" type="submit">Log In</button>
+</form>
+<div class="login-meta">
+<a href="reset-password.html" id="forgot-password-link">Forgot Password? Click here to reset it.</a>
+<a href="join.html" id="join-now-link">Not a member yet? Click here to join.</a>
+</div>
+</div>
+</div>
+<script id="loginInlineBinder">
+(function(){
+  function openLogin(e){
+    if(e) e.preventDefault();
+    var overlay = document.getElementById('loginOverlay');
+    var modal = document.getElementById('loginModal');
+    if(overlay) overlay.style.display = 'block';
+    if(modal){
+      modal.style.display = 'flex';
+      modal.classList.add('backdrop-close');
+      setTimeout(function(){ var u=document.getElementById('login-username'); if(u) u.focus(); }, 10);
+    }
+    document.body.dataset.loginOpen = "1";
+    // esc to close
+    document.addEventListener('keydown', escHandler);
+  }
+  function escHandler(ev){
+    if(ev.key === 'Escape'){ closeModal(); }
+  }
+  function closeModal(){
+    var overlay = document.getElementById('loginOverlay');
+    var modal = document.getElementById('loginModal');
+    if(overlay) overlay.style.display = 'none';
+    if(modal) modal.style.display = 'none';
+    document.body.dataset.loginOpen = "";
+    document.removeEventListener('keydown', escHandler);
+    // return focus to the trigger if present
+    var trigger = document.getElementById('member-login-btn');
+    if(trigger) try{ trigger.focus(); }catch(e){}
+  }
+  function bind(){
+    var btn = document.getElementById('member-login-btn');
+    if(btn && !btn._forceBound){ btn.addEventListener('click', openLogin); btn._forceBound = true; }
+    // close on overlay click
+    var overlay = document.getElementById('loginOverlay');
+    if(overlay && !overlay._bound){ overlay.addEventListener('click', function(e){ e.preventDefault(); closeModal(); }); overlay._bound = true; }
+    // close when clicking backdrop area in modal
+    var modal = document.getElementById('loginModal');
+    if(modal && !modal._bound){
+      modal.addEventListener('click', function(e){
+        if(e.target === modal){ closeModal(); }
+      });
+      modal._bound = true;
+    }
+    // close button
+    var closeBtn = document.querySelector('.login-close');
+    if(closeBtn && !closeBtn._bound){ closeBtn.addEventListener('click', function(e){ e.preventDefault(); closeModal(); }); closeBtn._bound = true; }
+  }
+  if (document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', bind); }
+  else { bind(); }
+  // Ensure form submit is placeholder
+  document.addEventListener('submit', function(e){
+    if(e.target && e.target.id === 'loginForm'){
+      e.preventDefault();
+      alert('Login submitted (placeholder). Replace with your auth platform when ready.');
+    }
+  });
+})();
+</script>
+
+
+<!-- Newsletter / Community modal -->
+<div aria-modal="true"
+     class="dcn-popup-overlay"
+     id="dcn-newsletter"
+     role="dialog"
+     style="display:none;">
+  <div class="dcn-popup" role="document">
+    <button aria-label="Close"
+            class="dcn-close"
+            data-dcn-close="dcn-newsletter">✕</button>
+
+    <div class="dcn-popup-header">
+      <h2 class="dcn-popup-title" style="font-size:1.85rem;">
+        Join the newsletter — or consider our free community.
+      </h2>
+    </div>
+
+    <!-- Success state (hidden by default, handled by your JS/Hubsport) -->
+    <div class="success-state">
+      <h3>✨ You're in!</h3>
+      <p class="dcn-bodycopy">
+        We’ll send updates and tools to help you keep chasing.
+      </p>
+    </div>
+
+    <!-- Default form state -->
+    <div class="dcn-popup-body form-state">
+      <p class="dcn-sub">
+        Start with the newsletter, or jump right into the Nation.
+      </p>
+      <p class="dcn-bodycopy">
+        Drop your info below to get our monthly-ish newsletter with tools,
+        inspiration, and updates. If you’re ready for a little more, you can
+        also join our free Dream Chaser Nation community on Skool — no pressure,
+        just an open invite.
+      </p>
+
+      <form id="dcn-newsletter-form" method="post">
+        <div class="dcn-row two">
+          <input class="dcn-input"
+                 name="firstname"
+                 placeholder="First name"
+                 required>
+          <input class="dcn-input"
+                 name="lastname"
+                 placeholder="Last name">
+        </div>
+
+        <div class="dcn-row">
+          <input class="dcn-input"
+                 name="email"
+                 type="email"
+                 placeholder="you@dreamchasernation.com"
+                 required>
+        </div>
+
+        <label class="dcn-bodycopy">
+          By subscribing, you agree to receive our monthly-ish newsletter and
+          occasional updates. No clutter, no spam — just the good stuff. You can
+          unsubscribe anytime.
+        </label>
+
+        <div class="dcn-actions"
+             style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+          <!-- Left: Newsletter submit -->
+          <button class="dcn-btn"
+                  type="submit"
+                  style="flex:1;min-width:0;background:rgba(255,255,255,.06);
+                         color:#f9fafb;border:1px solid rgba(148,163,184,.6);
+                         box-shadow:none;">
+            Join the Newsletter
+          </button>
+
+          <!-- Right: Community (yellow Skool button) -->
+          <a class="dcn-btn"
+             href="https://www.skool.com/dreamseekers-4847/about?ref=a79141dd0a864cab8249aeeae5ab54bb"
+             target="_blank"
+             rel="noopener"
+             style="flex:1;min-width:0;text-align:center;">
+            Join the Community
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Crusher Line Coming Soon modal -->
+<div aria-modal="true"
+     class="dcn-popup-overlay"
+     id="dcn-crusher-comingsoon"
+     role="dialog"
+     style="display:none;">
+  <div class="dcn-popup" role="document">
+    <button aria-label="Close"
+            class="dcn-close"
+            data-dcn-close="dcn-crusher-comingsoon">✕</button>
+
+    <div class="dcn-popup-header">
+      <h2 class="dcn-popup-title" style="font-size:1.85rem;">
+        The Crusher Line isn’t live yet
+      </h2>
+    </div>
+
+    <!-- Success state (hidden by default — optional, same structure) -->
+    <div class="success-state">
+      <h3>✨ Got it!</h3>
+      <p class="dcn-bodycopy">
+        We’ll give you a heads-up when the Crusher drops.
+      </p>
+    </div>
+
+    <!-- Default view -->
+    <div class="dcn-popup-body form-state">
+      <p class="dcn-sub">
+        This hoodie — and the Crusher Line — are still being finalized.
+      </p>
+
+      <p class="dcn-bodycopy">
+        If you want to check out the rest of the Dream Chaser Nation apparel,
+        the current collection is live and ready to explore.
+      </p>
+
+      <div class="dcn-actions"
+           style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+
+        <!-- View Apparel button -->
+        <a class="dcn-btn"
+           href="https://dreamchasernation.printify.me/"
+           target="_blank"
+           rel="noopener"
+           style="flex:1;min-width:0;text-align:center;">
+          View Apparel →
+        </a>
+
+        <!-- Wait button -->
+        <button class="dcn-btn"
+                data-dcn-close="dcn-crusher-comingsoon"
+                style="flex:1;min-width:0;background:rgba(255,255,255,.06);
+                       color:#f9fafb;border:1px solid rgba(148,163,184,.6);
+                       box-shadow:none;">
+          I’ll wait for this drop
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Crusher Hoodie Notify Me modal -->
+<div aria-modal="true"
+     class="dcn-popup-overlay"
+     id="dcn-crusher-notify"
+     role="dialog"
+     style="display:none;">
+  <div class="dcn-popup" role="document">
+    <button aria-label="Close"
+            class="dcn-close"
+            data-dcn-close="dcn-crusher-notify">✕</button>
+
+    <div class="dcn-popup-header">
+      <h2 class="dcn-popup-title" style="font-size:1.85rem;">
+        Be first when this hoodie drops
+      </h2>
+    </div>
+
+    <!-- Success state (hidden by default) -->
+    <div class="success-state">
+      <h3>✨ You're in!</h3>
+      <p class="dcn-bodycopy">
+        We’ll let you know the moment this design goes live.
+      </p>
+    </div>
+
+    <!-- Default form state -->
+    <div class="dcn-popup-body form-state">
+      <p class="dcn-sub">
+        This Crusher Line hoodie isn’t live yet.
+      </p>
+      <p class="dcn-bodycopy">
+        If you want a quick heads-up the moment it releases,
+        drop your info below.
+      </p>
+
+      <form id="dcn-crusher-notify-form" method="post">
+        <div class="dcn-row two">
+          <input class="dcn-input"
+                 name="firstname"
+                 placeholder="First name"
+                 required>
+          <input class="dcn-input"
+                 name="lastname"
+                 placeholder="Last name">
+        </div>
+
+        <div class="dcn-row">
+          <input class="dcn-input"
+                 name="email"
+                 type="email"
+                 placeholder="you@dreamchasernation.com"
+                 required>
+        </div>
+
+        <label class="dcn-bodycopy">
+          You’ll only get notified about this hoodie drop — nothing else.
+        </label>
+
+        <div class="dcn-actions"
+             style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+          
+          <!-- Submit -->
+          <button class="dcn-btn"
+                  type="submit"
+                  style="flex:1;min-width:0;">
+            Notify Me When It Drops
+          </button>
+
+          <!-- Close -->
+          <button class="dcn-btn"
+                  data-dcn-close="dcn-crusher-notify"
+                  type="button"
+                  style="flex:1;min-width:0;
+                         background:rgba(255,255,255,.06);
+                         color:#f9fafb;
+                         border:1px solid rgba(148,163,184,.6);
+                         box-shadow:none;">
+            Not right now
+          </button>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var form = document.getElementById("dcn-newsletter-form");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var popup = form.closest(".dcn-popup");
+    if (!popup) return;
+
+    var formState = popup.querySelector(".form-state");
+    var successState = popup.querySelector(".success-state");
+
+    if (formState) formState.style.display = "none";
+    if (successState) successState.style.display = "block";
+  });
+})();
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const crusherModalId = "dcn-crusher-comingsoon";
+  const crusherForm = document.querySelector(`#${crusherModalId} form`);
+
+  if (!crusherForm) return;
+
+  crusherForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const modal = document.getElementById(crusherModalId);
+    const formState = modal.querySelector(".form-state");
+    const successState = modal.querySelector(".success-state");
+
+    // Hide form & show success
+    if (formState) formState.style.display = "none";
+    if (successState) successState.style.display = "block";
+  });
+});
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>DREAM CHASER NATION — Pricing Page</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{--bg:#0f172a;--card:#0b1022;--muted:#94a3b8;--brand:#6366f1;--brand2:#9333ea;--gold:#facc15;--indigo:#4f46e5;}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:#fff}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:960px;margin:0 auto;padding:28px 16px}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+    .logo{font-weight:900;letter-spacing:-.3px;font-size:20px}
+    .logo .nation{color:var(--indigo)}
+    .pill{display:inline-block;padding:6px 10px;border-radius:9999px;border:1px solid rgba(255,255,255,.2);font-size:12px;color:var(--muted)}
+    .hero h1{font-size:34px;margin:0 0 6px}
+    .hero p{color:var(--muted);margin:0 0 12px}
+    .tiers{display:flex;flex-direction:column;gap:18px}
+    .tier{background:linear-gradient(135deg,rgba(99,102,241,.16),rgba(147,51,234,.12));border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px}
+    .badge{display:inline-block;background:rgba(250,204,21,.12);border:1px solid rgba(250,204,21,.5);color:#fff;padding:6px 10px;border-radius:9999px;font-weight:800;font-size:12px;margin-bottom:8px}
+    .badge.pop{background:rgba(250,204,21,.24);border-color:rgba(250,204,21,.7)}
+    .head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+    .title{font-size:22px;font-weight:900}
+    .price{margin-left:auto;font-size:30px;font-weight:900}
+    .period{color:var(--muted);font-size:14px;margin-left:4px}
+    .desc{color:#e5e7eb;line-height:1.7;margin-top:8px;white-space:pre-line}
+    details{margin-top:8px}
+    summary{cursor:pointer;color:#e5e7eb}
+    .cta{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:14px 24px;border-radius:14px;font-weight:800}
+    .btn-primary{background:linear-gradient(180deg,#fde047,#f59e0b);color:#111;
+      box-shadow:0 0 26px rgba(147,51,234,.65),0 22px 48px rgba(147,51,234,.5),0 0 90px rgba(255,255,255,.45)}
+    .btn-ghost{border:2px solid rgba(255,255,255,.25);color:#fff}
+    .sep{height:1px;background:rgba(255,255,255,.08);margin:6px 0 0}
+    .note{margin-top:18px;color:var(--muted);font-size:14px}
+    .video{margin-top:16px;display:flex;justify-content:center}
+    .video .box{width:100%;max-width:900px;aspect-ratio:16/9;border-radius:16px;border:1px dashed rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;color:var(--muted)}
+    .foot{margin-top:26px;color:var(--muted);font-size:13px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+    .foot .links a{margin-right:12px}
+  
+    .highlight{position:relative}
+    
+    .highlight .ribbon{
+      position:absolute; top:10px; right:-8px;
+      background:#facc15; color:#111;
+      font-weight:900; font-size:12px;
+      padding:6px 10px; border-radius:6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.35);
+      transform: rotate(8deg);
+    }
+
+  
+/* Highlighted flagship card (gold frame + glow) */
+.highlight{position:relative;border:3px solid #facc15;box-shadow:0 0 26px rgba(250,204,21,.65),0 22px 48px rgba(250,204,21,.5),0 0 90px rgba(250,204,21,.45);}
+.highlight .ribbon{
+  position:absolute; top:10px; right:-8px;
+  background:#facc15; color:#111;
+  font-weight:900; font-size:12px;
+  padding:6px 10px; border-radius:6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.35);
+  transform: rotate(8deg);
+}
+  
+
+/* === Slightly looser version for Ownership Partner card === */
+.pricing-card--owner .desc { white-space: normal; line-height: 1.65; }
+.pricing-card--owner .desc > * + * { margin-top: 0.65rem; }
+.pricing-card--owner ul { margin: 0.65rem 0 0.75rem 1.4rem; padding: 0; }
+.pricing-card--owner li { margin: 0.35rem 0; }
+.pricing-card--owner li > p { margin: 0; }
+
+/* === Scoped spacing fixes for Ownership Partner card === */
+.pricing-card--owner .desc { white-space: normal; line-height: 1.55; }
+.pricing-card--owner .desc > * + * { margin-top: 0.5rem; }
+.pricing-card--owner ul { margin: 0.5rem 0 0.6rem 1.25rem; padding: 0; }
+.pricing-card--owner li { margin: 0.25rem 0; }
+.pricing-card--owner li > p { margin: 0; }
+/* doubled top margin above headers only */
+.pricing-card--owner .subhead { margin-top: 1.5rem; margin-bottom: 0.35rem; }
+
+/* === Bullet indentation across pricing cards === */
+.tiers .desc ul { 
+  /* neutralize any inline margin-left and create a consistent tab-like indent */
+  margin-left: 0 !important; 
+  padding-left: 2.5em !important; /* ~5 spaces worth of indent at 1em space width */
+  list-style-position: outside;
+}
+.tiers .desc li { margin-left: 0; }
+
+/* === Scoped spacing fixes for AI Mastermind card (match $1M approach) === */
+.pricing-card--ai .desc { white-space: normal; line-height: 1.55; }
+.pricing-card--ai .desc > * + * { margin-top: 0.5rem; }
+.pricing-card--ai ul { margin: 0.5rem 0 0.6rem 1.25rem; padding: 0; }
+.pricing-card--ai li { margin: 0.25rem 0; }
+.pricing-card--ai li > p { margin: 0 !important; } /* kill double margins from <li> */
+.pricing-card--ai .subhead { margin-top: 0.9rem; margin-bottom: 0.35rem; }
+</style>
+<style>
+/* footer baseline */
+.site-footer{padding:40px 0 56px;border-top:1px solid rgba(255,255,255,.06);}
+.site-footer .wrap{max-width:1100px;margin:0 auto;text-align:center}
+.site-footer .footer-lines{margin:0 0 14px;color:#cfd7e0}
+.site-footer .footer-mark img{width:56px;height:56px;object-fit:contain;margin:8px auto 18px;opacity:.95}
+.site-footer .footer-socials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.site-footer .pill{display:inline-block;padding:10px 16px;border:1px solid rgba(255,255,255,.18);border-radius:12px;color:#e6ebf2;text-decoration:none}
+.site-footer .pill:hover{border-color:rgba(255,255,255,.28)}
+.site-footer .copy{margin:10px 0 6px;font-weight:500}
+.site-footer .footer-small{margin:0;color:#b6c0cc}
+@media (max-width:560px){
+  .site-footer{padding:36px 0 44px}
+  .site-footer .pill{font-size:14px}
+}
+</style>
+<style>.site-footer .pill-soft{background:rgba(255,255,255,.06)!important;border-color:rgba(255,255,255,.14)!important;color:#cfd7e0!important}</style><style>
+/* === Pricing Ribbon Styles (scoped) — ensure ribbons position on non-highlight tiers === */
+.tier { position: relative; }
+.tier .ribbon, .pricing-card .ribbon{
+  position:absolute;
+  top:12px; right:-8px;
+  background: linear-gradient(180deg,#fde047 0%, #f59e0b 100%);
+  color:#111;
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:6px 12px;
+  transform: rotate(12deg);
+  border-radius:6px;
+  box-shadow: 0 6px 14px rgba(245,158,11,.35);
+  pointer-events:none;
+  z-index:3;
+}
+</style>
+<style>/* bottom-return */ .bottom-return{display:flex;justify-content:center;margin:28px 0;}</style>
+<style>
+/* helper tweaks injected by build */
+.subhead{display:block;margin-top:18px;margin-bottom:6px;font-weight:700;font-size:1.05em;}
+.subhead + ul{margin-top:8px}
+.questions{font-style:italic;margin-top:8px}
+.closer{font-style:italic;margin-top:18px;margin-bottom:12px;text-align:left}
+</style>
+<style>
+  /* === DCN Modal Base Styles — pricing page only === */
+  .dcn-popup-overlay{
+    position:fixed;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background:rgba(15,23,42,.78);
+    backdrop-filter:blur(6px);
+    z-index:80;
+  }
+  .dcn-popup-overlay.show{display:flex;}
+
+  .dcn-popup{
+    width:min(720px,92vw);
+    border-radius:18px;
+    background:linear-gradient(180deg,#111827,#020617);
+    border:1px solid rgba(129,140,248,.45);
+    box-shadow:0 32px 80px rgba(0,0,0,.65);
+    padding:0;
+    position:relative;
+    overflow:hidden;
+  }
+  .dcn-popup-header{
+    padding:18px 22px;
+    background:linear-gradient(90deg,#6366f1,#8b5cf6);
+    color:#fff;
+    font-weight:900;
+    font-size:1.1rem;
+  }
+  .dcn-popup-title{margin:0;}
+
+  .dcn-close{
+    position:absolute;
+    top:10px;
+    right:14px;
+    border:0;
+    background:transparent;
+    color:#e5e7eb;
+    font-size:1.4rem;
+    cursor:pointer;
+  }
+
+  .dcn-popup-body{
+    padding:20px 22px 22px;
+    color:#e5e7eb;
+    max-height:70vh;
+    overflow-y:auto;
+  }
+
+  /* Make Coming Soon modal form fields match other DCN inputs */
+  .dcn-popup-body form .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .dcn-popup-body form .row input[type="text"],
+.dcn-popup-body form .row input[type="email"],
+.dcn-popup-body form .row input[type="tel"] {
+  flex: 1 1 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.75);
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+
+  .dcn-popup-body form .row input[type="text"]::placeholder,
+  .dcn-popup-body form .row input[type="email"]::placeholder {
+    color: #64748b;
+  }
+
+  .dcn-popup-body form .row input[type="text"]:focus,
+  .dcn-popup-body form .row input[type="email"]:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.55);
+  }
+
+
+  .dcn-sub{font-weight:700;margin:0 0 6px;}
+  .dcn-bodycopy{margin:6px 0 8px;line-height:1.6;color:#e5e7eb;}
+
+  .dcn-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .dcn-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 18px;
+    border-radius:999px;
+    font-weight:800;
+    border:none;
+    cursor:pointer;
+    background:linear-gradient(180deg,#fde047,#f59e0b);
+    color:#111827;
+    box-shadow:0 0 26px rgba(147,51,234,.55),0 22px 48px rgba(147,51,234,.45);
+    text-decoration:none;
+  }
+
+  .dcn-btn-secondary{
+    background:transparent;
+    border:2px solid rgba(255,255,255,.35);
+    color:#e5e7eb;
+    box-shadow:none;
+  }
+
+  .dcn-extra{font-size:.95rem;color:#cbd5e1;}
+
+  .dcn-popup-body ul{
+    margin:8px 0 10px 1.25rem;
+    padding:0;
+  }
+  .dcn-popup-body li{margin:4px 0;}
+
+  .dcn-popup .success-state{
+    display:none;
+    padding:18px 22px;
+    border-bottom:1px solid rgba(148,163,184,.35);
+  }
+  .dcn-popup .success-state h3{
+    margin:0 0 4px;
+    font-size:1.1rem;
+  }
+  .dcn-popup .form-state{display:block;}
+
+/* ===== Redirect notice (pre-checkout message) ===== */
+#redirectNotice {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  background: rgba(5, 10, 20, .55); backdrop-filter: blur(4px);
+  opacity: 0; pointer-events: none; transition: opacity .15s ease;
+  z-index: 120;
+}
+#redirectNotice.show { opacity: 1; pointer-events: auto; }
+#redirectNotice .card {
+  background: #0b0f1a; border: 1px solid rgba(255,255,255,.15);
+  padding: 18px 20px; border-radius: 12px;
+  font-weight: 800; color: #eaf0ff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  text-align: center;
+}
+
+</style>
+<style>
+/* === Lifetime Access – Accelerator Modal (visual only, reusing #dcn-offer-modal) === */
+
+#dcn-offer-modal .la-accel-modal {
+  width: 100%;
+  max-width: 720px;
+  background: #0b0f1d;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 255, 0.45);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Lifetime modal: let the overlay scroll instead of the page */
+#dcn-offer-modal.dcn-popup-overlay {
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 24px 0;
+}
+
+
+/* Header bar – big hero title */
+#dcn-offer-modal .la-accel-header {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #fefce8;
+}
+
+#dcn-offer-modal .la-accel-title {
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+}
+
+#dcn-offer-modal .la-accel-close {
+  background: transparent;
+  border: none;
+  color: #fefce8;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+/* Body – NO scroll on desktop */
+#dcn-offer-modal .la-accel-body {
+  padding: 20px 22px 16px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+#dcn-offer-modal .la-intro-card,
+#dcn-offer-modal .la-highlight,
+#dcn-offer-modal .la-section {
+  margin-bottom: 14px;
+}
+
+#dcn-offer-modal .la-intro-card {
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: rgba(30, 64, 175, 0.5);
+  border: 1px solid rgba(129, 140, 248, 0.7);
+  color: #e5e7ff;
+}
+
+#dcn-offer-modal .la-intro-card p {
+  margin: 0 0 6px;
+}
+#dcn-offer-modal .la-intro-card p:last-child {
+  margin-bottom: 0;
+}
+
+#dcn-offer-modal .la-highlight {
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: #101426;
+  border: 1px solid rgba(250, 204, 21, 0.7);
+}
+
+#dcn-offer-modal .la-highlight p {
+  margin: 0 0 6px;
+}
+#dcn-offer-modal .la-highlight p:last-child {
+  margin-bottom: 0;
+}
+
+#dcn-offer-modal .la-section-title {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+#dcn-offer-modal .la-section {
+  margin-bottom: 14px;
+}
+#dcn-offer-modal .la-section p {
+  margin: 0 0 6px;
+}
+#dcn-offer-modal .la-section p:last-child {
+  margin-bottom: 0;
+}
+
+#dcn-offer-modal .la-divider {
+  height: 1px;
+  margin: 10px 0 14px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(148, 163, 255, 0.6),
+    transparent
+  );
+}
+
+#dcn-offer-modal .la-strong {
+  font-weight: 700;
+}
+
+/* Footer CTA */
+#dcn-offer-modal .la-accel-footer {
+  padding: 14px 22px 18px;
+  border-top: 1px solid rgba(15, 23, 42, 0.9);
+  background: #050816;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#dcn-offer-modal .la-accel-cta {
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 700;
+  font-size: 0.96rem;
+  background: #facc15;
+  color: #111827;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* MOBILE: modal fits screen, body scrolls INSIDE */
+@media (max-width: 640px) {
+  #dcn-offer-modal .la-accel-modal {
+    max-width: 720px;
+    margin: 16px auto;
+  }
+  /* no special overflow on la-accel-body – overlay handles scroll */
+}
+</style>
+
+
+
+</head>
+<body>
+<div class="wrap">
+<div class="top">
+<div class="logo">✨ Dream Chaser <span class="nation">Nation</span></div>
+<div><a class="pill" href="index.html">← Back to Home</a></div>
+</div>
+<div class="hero">
+<h1>Pricing</h1>
+<p style="font-size:18px; margin-bottom:28px;">Select a path below. You can expand details as needed.</p>
+<p style="margin:12px 0;"></p>
+</div>
+<div class="tiers">
+<!-- $1M+ Owner Tier -->
+<div class="tier highlight pricing-card--owner" style="border:3px solid #facc15; box-shadow:0 0 26px rgba(250,204,21,.65),0 22px 48px rgba(250,204,21,.5),0 0 90px rgba(250,204,21,.45);"><div class="badge pop" style="font-size:18px;padding:8px 14px;background:linear-gradient(90deg,#facc15,#f59e0b);color:#111">Invite Only</div><div class="ribbon">Ownership<br/>Opportunity</div>
+<div class="head">
+<div class="title">$1M+ — Ownership Partner</div>
+<div class="price">$1,000,000</div>
+</div>
+<div class="desc" style="margin-bottom:6px; line-height:1.55;">
+  <p style="margin:0 0 8px;"><strong>$1M+ — Ownership Partner —</strong> Exclusive ownership opportunity with hands-on strategic access and bespoke partnership services.</p>
+  <div class="subhead" style="margin-top:12px;margin-bottom:6px;">What’s Included:</div>
+  <p style="margin:0 0 8px;">Exclusive Access to Everything in ALL the Programs, but this is much more than just joining the program — it's an exciting <strong>ownership partner's</strong> opportunity, including:</p>
+  <ul style="margin:6px 0 8px 18px;">
+    <li style="margin:4px 0;">Equity participation</li>
+    <li style="margin:4px 0;">Private strategy sessions</li>
+    <li style="margin:4px 0;">Partner concierge</li>
+    <li style="margin:4px 0;">Priority access to new initiatives</li>
+  </ul>
+</div>
+<details aria-expanded="false" data-target="#partner-expanded" href="javascript:void(0)" role="button">
+  <summary>Read more</summary>
+</details>
+<div class="desc expanded" id="partner-expanded" style="text-align:left;display:none">
+  <div class="subhead" style="margin-top:10px;margin-bottom:6px;">Overview</div>
+  <p style="margin:0 0 10px;">An ultra-selective, premium ownership offering for investors who want meaningful exposure to Dream Chaser Nation’s long-term upside. This is more than a purchase — it’s a tailored partnership that provides preferential access, strategic alignment opportunities, and bespoke benefits structured around your goals.</p>
+
+  <div class="subhead" style="margin-top:12px;margin-bottom:6px;">Deliverables &amp; benefits</div>
+  <ul style="margin:6px 0 10px 18px;">
+    <li style="margin:6px 0;"><strong>Equity participation and individualized legal onboarding</strong> with clear governance and reporting provisions (partner terms are crafted per agreement).</li>
+    <li style="margin:6px 0;"><strong>Partner Concierge &amp; Onboarding:</strong> a dedicated concierge to manage introductions, scheduling, reporting, and bespoke requests. Your onboarding is white-glove and handled personally.</li>
+    <li style="margin:6px 0;"><strong>Strategic access &amp; collaboration:</strong> invitations to private briefings, early access to new product lines and investment projects, and priority consideration for revenue-share and joint initiatives.</li>
+    <li style="margin:6px 0;"><strong>Exclusive experiences:</strong> invitation-only retreats, partner dinners, and curated networking events with the founder &amp; senior leadership.</li>
+    <li style="margin:6px 0;"><strong>Transparent reporting:</strong> periodic financial and operational updates tailored to partner preferences (dashboard access and quarterly briefings).</li>
+  </ul>
+
+  <div class="subhead" style="margin-top:12px;margin-bottom:6px;">High-touch onboarding &amp; timeline (red-carpet experience)</div>
+  <ul style="margin:6px 0 10px 18px;">
+    <li style="margin:6px 0;"><strong>Private introduction &amp; discovery</strong> — a confidential briefing with senior leadership to align objectives and priorities.</li>
+    <li style="margin:6px 0;"><strong>Bespoke proposal &amp; partner terms</strong> — we craft a tailored agreement outlining ownership structure, rights, and participation options.</li>
+    <li style="margin:6px 0;"><strong>White-glove legal &amp; tax coordination</strong> — we coordinate with your advisors (and ours) to ensure clarity on structure and any applicable tax considerations.</li>
+    <li style="margin:6px 0;"><strong>Partner integration &amp; welcome</strong> — concierge-managed onboarding, welcome package, and partner orientation.</li>
+    <li style="margin:6px 0;"><strong>First Partner Advisory Session</strong> — scheduled within the agreed onboarding window, providing the first roadmap for collaboration and opportunity.</li>
+  </ul>
+  <p class="questions" style="margin:0 0 10px;">(Timeline and deliverables are customized per partner; in-person visits and bespoke scheduling are available.)</p>
+
+  <div class="subhead" style="margin-top:12px;margin-bottom:6px;">Who this is for</div>
+  <p style="margin:0 0 10px;">High-net-worth individuals, family offices, and strategic investors seeking long-term capital appreciation and unique partnership opportunities. We welcome both active partners who want strategic engagement and passive investors seeking ownership exposure with premium reporting and concierge service.</p>
+
+  <div class="subhead" style="margin-top:12px;margin-bottom:6px;">Equity / tax note</div>
+  <p style="margin:0 0 10px;">Equity is available for Ownership Partners. Some investors may qualify for favorable tax treatment (e.g., §1244 or QSBS); please consult your tax or legal advisor for details.</p>
+
+  <div class="subhead" style="margin-top:12px;margin-bottom:6px;">Founder’s note</div>
+  <p style="margin:0 0 10px;">This company is my dream. This is not something I am looking to sell or anything like that. To set clear expectations, at maximum, we are only looking at <strong>no more than a 10% ownership opportunity</strong> partnership available, but every opportunity will be discussed privately. This is no guarantee of any opportunity. The right fit is critical. I'm interested in speaking with individuals who are highly motivated to see the successful growth of this company — individuals looking to help us reach even more dream chasers and build an even better education system for them.</p>
+  <p style="margin:0 0 10px;">My vision for what this place can be is something I hold very special. I have a lot of exciting long-term plans for this movement and to grow and expand this nation. I’ll share those with you personally as we put our heads together to collaborate on new ideas I may not even be thinking of. Let’s continue to grow this community together and help change the lives of people every day. There are not many better feelings than seeing someone chase and crush their dreams!</p>
+  <p style="margin:0;"><em>Big things are on the horizon — get on board while you can! The train has left the station — it’s time to get aboard or watch it go by!</em></p>
+</div>
+<div style="height:8px"></div><div class="cta">
+  <a class="btn btn-primary js-owner-open" href="#owner-apply">
+    Apply for Partner Review
+  </a>
+  <a class="btn btn-ghost" href="https://meetings-na2.hubspot.com/paul-graham?utm_source=site&amp;utm_medium=pricing&amp;utm_campaign=dcn-core" rel="noopener" target="_blank">
+    Request Private Call
+  </a>
+</div>
+
+</div>
+<!-- $100k 1:1 Mastermind -->
+<div class="tier">
+<div class="badge">Private Access</div>
+<div class="head">
+<div class="title">$100,000 — 1:1 Mastermind Club</div>
+<div class="price">$100,000</div>
+</div><div class="desc" style="margin-bottom:6px;">$100,000 — High-touch mastermind with direct founder access and bespoke implementation.</div><div class="desc" style="margin-top:10px;margin-bottom:12px;line-height:1.6;"><strong>What’s Included:</strong><br>Everything in the <em>Join the Nation Accelerator Program</em> <strong>PLUS:</strong><br/><br/><ul><li>Quarterly in-person strategy intensives</li><li>Monthly one-on-ones with the founder</li><li>Dedicated Success Manager</li></ul></div><details><summary>Read more</summary><div class="desc expanded" style="text-align:left;"><div><span style="display:block;margin-top:12px;margin-bottom:8px;font-weight:700;font-size:1.06em;"><strong>Overview</strong></span><p>A highly personalized mastermind for founders and senior operators who want direct, founder-led guidance plus white-glove implementation support. This is a hands-on partnership focused on measurable business growth.</p></div><div><span style="display:block;margin-top:12px;margin-bottom:8px;font-weight:700;font-size:1.06em;"><strong>Deliverables &amp; benefits</strong></span><ul><li><strong>Quarterly in-person strategy intensives —</strong> held at a destination you choose or on-site at your business. We’ll fly to you for focused, on-location strategy and practical execution when needed.</li><li><strong>Monthly 1:1 strategy sessions (60–90 minutes - or however long it takes) with the founder as your primary advisor —</strong> direct access to the founder, not handed off.</li><li><strong>Dedicated Success Manager &amp; implementation team —</strong> the team handles logistics and execution so strategic time with the founder is focused and high-value.</li><li><strong>Priority phone access </strong> for urgent needs and timely problem-solving.</li><li><strong>Onboarding —</strong> founder-led with white-glove support.</li><li><strong>Private discovery briefing </strong> with the founder and leadership team.</li><li><strong>Bespoke engagement plan and first-90-day roadmap </strong> created with the founder in a 1:1 session.</li><li><strong>White-glove coordination by your Success Manager </strong> who handles strategy preparation, team alignment, scheduling, and delivery readiness.</li><li>Implementation kickoff and scheduled intensives.</li></ul></div><div><span style="display:block;margin-top:12px;margin-bottom:8px;font-weight:700;font-size:1.06em;"><strong>Who this is for</strong></span><p>CEOs, founders, and senior operators who expect a founder-led relationship, rapid implementation, and measurable outcomes.</p></div><div><span style="display:block;margin-top:12px;margin-bottom:8px;font-weight:700;font-size:1.06em;"><strong>Terms &amp; commitments</strong></span><p>Every detail of your membership—terms, deliverables, and commitments—is clearly defined in your private membership agreement. We honor what we promise and tailor the experience to your goals during your one-on-one onboarding session, where every question is answered and every detail confirmed.</p></div></details><div class="cta">
+  <a class="btn btn-primary js-mastermind-open" href="#mastermind-apply">
+    Apply for 1:1 Access
+  </a>
+  <a class="btn btn-ghost" href="https://meetings-na2.hubspot.com/paul-graham?utm_source=site&amp;utm_medium=pricing&amp;utm_campaign=dcn-core" rel="noopener" target="_blank">
+    Request Private Call
+  </a>
+</div>
+
+</div>
+<!-- $25k VIP Elite -->
+<div class="tier"><div class="badge">VIP</div><div class="head">
+<div class="title">$25,000 — VIP Elite Group</div>
+<div class="price">$25,000</div>
+</div><div class="desc" style="line-height:1.6;;line-height:1.6;;margin-bottom:6px">$25,000 — Dedicated founder access, prioritized implementation, and a private, VIP-only community.</div><div class="desc" style="line-height:1.6;;line-height:1.6;line-height:1.6;margin-bottom:10px;line-height:1.6;margin-bottom:10px;line-height:1.6;margin-top:6px;margin-bottom:10px;line-height:1.6"><strong>What’s Included:</strong><br/><div>Everything in the <em>Join the Nation Accelerator Program</em> <strong>PLUS:</strong></div><ul><li>VIP sessions</li><li>Quarterly 1:1 strategy sessions</li><li>Private VIP community</li></ul></div>
+<details><summary>Read more</summary>
+<div class="desc" style="line-height:1.55;line-height:1.6"><strong style="font-weight:800;font-weight:700;"><span class="subhead"><strong>Overview</strong></span></strong><br/>An exclusive VIP experience that blends high-caliber peer learning with prioritized support and founder access. This tier is for leaders who want structured, results-driven guidance and a private space to solve business challenges with peers who move at the same pace.</div>
+<div class="desc" style="line-height:1.55;margin-top:18px;line-height:1.6"><strong style="font-weight:800;"><span class="subhead"><strong>Deliverables &amp; benefits</strong></span></strong><div class="desc" style="padding-left:18px;text-indent:-10px;line-height:1.45;;;;line-height:1.55;margin-top:18px;line-height:1.6"><span aria-hidden="true">• </span><strong>Monthly VIP sessions</strong> (founder and senior leaders attend regularly) — intimate, high-value group sessions designed for real implementation.</div><div class="desc" style="padding-left:18px;text-indent:-10px;line-height:1.45;;;;line-height:1.55;margin-top:18px;line-height:1.6"><span aria-hidden="true">• </span><strong>Quarterly scheduled 1:1 strategy sessions (1hr) with the founder</strong>; Senior leaders are available for additional support as well, so you receive prioritized strategic time as needed.</div><div class="desc" style="padding-left:18px;text-indent:-10px;line-height:1.45;;;;line-height:1.55;margin-top:18px;line-height:1.6"><span aria-hidden="true">• </span><strong>Dedicated Success Manager &amp; implementation support</strong> — your Success Manager coordinates execution and preparation to keep sessions productive.</div><div class="desc" style="padding-left:18px;text-indent:-10px;line-height:1.45;;;;line-height:1.55;margin-top:18px;line-height:1.6"><span aria-hidden="true">• </span><strong>Priority Slack channel</strong> for fast access, resources, and peer collaboration (private, VIP-only).</div><div class="desc" style="padding-left:18px;text-indent:-10px;line-height:1.45;;;;line-height:1.55;margin-top:18px;line-height:1.6"><span aria-hidden="true">• </span><strong>Actionable playbooks</strong>: templates, funnel blueprints, and checklists tailored to the VIP level.</div></div>
+<div class="desc" style="line-height:1.55;margin-top:18px;line-height:1.6"><strong style="font-weight:800;font-weight:700;">Onboarding &amp; cadence (concierge-led)</strong><br/>Welcome &amp; alignment call → 30/90-day VIP playbook → concierge scheduling → monthly VIP sessions + quarterly 1:1s + VIP channel support.</div>
+<div class="desc" style="line-height:1.55;margin-top:18px;line-height:1.6"><strong style="font-weight:800;font-weight:700;"><span class="subhead"><strong>Who this is for</strong></span></strong><br/>Seasoned operators and leaders who want elite peer feedback, prioritized support, and a structured path to implement high-impact growth strategies.</div>
+</details>
+<div style="height:8px"></div><div class="cta" style="position:relative;z-index:5;pointer-events:auto">
+<!-- SURGICAL EDIT: VIP button href remains Stripe (already working) -->
+<a aria-label="Become VIP - Apply" class="btn btn-primary" href="https://buy.stripe.com/dRm8wR8YEgc77nj97i04800" role="button">Join VIP</a>
+<a aria-label="Book VIP Call" class="btn btn-ghost js-meeting-link" href="/offer.html?plan=vip-25k#book-call" role="button">Book VIP Call</a>
+</div></div><div class="tier" style="border:3px solid #facc15;">
+  <!-- SURGICAL EDIT #1: add id for dynamic ribbon text -->
+  <div class="badge pop" id="accelerator-pop-badge" style="font-size:18px;padding:8px 14px;background:linear-gradient(90deg,#facc15,#f59e0b);color:#111">Most Popular</div>
+  <div class="ribbon">Best Value</div>
+<div class="head">
+<div class="title">$9,997 — Join the Nation Accelerator Program</div>
+<div class="price">$9,997</div>
+</div>
+<div class="desc" style="margin-bottom:6px;">$9,997 — Everything you need to build a business from the ground up — core curriculum, live coaching, community, and the 5-Book Bundle that powers the program.</div><div class="desc" style="margin-top:10px;margin-bottom:12px;line-height:1.6;"><strong>What’s Included:</strong><br/><ul><li>Course library</li><li>5-Book Bundle</li><li>Weekly live coaching</li><li>Implementation sessions &amp; accountability</li><li>Private community</li></ul></div>
+<details aria-expanded="false" data-target="#accel-expanded" href="javascript:void(0)" role="button"><summary>Read more</summary>
+</details>
+<div class="cta">
+  <!-- SURGICAL EDIT: Accelerator wired to Stripe -->
+  <a class="btn btn-primary dcn-offer-trigger"
+   href="https://buy.stripe.com/6oU00ldeU5xt4b70AM04802"
+   data-dcn-offer="accelerator">
+  See Today’s Accelerator Offer
+</a>
+
+</div>
+<div class="desc expanded" id="accel-expanded" style="text-align:left;display:none"><div><span style="display:block;margin-top:12px;margin-bottom:8px;font-weight:700;font-size:1.06em;"><strong>Overview</strong></span><p>Join the Nation is the complete, practical roadmap for people who want to start, build, and/or scale their existing business — even if you’re starting from zero. The program walks you step-by-step from idea to first customers, then into repeatable growth. The 5-Book Bundle is central to the curriculum — it includes the five core books that power the program, and participants keep these physical books for life as a reference to return to again and again. You also keep all program materials forever (templates, checklists, roadmaps, and playbooks).</p></div><div><span style="display:block;margin-top:12px;margin-bottom:8px;font-weight:700;font-size:1.06em;"><strong>Deliverables &amp; benefits</strong></span><ul><li><strong>5-Book Bundle (core &amp; cornerstone).</strong>  The five books that power the program — physical copies you keep for life. Use them as reference points forever. These core books are the anchor of the curriculum and are heavily featured across lessons and workshops.</li><li><strong>Beyond the books.</strong>  We don’t just hand you books — we teach them. Each book is unpacked inside the lessons, and we layer on additional training, coaching, and resources that go beyond the pages. That means live lessons that walk through the ideas, practical exercises that make them real, and extra modules that expand into advanced marketing and execution tactics — learn to market the way the best in the world do it. The right way, step-by-step.</li><li><strong>Full course library.</strong>  Module-based video lessons that move from beginner fundamentals (how to start with little to no cost) to implementation (offers, funnels, scaling).</li><li><strong>Weekly live coaching calls.</strong>  Group coaching where we teach, model, and implement together — focused training with practical next steps.</li><li><strong>Actionable templates &amp; playbooks.</strong>  Website checklists, CRM setup guides, launch scripts, ad templates, email sequences, pricing calculators, and more — plug-and-play assets that cut setup time.</li><li><strong>Private member community.</strong>  Peer accountability, feedback threads, and shared wins.</li><li><strong>Implementation sessions &amp; accountability.</strong>  Hands-on sessions where a coach helps you implement specific deliverables (site setup, copy feedback, funnel fixes, or the next test). Practical, supportive, and designed to get real work done — not performance theater.</li><li><strong>Onboarding sprint.</strong>  A 30-day launch sprint to get your first professional website, CRM, and marketing funnel started (we guide you step-by-step through the technical pieces). We'll help you navigate to find all the low-budget options (including free websites) to start as you get the pieces of your business in order.</li><li><strong>Progression path.</strong>  The program supports learners at every stage and is structured to help you move forward at your pace.</li></ul></div><div><span class="subhead"><strong>What materials you get (exact and tangible)</strong></span><ul><li>The 5-Book Bundle (physical copies you keep for life).</li><li>Full downloadable templates and playbooks (website, funnel, email, ads, offer scripts).</li><li>Recorded lesson library access (downloadable assets where allowed).</li><li>Checklists and 30/90/365 day roadmaps.</li><li>Access to the private members resource library.</li></ul></div><div><span style="display:block;margin-top:12px;margin-bottom:8px;font-weight:700;font-size:1.06em;"><strong><span class="subhead"><strong>Onboarding &amp; timeline (practical, milestone-driven)</strong></span></strong></span><ul><li><strong>Immediate access</strong> to the online course library and digital resources (physical 5-Book Bundle ships after enrollment).</li><li>Days 1–30 (Onboarding &amp; fundamentals): Orientation, clarify your first offer, pick a target customer, and begin building a professional, conversion-focused website for little to no cost and essential business basics.</li><li>Days 31–60 (Build &amp; initial experiments): Build core assets and run initial experiments (organic or modest paid tests) to validate ideas and learn what to optimize.</li><li>Days 61–180 (Improve &amp; scale): Use coaching and implementation sessions to improve conversion, expand channels, and build repeatable processes.</li><li>Months 6–12 (Refine &amp; continue): Optimize systems, document processes, and continue building momentum.</li><p style='\"font-style:italic;\"'><em>(This program moves with urgency but focuses on fundamentals and deliberate progress — not get-rich-quick promises.)</em></p></ul></div><div><span style="display:block;margin-top:12px;margin-bottom:8px;font-weight:700;font-size:1.06em;"><strong>Who this is for</strong></span><p>Well, a few levels or stages. For one, it's the : The perfect starter package to get your business up and running — from dreaming to chasing. This is for people who want to actually make their dream a reality, or at least give it everything they have to live the life they've dreamed of. This is for people who want a clear, practical path to launch and early traction.</p><p>But we don't stop there. We also go very deep into a ton of details. This is not just a basic program. We certainly get you started, up and running, but we show the next level and what it takes to get there. Depth into subjects is a strong point in this program.</p><p>Sometimes we might even go too deep, where you come away thinking: "Did I need to get that deep level of an understanding?" The answer is almost a resounding "Yes!" Because we don't want you to just chase your dreams, we want you to crush them with an earth-shaking force and then — who knows — maybe you move up another level and chase some more.</p><p>So this is great for beginners, entrepreneurs or teams at any level who have started but need structure, playbooks, and faster execution to scale.</p></div><div><span><span class="subhead"><strong>The real things we’ll help you solve</strong></span></span><ul><li><em>Where do I start if I have zero budget?</em></li><li><em>LLC? C-Corp? S-Corp? What does that all mean? Which is the best option for my situation? How do I set each one of those up with little to no cost?</em></li><li><em>What can I reasonably write off, and how does structure affect taxes? (We coach strategy and execution; for legal or tax specifics please consult a qualified attorney or tax advisor.)</em></li><li><em>How do I protect my family and assets while I build?</em></li><li><em>How do I find customers?</em></li><li><em>How do I set up a professional, conversion-focused website for little to no cost?</em></li><li><em>How do I keep track of customers so I can follow-up and market to them?</em></li><li><em>Which CRM should I use and how do I set it up for simple funnels?</em></li><li><em>How do I convert a simple idea into a funnel and system that sells?</em></li><li><em>How do I create a high-impact offer that actually sells?</em></li><li><em>How do I price my first product or service to get initial traction?</em></li><li><em>What marketing tactics move the needle first (organic, ads, partnerships)?</em></li><li><em>How do I get my first paying customer?</em></li><li><em>When do I hire, and what should the first hire do?</em></li></ul></div><div><span><span class="subhead"><strong>100% Guarantee</strong></span></span><p>And lastly — we want you to be successful here. That’s our mission. If, for any reason within the first 30 days, you don’t feel that the program, resources, or support are helping you build momentum and get closer to chasing your dreams, let us know and we’ll issue a full refund — no questions asked.</p><p>Payment plans: We offer a flexible payment option — split into 3 installments. Contact support and our customer care team will gladly assist with set-up.</p></div><div class="desc" style="margin-top:16px;font-style:italic;text-align:left;"><p class="closer">
+</div></div></div>
+<div class="tier pricing-card--ai">
+<div class="badge">Deep Dive</div>
+<div class="head">
+<div class="title">$3,000 — AI Mastermind Training</div>
+<div class="price">$3,000</div>
+</div>
+<div class="desc">$3,000 – AI Mastermind training. Heavy on fundamentals and practical application. Not only how to use AI, but how it works — so you understand model behaviors, learning signals, and constraints. You’ll build with clarity and outperform competitors who treat AI like a black box.
+  <div class="subhead" style="line-height:1.6;margin-bottom:10px;">What’s Included:</div>
+  <ul style="margin:6px 0 10px 18px;">
+    <li style="margin:6px 0;">Fundamentals → understand models, signals, constraints (why AI behaves the way it does)</li>
+    <li style="margin:6px 0;">Hands-on builds → practical labs and projects to apply techniques with clarity</li>
+    <li style="margin:6px 0;">Live coaching & feedback → weekly sessions, reviews, and performance boosts</li>
+  </ul>
+</div>
+<details><summary>Read more</summary>
+<div class="desc">Our aim is 0% → 99% knowledge. You’ll develop the mental models to evaluate tools, prompt efficiently, and ship projects with confidence.</div>
+</details>
+<div class="cta">
+  <!-- SURGICAL EDITS: Primary wired to Stripe; removed Curriculum button -->
+  <a class="btn btn-primary dcn-offer-trigger"
+   href="https://buy.stripe.com/28EdRb3Ek1hd8rnfvG04803"
+   data-dcn-offer="ai">
+  See Today’s Offer
+</a>
+
+</div>
+</div><div class="tier"><div class="badge">Core Skill</div><div class="head"><div class="title">$3,000 — Sales Mastery</div><div class="price">$3,000</div></div><div class="desc" style="margin-bottom:6px;line-height:1.6">$3,000 — Structured training to master sales logic — designed for sales reps, managers, and business owners who want a principled, high-clarity approach to creating demand and guiding decisions.</div><div class="desc" style="line-height:1.6"><strong>What’s Included:</strong><br/><div><ul><li>Sales logic foundations — clear mental models for outreach, discovery, and recommendations</li><li>Practice &amp; feedback — role-plays, scenarios, and scorecards to level up conversations</li><li>Systems &amp; cadence — pipeline hygiene, follow-ups, and weekly rhythm for consistent performance</li></ul></div></div><details><summary>Read more</summary><div class="desc" style="line-height:1.6"><strong style="display:block;margin-bottom:8px;font-weight:700;font-size:1.06em;">Overview</strong><p>Sales Mastery teaches decision-first, principled selling without gimmicks. You’ll learn clear thinking, structured conversations, and how to guide prospects with logic and integrity.</p><p>We focus on creating demand, clarifying trade-offs, and helping buyers make confident decisions—the opposite of pressure or tricks.</p></div><div class="desc" style="line-height:1.6"><strong style="display:block;margin-bottom:8px;font-weight:700;font-size:1.06em;">Deliverables &amp; benefits</strong><ul><li>Live practice sessions with role-plays and scenario drills</li><li>Conversation scorecards, checklists, and debrief templates</li><li>Pipeline hygiene &amp; weekly cadence system for consistent execution</li><li>Email, call, and meeting frameworks built on sales logic—no pressure tactics</li></ul></div><div class="desc" style="line-height:1.6"><strong style="display:block;margin-bottom:8px;font-weight:700;font-size:1.06em;">Books included (Sales Trilogy)</strong><ul><li>Book#1: Sell This To Your Mom</li><li>Book#2: Sales Logic</li><li>Book#4: Emotions and <em>Feelings</em></li></ul></div><div class="desc" style="line-height:1.6"><strong style="display:block;margin-bottom:8px;font-weight:700;font-size:1.06em;">Guarantee</strong><p>Includes the same commitment as the <em>Join the Nation Accelerator Program</em> — if you actively participate and don’t feel the program, resources, or support are helping you make clear progress, contact us and we’ll make it right.</p></div></details><div class="cta">
+  <!-- SURGICAL EDITS: Primary wired to Stripe; removed Curriculum button -->
+  <a class="btn btn-primary dcn-offer-trigger"
+   href="https://buy.stripe.com/3cI9AVcaQf839vr2IU04804"
+   data-dcn-offer="sales">
+  See Today’s Offer
+</a>
+
+</div></div><div class="tier">
+<div class="badge">Books Only</div>
+<div class="head">
+<div class="title">$497 — Printed Book Bundle </div>
+<div class="price">$497</div>
+</div>
+<div class="desc">Premium printing in full color with images to accelerate learning. Includes the 5-book series:
+• Sell This To Your Mom
+• Sales Logic
+• AI Mastermind
+• Emotions and <i>Feelings</i>
+• Energy</div>
+<div class="cta">
+  <!-- SURGICAL EDIT: Bundle wired to Stripe -->
+  <a class="btn btn-primary dcn-bundle-trigger"
+   href="https://buy.stripe.com/9B600l2Ag7FB0YV3MY04801">
+  Pre-Order
+</a>
+
+  <a class="btn btn-ghost" href="/faq.html">What’s Inside</a>
+</div>
+</div>
+
+<style>
+  .video {
+    width: 100%;
+    display: block;
+    min-height: 300px; /* keeps the container from collapsing */
+  }
+</style>
+
+<!-- Optional video + webinar -->
+<div class="video">
+<!-- Webinar video embed -->
+<div class="card"
+     style="margin-top:24px;border-radius:18px;
+            border:1px dashed rgba(148,163,184,.55);
+            background:rgba(15,23,42,0.9);padding:18px;">
+  <div style="position:relative;width:100%;padding-top:56.25%;
+              border-radius:14px;overflow:hidden;
+              border:1px solid rgba(148,163,184,.45);
+              background:#020617;">
+    <iframe
+      title="Book Bundle Webinar"
+      style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+      src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&playsinline=1"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+</div>
+<div class="foot">
+<div class="note">Monthly payments available. Financing and payment plans can be discussed after application or at checkout.</div>
+
+</div>
+</div>
+
+<!-- QUOTE CARD — added just above footer (subtle purple card) -->
+<section class="wrap" style="margin:28px auto 24px;">
+  <div style="
+    background: linear-gradient(135deg, rgba(124,58,237,.14), rgba(99,102,241,.10));
+    border: 1px solid rgba(167,139,250,.35);
+    border-radius: 16px;
+    padding: 20px 18px;
+    box-shadow: 0 10px 28px rgba(0,0,0,.25) inset;">
+    <blockquote style="margin:0; text-align:center;">
+      <div style="font-size:28px; font-weight:900; line-height:1.25;">
+        “Whatever <span style='font-weight:900;'>lies before me</span> is not
+        <span style='font-weight:900;'>blocking my next step</span> — it <i><strong>is</strong></i> my next step.”
+      </div>
+      <div style="margin-top:10px; font-size:16px; opacity:.85;">— Maureen Brady</div>
+    </blockquote>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<script>
+  (function(){var y=document.getElementById('year'); if(y) y.textContent = new Date().getFullYear();})();
+</script>
+<section class="wrap" style="margin:26px auto 10px">
+<div style="border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px 18px;background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(34,211,238,.08))">
+<p style="margin:0;font-weight:700">It can all change <span style="color:#facc15">today</span>.</p>
+<p style="margin:6px 0 0;opacity:.9">Plant the tree today. If something called you to this page, listen to it. A year from now you’ll be glad you started.</p>
+</div>
+</section>
+<div class="wrap" style="text-align:center;margin:28px 0; display:flex; justify-content:center;">
+</div>
+<footer class="site-footer"><div class="wrap"><p class="footer-lines">General inquiries: <a href="mailto:info@dreamchasernation.com">info@dreamchasernation.com</a><br/>Support: <a href="mailto:support@dreamchasernation.com">support@dreamchasernation.com</a></p><div class="footer-mark"><img alt="Dream Chaser Nation mark" src="assets/dcu-logo.png" style="width:56px;height:56px;object-fit:contain;display:block;margin:8px auto 18px;opacity:.95"/></div><div class="footer-socials"><a class="pill" href="#">YouTube</a><a class="pill" href="#">Instagram</a><a class="pill" href="#">TikTok — Dream Crusher Hub</a></div><div class="footer-talent"><a class="pill pill-soft" href="got-talent.html">Got Talent?</a></div><p class="copy">© 2025 Dream Chaser Nation, Inc. All Rights Reserved.</p><p class="footer-small">6 Liberty Square #2521, Boston, MA 02109 </p></div></footer>
+
+<!-- ===== DCN Lifetime Offer Modal (Nation-styled, Lifetime design) ===== -->
+<div class="dcn-popup-overlay" id="dcn-offer-modal" aria-modal="true" role="dialog">
+  <div class="dcn-popup" role="document">
+    <div class="la-accel-modal">
+      <!-- Header -->
+      <header class="la-accel-header">
+        <div class="la-accel-title" id="dcn-offer-title">
+          🌟 Lifetime Access Bonus — Join the Nation Accelerator Program
+        </div>
+        <!-- KEEP .dcn-close so existing JS can close it -->
+        <button class="dcn-close la-accel-close" type="button" aria-label="Close">✕</button>
+      </header>
+
+      <!-- Body – your copy, structured -->
+      <div class="la-accel-body">
+        <!-- Intro card -->
+        <section class="la-intro-card">
+          <p>These programs — especially the Accelerator — are designed to get you up and moving toward chasing. They are specifically designed to be 1-year programs.</p>
+          <p>We want you building momentum — up and running fast toward your dreams.</p>
+          <p>But we understand that life doesn’t always cooperate. So right now, with this bonus opportunity, we will grant Lifetime Access to these programs.</p>
+        </section>
+
+        <!-- Lifetime Access highlight -->
+        <section class="la-highlight">
+          <h2 class="la-section-title">🌟 Lifetime Access Upgrade! 🌟</h2>
+
+          <p>That’s right — <span class="la-strong">Lifetime Access.</span></p>
+          <p>You already get the books that come with the program for life as physical hard-cover books to always have with you, but on top of that you get the support you need for a lifetime.</p>
+          <p>Come back whenever you want — if something in life throws you a curve ball and you have to deviate from your plan, come back and re-group, re-energize with the Nation. <span class="la-strong">We will always be here for you.</span></p>
+        </section>
+
+        <div class="la-divider"></div>
+
+        <!-- Join now section -->
+        <section class="la-section">
+          <p><span class="la-strong">Join now and you lock in today’s pricing for not just this year — but for life.</span> You can lock in today which guarantees the free upgrade to lifetime access — no matter what the future brings. With this Bonus, you will now have lifetime access to all the Zooms and updated training material that will inevitably come as we go through this powerful thing called life — together.</p>
+        </section>
+
+        <!-- Calling / reason section -->
+        <section class="la-section">
+          <p><span class="la-strong">Join now.</span> Something brought you here for a reason. You are reading this page right now for a reason. Something pulled on you. Something called to you about our Nation.</p>
+          <p>This could be your chance — your chance to stop dreaming only and start chasing — and eventually <span class="la-strong">crushing!</span></p>
+        </section>
+
+        <!-- Today is the day section -->
+        <section class="la-section">
+          <p><span class="la-strong">Today is the day everything changes for you.</span> Don’t get left behind. <span class="la-strong">Don’t look back a year from now and regret that the tree was never planted today.</span></p>
+          <p><span class="la-strong">Today is the day</span> you can decide to take that leap — but only you can make that decision. No one can make it for you. <span class="la-strong">Today is your day. Go do it!</span></p>
+        </section>
+
+        <!-- Final wrap-up -->
+        <section class="la-section">
+          <p>The only thing stopping you is you. Make the decision that changes everything for you and your family. Make the decision to chase — chase those powerful dreams and that life you always dreamed of.</p>
+          <p>We’d be honored to be the ones you selected to help push you over the finish line and get you onto a life path you never dreamed was really possible. <span class="la-strong">Today is the day you make that dream a reality.</span> Unlock the power today. Take that first step right now!</p>
+        </section>
+      </div>
+
+      <!-- Footer CTA – wired to existing JS (Stripe per program) -->
+      <footer class="la-accel-footer">
+        <button
+          class="la-accel-cta"
+          id="dcn-offer-cta"
+          type="button">
+          Do it now — I’m in! 🚀
+        </button>
+      </footer>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== DCN Coming Soon / Interest + DCU-signup Modal ===== -->
+<div class="dcn-popup-overlay" id="dcn-coming-modal" aria-modal="true" role="dialog">
+  <div class="dcn-popup" role="document">
+    <button class="dcn-close" type="button" data-dcn-close="coming">✕</button>
+    <div class="dcn-popup-header">
+      <h2 class="dcn-popup-title" id="dcn-coming-title">🚧 This Program — Coming Soon!</h2>
+    </div>
+
+    <div class="success-state" id="dcn-coming-success">
+      <h3>✨ You’re on the launch list!</h3>
+      <p class="dcn-bodycopy">We’ll email you the moment this goes live.</p>
+    </div>
+
+    <div class="dcn-popup-body form-state">
+      <p class="dcn-sub" id="dcn-coming-lead">Be first to know when it goes live.</p>
+
+      <!-- Core copy from DCU Coming Soon modal (kept, then we add DCN-specific extras) -->
+      <p class="dcn-bodycopy">
+        <strong>We’re putting the final touches on something powerful.</strong><br/>
+        You’re seeing this page early — which means you’re already ahead of the crowd. Read through what’s coming, and then
+        drop your info below so you don’t miss launch day, early-bird offers, or founding member perks.
+      </p>
+      <p class="dcn-bodycopy">
+        Whether it’s a <strong>new DCU program</strong> or the <strong>5-Book Bundle</strong>, you’ll get notified the moment it’s ready —
+        so you can take action while everyone else is still “thinking about it.”
+      </p>
+
+      <p class="dcn-bodycopy">
+        <strong>Want email updates straight from this page?</strong> Pop your info in below and we’ll tag your interest so you get
+        the right updates as things go live.
+      </p>
+
+      <form id="dcn-coming-form" action="#" method="post">
+        <input type="hidden" name="interest_kind" id="dcn-interest-kind" value="programs">
+        <input type="hidden" name="source_page" value="dcn_pricing">
+
+        <div class="row">
+          <input name="first_name" type="text" placeholder="First name" required>
+          <input name="last_name" type="text" placeholder="Last name" required>
+        </div>
+        <div class="row">
+          <input name="email" type="email" placeholder="you@dreamchasernation.com" required>
+        </div>
+
+        <label class="dcn-bodycopy" style="margin-top:8px; display:block; font-size:0.85rem; opacity:.9;">
+          By submitting, you agree to receive occasional updates, launch details, and early access opportunities from
+          Dream Chaser Nation / Dream Chaser University. No spam — just tools, momentum, and opportunities to keep you chasing.
+          You can unsubscribe anytime.
+        </label>
+
+        <div class="dcn-actions" style="margin-top:12px;">
+          <button class="dcn-btn" id="dcn-coming-submit" type="submit">
+            Get Launch Updates For This
+          </button>
+        </div>
+      </form>
+
+      <p class="dcn-bodycopy" style="margin-top:16px;">
+        <strong>Want to explore while you wait?</strong><br/>
+        You can create a <strong>FREE Dream Chaser University account</strong>, poke around what’s already built,
+        and check out the Family Access area as it comes online.
+      </p>
+      <div class="dcn-actions" style="margin-top:8px;">
+        <a href="#" class="dcn-btn dcn-btn-secondary" id="dcn-coming-dcu-cta">
+          Create a FREE DCU account & explore what’s ready →
+        </a>
+      </div>
+      <p class="dcn-bodycopy" style="margin-top:8px; font-size:0.9rem; opacity:.9;">
+        You don’t have to fill out the form above to explore DCU — that button simply takes you
+        to the signup page so you’re ready the moment everything opens up.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- ===== DCN Ownership Partner Application Modal ===== -->
+<div class="dcn-popup-overlay" id="dcn-owner-modal" aria-modal="true" role="dialog">
+  <div class="dcn-popup" role="document">
+    <button class="dcn-close" type="button" aria-label="Close">✕</button>
+
+    <div class="dcn-popup-header" style="background:linear-gradient(90deg,#facc15,#f97316);color:#111827;">
+      <h2 class="dcn-popup-title">Ownership Partner — Application</h2>
+    </div>
+
+    <div class="success-state" id="dcn-owner-success">
+      <h3>✨ Thank you for your interest in Ownership.</h3>
+      <p class="dcn-bodycopy">
+        We’ve received your application for the Ownership Partner opportunity.
+        We’ll review what you shared and, if it sounds like a strong fit, we’ll
+        reach out as soon as we can to continue the conversation.
+      </p>
+    </div>
+
+    <div class="dcn-popup-body form-state">
+      <p class="dcn-bodycopy">
+        This is an ultra-selective opportunity. Tell us a bit about who you are,
+        why you feel you’d be a great fit as an Ownership Partner, and any ideas
+        you have that could help us grow Dream Chaser Nation and reach more dream
+        chasers.
+      </p>
+
+      <form id="dcn-owner-form" action="#" method="post">
+        <input type="hidden" name="source_page" value="dcn_pricing_owner">
+        <input type="hidden" name="application_type" value="owner_partner">
+
+        <div class="row">
+          <input name="first_name" type="text" placeholder="First name" required>
+          <input name="last_name" type="text" placeholder="Last name" required>
+        </div>
+
+        <div class="row">
+          <input name="email" type="email" placeholder="you@dreamchasernation.com" required>
+          <input name="phone" type="tel" placeholder="Phone">
+        </div>
+
+        <div class="row" style="flex-direction:column;gap:6px;">
+          <label class="dcn-bodycopy" for="owner-message" style="font-size:0.9rem;opacity:.9;">
+            Why do you feel you would be a great fit to be an Ownership Partner?
+            What ideas do you have that would help us grow this and reach more
+            dream chasers?
+          </label>
+          <textarea id="owner-message" name="message" rows="5" required
+            style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,.75);background:#020617;color:#e5e7eb;font-size:.95rem;resize:vertical;"></textarea>
+        </div>
+
+        <div class="dcn-actions" style="margin-top:14px;">
+          <button class="dcn-btn" id="dcn-owner-submit" type="submit">
+            Submit Ownership Application
+          </button>
+        </div>
+
+        <p class="dcn-bodycopy" style="margin-top:10px;font-size:0.85rem;opacity:.85;">
+          By submitting, you agree to receive follow-up emails about your
+          application and related Ownership opportunities. You can unsubscribe
+          from general updates at any time.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DCN 1:1 Mastermind Application Modal ===== -->
+<div class="dcn-popup-overlay" id="dcn-mastermind-modal" aria-modal="true" role="dialog">
+  <div class="dcn-popup" role="document">
+    <button class="dcn-close" type="button" aria-label="Close">✕</button>
+
+    <div class="dcn-popup-header">
+      <h2 class="dcn-popup-title">1:1 Mastermind Club — Application</h2>
+    </div>
+
+    <div class="success-state" id="dcn-mastermind-success">
+      <h3>✨ Thank you for your interest in the 1:1 Mastermind.</h3>
+      <p class="dcn-bodycopy">
+        We’ve received your application for the 1:1 Mastermind Club.
+        We’ll review what you shared and, if it sounds like a strong fit,
+        we’ll reach out as soon as we can to continue the conversation.
+      </p>
+    </div>
+
+    <div class="dcn-popup-body form-state">
+      <p class="dcn-bodycopy">
+        This is a high-touch, founder-led experience. Tell us a little about
+        yourself, why you’re interested in the 1:1 Mastermind, and what you
+        hope to gain from this program.
+      </p>
+
+      <form id="dcn-mastermind-form" action="#" method="post">
+        <input type="hidden" name="source_page" value="dcn_pricing_mastermind">
+        <input type="hidden" name="application_type" value="mastermind_1on1">
+
+        <div class="row">
+          <input name="first_name" type="text" placeholder="First name" required>
+          <input name="last_name" type="text" placeholder="Last name" required>
+        </div>
+
+        <div class="row">
+          <input name="email" type="email" placeholder="you@dreamchasernation.com" required>
+          <input name="phone" type="tel" placeholder="Phone">
+        </div>
+
+        <div class="row" style="flex-direction:column;gap:6px;">
+          <label class="dcn-bodycopy" for="mastermind-message" style="font-size:0.9rem;opacity:.9;">
+            Tell us a little about yourself. Why are you interested in the 1:1
+            Mastermind, and what do you hope to gain from this program?
+          </label>
+          <textarea id="mastermind-message" name="message" rows="5" required
+            style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,.75);background:#020617;color:#e5e7eb;font-size:.95rem;resize:vertical;"></textarea>
+        </div>
+
+        <div class="dcn-actions" style="margin-top:14px;">
+          <button class="dcn-btn" id="dcn-mastermind-submit" type="submit">
+            Submit 1:1 Mastermind Application
+          </button>
+        </div>
+
+        <p class="dcn-bodycopy" style="margin-top:10px;font-size:0.85rem;opacity:.85;">
+          By submitting, you agree to receive follow-up emails about your
+          application and related mastermind opportunities. You can unsubscribe
+          from general updates at any time.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="/assets/js/printify-links.js"></script>
+<style>
+  /* === DCN uniform form spacing === */
+  .dcn-popup-body form .row { margin-top: 12px; margin-bottom: 12px; }
+  .dcn-popup-body form .row:first-child { margin-top: 0; }
+  .dcn-popup-body form .row:last-child  { margin-bottom: 0; }
+</style>
+<!-- Start of HubSpot Embed Code -->
+<script async="" defer="" id="hs-script-loader" src="https://js-na2.hs-scripts.com/243879652.js" type="text/javascript"></script>
+<!-- End of HubSpot Embed Code -->
+</div>
+<script>
+// Set this once (paste your HubSpot Meetings URL below) and it updates all meeting buttons site-wide.
+window.DCN_MEETING_URL = window.DCN_MEETING_URL || ""; // e.g., "https://meetings.hubspot.com/yourname/vip";
+
+(function(){
+  var url = (window.DCN_MEETING_URL || "").trim();
+  if (!url) return; // keep existing fallback if not set
+  var utm = "?utm_source=site&utm_medium=pricing&utm_campaign=dcn-core";
+  document.querySelectorAll('a.js-meeting-link').forEach(function(a){
+    a.href = url + utm;
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+})();
+</script>
+<script>
+window.DCN_MEETING_URL = "https://meetings-na2.hubspot.com/paul-graham";
+(function(){
+  var url = (window.DCN_MEETING_URL || "").trim();
+  if (!url) return;
+  var utm = "?utm_source=site&utm_medium=pricing&utm_campaign=dcn-core";
+  document.querySelectorAll('a.js-meeting-link').forEach(function(a){
+    a.href = url + utm;
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+})();
+</script>
+<script>
+(function(){
+  function dcnToggleReadMore(evt){
+    var a = evt.currentTarget;
+    var sel = a.getAttribute('data-target');
+    if(!sel) return;
+    var el = document.querySelector(sel);
+    if(!el) return;
+    var shown = el.style.display !== 'none';
+    el.style.display = shown ? 'none' : 'block';
+    a.setAttribute('aria-expanded', shown ? 'false' : 'true');
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('[data-target^="#"][role="button"]').forEach(function(a){
+    a.removeEventListener('click', dcnToggleReadMore);
+      a.addEventListener('click', dcnToggleReadMore);
+    });
+  });
+  window.dcnToggleReadMore = dcnToggleReadMore;
+})();
+</script>
+<script>
+(function(){
+  // === Simple config for this page (Stripe links + DCU signup) ===
+  var DCN_PRICING = {
+    programs: {
+      accelerator: {
+        name: 'Join the Nation Accelerator Program',
+        type: 'program',
+        live: true,
+        stripe: 'https://buy.stripe.com/6oU00ldeU5xt4b70AM04802'
+      },
+      ai: {
+        name: 'AI Mastermind Training',
+        type: 'program',
+        live: true,
+        stripe: 'https://buy.stripe.com/28EdRb3Ek1hd8rnfvG04803'
+      },
+      sales: {
+        name: 'Sales Mastery',
+        type: 'program',
+        live: true,
+        stripe: 'https://buy.stripe.com/3cI9AVcaQf839vr2IU04804'
+      }
+    },
+    bundle: {
+      name: 'Printed Book Bundle (Color)',
+      type: 'bundle',
+      live: true,
+      stripe: 'https://buy.stripe.com/9B600l2Ag7FB0YV3MY04801'
+    },
+    dcuSignupUrl: 'https://dreamchaseru.com/signup.html' // change if needed
+  };
+  window.DCN_PRICING = DCN_PRICING;
+
+  // === Grab modal elements ===
+  var offerModal   = document.getElementById('dcn-offer-modal');
+  var offerTitle   = document.getElementById('dcn-offer-title');
+  var offerCta     = document.getElementById('dcn-offer-cta');
+  var comingModal  = document.getElementById('dcn-coming-modal');
+  var comingTitle  = document.getElementById('dcn-coming-title');
+  var comingLead   = document.getElementById('dcn-coming-lead');
+  var comingKind   = document.getElementById('dcn-interest-kind');
+  var comingForm   = document.getElementById('dcn-coming-form');
+  var comingSubmit = document.getElementById('dcn-coming-submit');
+  var comingSuccess= document.getElementById('dcn-coming-success');
+  var comingDcuCta = document.getElementById('dcn-coming-dcu-cta');
+
+  var currentOfferKey = null;
+
+  // === NEW: mirror DCU URL tracking for interest ===
+  function updateInterestQuery(param){
+    try{
+      var url = new URL(window.location.href);
+      if (param) {
+        url.searchParams.set('interest', param);
+      } else {
+        url.searchParams.delete('interest');
+      }
+      window.history.replaceState({}, '', url.toString());
+    }catch(e){
+      // ignore
+    }
+  }
+
+  function openOffer(key){
+    if (!offerModal) return;
+    var cfg = (DCN_PRICING.programs[key] || null);
+    if (!cfg) return;
+    currentOfferKey = key;
+    offerTitle.textContent = '🌟 Lifetime Access Bonus — ' + cfg.name;
+    offerModal.classList.add('show');
+  }
+  function closeOffer(){
+    if (offerModal) offerModal.classList.remove('show');
+  }
+
+  function openComing(cfg){
+    if (!comingModal) return;
+    var type = (cfg && cfg.type) || 'program';
+    var interestParam = 'programs';
+
+    if (type === 'bundle') {
+      comingTitle.textContent = '📚 This Book Bundle — Coming Soon!';
+      comingLead.textContent  = 'Be first to unlock the full 5-book bundle.';
+      comingKind.value        = 'bundle';
+      interestParam           = 'bundle';
+    } else {
+      comingTitle.textContent = '🚧 This Program — Coming Soon!';
+      comingLead.textContent  = 'Be first to know when it goes live.';
+      comingKind.value        = 'programs';
+      interestParam           = 'programs';
+    }
+
+    // push ?interest=... into URL for HubSpot page tracking
+    updateInterestQuery(interestParam);
+
+    comingModal.classList.add('show');
+  }
+  function closeComing(){
+    if (comingModal) comingModal.classList.remove('show');
+  }
+
+  // === Wire "See Today’s Offer" buttons ===
+  document.querySelectorAll('.dcn-offer-trigger').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var key = this.getAttribute('data-dcn-offer');
+      var cfg = (DCN_PRICING.programs[key] || null);
+      if (!cfg) return;
+      e.preventDefault();
+      if (cfg.live) {
+        openOffer(key);
+      } else {
+        openComing(cfg);
+      }
+    });
+  });
+
+  // === Wire Book Bundle button for Coming Soon toggle ===
+  document.querySelectorAll('.dcn-bundle-trigger').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var cfg = DCN_PRICING.bundle;
+      if (!cfg) return;
+      if (!cfg.live) {
+        e.preventDefault();
+        openComing(cfg);
+      }
+      // if live === true we just let it go straight to Stripe
+    });
+  });
+
+  // === Close buttons & ESC ===
+  document.querySelectorAll('.dcn-close').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      closeOffer();
+      closeComing();
+      // also close any other DCN modal this button lives inside
+      var overlay = this.closest('.dcn-popup-overlay');
+      if (overlay) {
+        overlay.classList.remove('show');
+      }
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      closeOffer();
+      closeComing();
+    }
+  });
+
+  // helper: show redirect overlay + go to Stripe
+  function dcnShowRedirectAndGo(url){
+    var notice = document.getElementById('redirectNotice');
+    if (notice) {
+      notice.classList.add('show');
+    }
+    window.location.href = url;
+  }
+
+  // === Offer CTA → Stripe checkout ===
+  if (offerCta) {
+    offerCta.addEventListener('click', function(){
+      if (!currentOfferKey) {
+        closeOffer();
+        return;
+      }
+      var cfg = DCN_PRICING.programs[currentOfferKey];
+      if (!cfg || !cfg.stripe) {
+        closeOffer();
+        return;
+      }
+      dcnShowRedirectAndGo(cfg.stripe);
+    });
+  }
+
+
+
+  // === Direct Stripe buttons (VIP, live bundle) → show redirect notice too ===
+
+  // For VIP direct Stripe link
+  function wireRedirectForStripeLink(selector){
+    var el = document.querySelector(selector);
+    if (!el) return;
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      dcnShowRedirectAndGo(this.href);
+    });
+  }
+
+  // VIP: $25k Join VIP button
+  wireRedirectForStripeLink('a[href="https://buy.stripe.com/dRm8wR8YEgc77nj97i04800"]');
+
+  // Bundle: only intercept when it's actually live
+  var bundleBtn = document.querySelector('.dcn-bundle-trigger');
+  if (bundleBtn) {
+    bundleBtn.addEventListener('click', function(e){
+      var cfg = (DCN_PRICING && DCN_PRICING.bundle) || null;
+      if (!cfg || !cfg.live || !cfg.stripe) {
+        // If bundle is NOT live, let the existing Coming Soon logic handle it
+        return;
+      }
+      e.preventDefault();
+      dcnShowRedirectAndGo(cfg.stripe);
+    });
+  }
+
+
+
+
+
+
+
+
+  // === Coming Soon → DCU signup link ===
+  if (comingDcuCta) {
+    comingDcuCta.addEventListener('click', function(e){
+      var url = DCN_PRICING.dcuSignupUrl;
+      if (!url) return;
+      this.href = url;
+    });
+  }
+
+   // === HubSpot pricing + application submit (same Portal, different Forms) ===
+  var HUBSPOT_PORTAL_ID            = '243879652';
+  var HUBSPOT_PRICING_FORM_GUID    = '587fedfa-e9ee-4a84-bb82-d4cdb4b3dd4a'; // generic pricing / interest
+  var HUBSPOT_OWNER_FORM_GUID      = '3089e6ae-c962-47b4-8144-3baf74c92ee8'; // DCN Ownership Partner form
+  var HUBSPOT_MASTERMIND_FORM_GUID = 'e37ee5c0-16ce-40d8-8e71-150cff489d35'; // DCN 1:1 Mastermind form
+
+  function getHubSpotUtk(){
+    var m = document.cookie.match(/hubspotutk=([^;]+)/);
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+
+  async function submitHubSpotForm(payload, formGuid){
+    var guid = formGuid || HUBSPOT_PRICING_FORM_GUID;
+    var url = 'https://api.hsforms.com/submissions/v3/integration/submit/' +
+      HUBSPOT_PORTAL_ID + '/' + guid;
+    try{
+      var res = await fetch(url,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(payload)
+      });
+      if (!res.ok) {
+        console.warn('HubSpot form submit failed:', res.status, 'for guid:', guid);
+      }
+    }catch(err){
+      console.warn('HubSpot form submit error:', err, 'for guid:', guid);
+    }
+  }
+
+
+  if (comingForm && comingSubmit && comingSuccess) {
+    comingForm.addEventListener('submit', async function(e){
+      e.preventDefault();
+
+      var first = (comingForm.querySelector('input[name="first_name"]') || {}).value || '';
+      var last  = (comingForm.querySelector('input[name="last_name"]') || {}).value || '';
+      var email = (comingForm.querySelector('input[name="email"]') || {}).value || '';
+      var kind  = comingKind.value || 'programs';
+
+      var interestInternal = 'dcu_interest_pricing_interest';
+      if (kind === 'programs') {
+        interestInternal = 'dcu_interest_programs';
+      } else if (kind === 'books') {
+        interestInternal = 'dcu_interest_books';
+      } else if (kind === 'bundle') {
+        interestInternal = 'dcu_interest_book_bundle';
+      }
+
+      var fields = [
+        { name: 'firstname', value: first },
+        { name: 'lastname',  value: last },
+        { name: 'email',     value: email },
+        { name: 'interest_level',        value: interestInternal },
+        { name: 'pricing_interest_kind', value: kind },
+        { name: 'source_page',           value: 'dcn_pricing' }
+      ];
+
+      var payload = {
+        fields: fields,
+        context: {
+          hutk: getHubSpotUtk(),
+          pageUri: window.location.href,
+          pageName: document.title
+        }
+      };
+
+                  await submitHubSpotForm(payload, HUBSPOT_PRICING_FORM_GUID);
+
+
+
+      try{
+        window._hsq = window._hsq || [];
+        window._hsq.push([
+          'identify',
+          {
+            email: email,
+            firstname: first,
+            lastname: last,
+            interest_level: interestInternal
+          }
+        ]);
+        window._hsq.push([
+          'trackEvent',
+          {
+            id: 'pricing_interest',
+            value: 1,
+            interest_kind: kind,
+            interest_internal: interestInternal
+          }
+        ]);
+      }catch(err){}
+
+      comingSubmit.disabled = true;
+      comingSuccess.style.display = 'block';
+    });
+  }
+
+
+
+
+  // === Ownership & 1:1 Mastermind application modals ===
+  var ownerModal       = document.getElementById('dcn-owner-modal');
+  var ownerForm        = document.getElementById('dcn-owner-form');
+  var ownerSuccess     = document.getElementById('dcn-owner-success');
+  var ownerSubmit      = document.getElementById('dcn-owner-submit');
+
+  var mastermindModal  = document.getElementById('dcn-mastermind-modal');
+  var mastermindForm   = document.getElementById('dcn-mastermind-form');
+  var mastermindSuccess= document.getElementById('dcn-mastermind-success');
+  var mastermindSubmit = document.getElementById('dcn-mastermind-submit');
+
+  // Openers
+  document.querySelectorAll('.js-owner-open').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      if (ownerModal) ownerModal.classList.add('show');
+    });
+  });
+
+  document.querySelectorAll('.js-mastermind-open').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      if (mastermindModal) mastermindModal.classList.add('show');
+    });
+  });
+
+  // Ownership Partner → HubSpot
+  if (ownerForm && ownerSubmit) {
+    ownerForm.addEventListener('submit', async function(e){
+      e.preventDefault();
+
+      var first = (ownerForm.querySelector('input[name="first_name"]') || {}).value || '';
+      var last  = (ownerForm.querySelector('input[name="last_name"]') || {}).value || '';
+      var email = (ownerForm.querySelector('input[name="email"]') || {}).value || '';
+      var phone = (ownerForm.querySelector('input[name="phone"]') || {}).value || '';
+      var msg   = (ownerForm.querySelector('textarea[name="message"]') || {}).value || '';
+
+      var fields = [
+        { name: 'firstname', value: first },
+        { name: 'lastname',  value: last },
+        { name: 'email',     value: email },
+        { name: 'phone',     value: phone },
+        // internal flags so you can segment easily in HubSpot
+        { name: 'interest_level',        value: 'dcn_interest_owner_partner' },
+        { name: 'pricing_interest_kind', value: 'owner_partner_application' },
+        { name: 'source_page',           value: 'dcn_pricing_owner' },
+          { name: 'test', value: msg }
+
+      ];
+
+      var payload = {
+        fields: fields,
+        context: {
+          hutk: getHubSpotUtk(),
+          pageUri: window.location.href,
+          pageName: document.title
+        }
+      };
+
+            await submitHubSpotForm(payload, HUBSPOT_OWNER_FORM_GUID);
+
+
+      try {
+        window._hsq = window._hsq || [];
+        window._hsq.push([
+          'identify',
+          {
+            email: email,
+            firstname: first,
+            lastname: last,
+            interest_level: 'dcn_interest_owner_partner'
+          }
+        ]);
+        window._hsq.push([
+          'trackEvent',
+          {
+            id: 'owner_partner_application',
+            value: 1
+          }
+        ]);
+      } catch (err) {}
+
+      ownerSubmit.disabled = true;
+      ownerForm.style.display = 'none';
+      if (ownerSuccess) ownerSuccess.style.display = 'block';
+    });
+  }
+
+  // 1:1 Mastermind → HubSpot
+  if (mastermindForm && mastermindSubmit) {
+    mastermindForm.addEventListener('submit', async function(e){
+      e.preventDefault();
+
+      var first = (mastermindForm.querySelector('input[name="first_name"]') || {}).value || '';
+      var last  = (mastermindForm.querySelector('input[name="last_name"]') || {}).value || '';
+      var email = (mastermindForm.querySelector('input[name="email"]') || {}).value || '';
+      var phone = (mastermindForm.querySelector('input[name="phone"]') || {}).value || '';
+      var msg   = (mastermindForm.querySelector('textarea[name="message"]') || {}).value || '';
+
+      var fields = [
+        { name: 'firstname', value: first },
+        { name: 'lastname',  value: last },
+        { name: 'email',     value: email },
+        { name: 'phone',     value: phone },
+        { name: 'interest_level',        value: 'dcn_interest_mastermind_1on1' },
+        { name: 'pricing_interest_kind', value: 'mastermind_1on1_application' },
+        { name: 'source_page',           value: 'dcn_pricing_mastermind' },
+          { name: 'mastermind_1_1_submission_form', value: msg } // ← use exact internal name
+
+      ];
+
+      var payload = {
+        fields: fields,
+        context: {
+          hutk: getHubSpotUtk(),
+          pageUri: window.location.href,
+          pageName: document.title
+        }
+      };
+
+            await submitHubSpotForm(payload, HUBSPOT_MASTERMIND_FORM_GUID);
+
+
+      try {
+        window._hsq = window._hsq || [];
+        window._hsq.push([
+          'identify',
+          {
+            email: email,
+            firstname: first,
+            lastname: last,
+            interest_level: 'dcn_interest_mastermind_1on1'
+          }
+        ]);
+        window._hsq.push([
+          'trackEvent',
+          {
+            id: 'mastermind_1on1_application',
+            value: 1
+          }
+        ]);
+      } catch (err) {}
+
+      mastermindSubmit.disabled = true;
+      mastermindForm.style.display = 'none';
+      if (mastermindSuccess) mastermindSuccess.style.display = 'block';
+    });
+  }
+
+
+
+
+
+
+
+})();
+</script>
+<!-- ===== DCN Feature Flags: read ALL pricing.* keys from Supabase ===== -->
+<script type="module">
+  import { supabase } from './js/supabaseClient.js';
+
+  // All the pricing flags you manage in Super Admin
+  const FLAG_KEYS = {
+    accelerator: 'pricing.nation_live',
+    ai:          'pricing.aim_live',
+    sales:       'pricing.sales_live',
+    bundle:      'pricing.bundle_live',
+    vip:         'pricing.vip_live',
+    club:        'pricing.club_live',
+    book1:       'pricing.book1_live',
+    book2:       'pricing.book2_live',
+    book3:       'pricing.book3_live',
+    book4:       'pricing.book4_live',
+    book5:       'pricing.book5_live'
+  };
+
+  async function getFlag(flagKey, fallback) {
+    if (!flagKey) return fallback;
+
+    try {
+      const { data, error } = await supabase.rpc('get_feature_flag', { flag_key: flagKey });
+
+      if (error) {
+        console.warn('DCN get_feature_flag error:', flagKey, error);
+        return fallback;
+      }
+      // Supabase function returns a bare boolean
+      if (typeof data === 'boolean') {
+        return data;
+      }
+      return fallback;
+    } catch (err) {
+      console.warn('DCN get_feature_flag exception:', flagKey, err);
+      return fallback;
+    }
+  }
+
+  async function loadAllFlagsForDCN() {
+    if (!window.DCN_PRICING) return;
+
+    const cfg = window.DCN_PRICING;
+
+    // What the page thinks by default (all live = true unless you change this object)
+    const defaults = {
+      accelerator: cfg.programs?.accelerator?.live ?? true,
+      ai:          cfg.programs?.ai?.live ?? true,
+      sales:       cfg.programs?.sales?.live ?? true,
+      bundle:      cfg.bundle?.live ?? true,
+      vip:         true,
+      club:        true,
+      book1:       true,
+      book2:       true,
+      book3:       true,
+      book4:       true,
+      book5:       true
+    };
+
+    const results = {};
+
+    // Ask Supabase for every flag you own in Super Admin
+    await Promise.all(
+      Object.entries(FLAG_KEYS).map(async ([shortKey, fullKey]) => {
+        results[shortKey] = await getFlag(fullKey, defaults[shortKey]);
+      })
+    );
+
+    // Feed the four that this page actually uses back into DCN_PRICING
+    if (cfg.programs?.accelerator) cfg.programs.accelerator.live = results.accelerator;
+    if (cfg.programs?.ai)          cfg.programs.ai.live          = results.ai;
+    if (cfg.programs?.sales)       cfg.programs.sales.live       = results.sales;
+    if (cfg.bundle)                cfg.bundle.live               = results.bundle;
+
+    // Expose ALL flags globally so we can reuse them later on the book page / VIP, etc.
+    window.DCN_FLAGS = results;
+
+    /* SURGICAL EDIT #2:
+       Toggle Accelerator badge text ONLY based on pricing.nation_live */
+    const accelBadge = document.getElementById('accelerator-pop-badge');
+    if (accelBadge) {
+      accelBadge.textContent = results.accelerator ? 'Most Popular' : 'Most Anticipated';
+    }
+
+    // No spammy console.log here to confuse things.
+  }
+
+  loadAllFlagsForDCN();
+</script>
+
+<!-- ===== Redirect notice (pre-checkout) ===== -->
+<div id="redirectNotice" aria-hidden="true">
+  <div class="card">Great choice — sending you to our secure checkout…</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Lil Dream Chaser U — Coming Soon</title>
+<meta content="Dream Chaser Nation, Inc. — bigger, bolder static preview" name="description"/>
+<style>
+:root{
+  --bg:#0b1020;
+  --panel:#0f172a;
+  --ink:#e2e8f0;
+  --muted:#94a3b8;
+  --brand:#7c3aed;
+  --brand2:#22d3ee;
+  --accent:#fbbf24;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 22px;border-radius:18px;font-weight:900;letter-spacing:.2px;box-shadow:0 10px 24px rgba(0,0,0,.25);transition:transform .15s ease,opacity .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#ffe58a);color:#111827}
+.btn-ghost{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06)}
+.badge{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.12)}
+.section{padding:80px 0}
+.section-tight{padding:56px 0}
+.grid{display:grid;gap:22px}
+.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:24px;backdrop-filter:blur(6px)}
+.hero{position:relative;overflow:hidden}
+.hero .g1{position:absolute;inset:-20%;background:radial-gradient(800px 800px at 20% 10%, rgba(124,58,237,.5), transparent 60%), radial-gradient(900px 900px at 80% 0%, rgba(34,211,238,.45), transparent 60%), radial-gradient(800px 800px at 50% 80%, rgba(251,191,36,.35), transparent 60%);filter:blur(20px);}
+.hero .g2{position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.12) 1px, transparent 1px);background-size:20px 20px;opacity:.25}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.15), rgba(0,0,0,.4))}
+.hero .inner{position:relative;padding:110px 0 80px}
+h1{font-size:64px;line-height:1.05;margin:0;font-weight:1000;letter-spacing:.2px;text-shadow:0 2px 0 rgba(0,0,0,.3)}
+h2{font-size:36px;margin:0 0 10px;font-weight:900}
+p.lead{font-size:20px;color:var(--ink);opacity:.92;max-width:820px}
+.stat{display:grid;gap:4px;text-align:center}
+.stat .v{font-size:40px;font-weight:1000}
+.stat .l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.navbar{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.6);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.navbar .row{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+
+/* navbar hardening */
+.navbar .row > div:last-child{ display:flex; gap:16px; align-items:center; flex-wrap:nowrap!important; }
+.navbar .logo{ white-space:nowrap; }
+@media (max-width:1200px){
+  .navbar .row > div:last-child{ gap:12px; }
+}
+
+.logo{font-weight:1000;font-size:22px;letter-spacing:.2px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px}
+.img-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.img-grid .img{border-radius:20px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 10px 24px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.1)}
+.img-grid img{width:100%;height:100%;object-fit:contain;background:#000;display:block}
+.quote{font-size:20px;line-height:1.5}
+.quote b{font-weight:900}
+.tile{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 16px 36px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.1)}
+.tile .img{height:260px;background:#0b1020}
+.tile .img img{width:100%;height:100%;object-fit:contain;background:#000;display:block}
+.tile .overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.55), transparent 40%)}
+.tile .txt{position:absolute;left:20px;right:20px;bottom:20px}
+.kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.12);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.btn-small{padding:10px 14px;border-radius:12px;font-size:14px;font-weight:800}
+.footer{margin-top:60px;padding:28px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);text-align:center}
+input,textarea{width:100%;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);color:var(--ink)}
+form .row{display:grid;gap:14px}
+form .row.cols-2{grid-template-columns:1fr 1fr}
+@media (max-width:980px){
+  h1{font-size:48px}
+  .cols-2,.cols-3,.cols-4{grid-template-columns:1fr}
+  .img-grid{grid-template-columns:1fr 1fr}
+}
+
+.hero .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000 no-repeat center;opacity:.25;filter:saturate(115%) contrast(105%);}
+@media (max-width:640px){.hero .hero-photo{opacity:.28}}
+
+.navbar .container>div:last-child{flex-wrap:nowrap;white-space:nowrap;overflow:hidden}
+
+/* --- Lil Dream Chaser U: Family banner --- */
+.ldcu-photo { margin: 24px 0 8px; }
+.ldcu-photo .container { border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(2,6,23,.35); }
+.ldcu-photo .hero-img { width: 100%; height: clamp(220px, 32vw, 460px); object-fit: cover; display: block; }
+/* slightly tighter on very small screens */
+@media (max-width: 540px){
+  .ldcu-photo { margin: 16px 0 6px; }
+  .ldcu-photo .hero-img { height: 220px; }
+}
+
+/* --- LDCU photo centered variant --- */
+.ldcu-photo { margin: 24px 0 8px; }
+.ldcu-photo .container { 
+  display: flex; 
+  justify-content: center; 
+  border-radius: 16px; 
+  overflow: visible; 
+}
+.ldcu-photo .hero-img { 
+  width: var(--hero-w); 
+  height: auto; 
+  display: block; 
+  border-radius: 16px; 
+  box-shadow: 0 10px 30px rgba(2,6,23,.35);
+}
+@media (max-width: 540px){
+  .ldcu-photo { margin: 16px 0 10px; }
+  .ldcu-photo .hero-img { width: 92vw; }
+}
+
+/* --- Decorative side rails for the centered hero image --- */
+.ldcu-photo { --hero-w: clamp(260px, 42vw, 620px); }
+.ldcu-photo .container{ position:relative; }
+.ldcu-photo .container::before,
+.ldcu-photo .container::after{
+  content:"";
+  position:absolute;
+  top:8%;
+  height:84%;
+  width:clamp(6px, 1.2vw, 14px);
+  border-radius:9999px;
+  background:linear-gradient(180deg, transparent, rgba(255,235,130,.65), transparent);
+  filter:blur(0.2px);
+  opacity:.65;
+  pointer-events:none;
+}
+/* place rails just outside the image edges */
+.ldcu-photo .container::before{ left: calc(50% - (var(--hero-w) / 2) - clamp(12px, 1.8vw, 22px)); }
+.ldcu-photo .container::after{  right: calc(50% - (var(--hero-w) / 2) - clamp(12px, 1.8vw, 22px)); }
+
+@media (max-width: 900px){
+  .ldcu-photo .container::before,
+  .ldcu-photo .container::after{ display:none; }
+}
+
+/* --- LDCU product cards (family tees) --- */
+.ldcu-products { margin-top: 8px; }
+.ldcu-products .grid { 
+  display: grid; 
+  gap: 18px; 
+  grid-template-columns: repeat(4, minmax(220px,1fr));
+}
+@media (max-width: 1100px){
+  .ldcu-products .grid { grid-template-columns: repeat(2, minmax(220px,1fr)); }
+}
+@media (max-width: 560px){
+  .ldcu-products .grid { grid-template-columns: 1fr; }
+}
+.product-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(2,6,23,.18);
+}
+.product-card .img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(113, 163, 255, .18), rgba(255, 179, 71, .18));
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,.6);
+  font-size: .95rem;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.product-card .img img { width: 100%; height: 100%; object-fit: cover; display:block; }
+.product-card .title { font-weight: 700; margin: 6px 0 6px; }
+.product-card .price{ margin: 0 0 10px; font-weight: 700; color: #ffd86b; }
+.product-card .btn { width: 100%; }
+
+.ldcu-products .header{
+  display:flex; align-items:center; justify-content:space-between; gap: 12px; margin-bottom: 16px;
+}
+.ldcu-products .header a.see-all{ color:#9bbcff; font-weight:600; text-decoration:none; }
+.ldcu-products .header a.see-all:hover{ text-decoration:underline; }
+</style>
+<!-- Family section scoped styles (no Tailwind needed) -->
+<style>
+    /* Container */
+    /* Background layers */
+    /* Cards grid */
+    @media(min-width: 900px){ }
+    /* CTA */
+    </style>
+<style>
+/* Ensure Family cards are white boxes on dark background */
+    /* Force Family section fonts to white */
+    /* --- DCN: Reusable dark section styles --- */
+.dcn-dark-section, .dcn-dark-section * { color: #ffffff !important; }
+.dcn-card {
+  background: radial-gradient(100% 100% at 50% 0%, #0ea5a5 0%, #0f766e 60%, #0b5253 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.18), 0 2px 10px rgba(2,6,23,0.25);
+  color: #ffffff;
+}
+.dcn-card .title { color: #ffffff; font-weight: 800; letter-spacing: .2px; }
+.dcn-card .desc  { color: rgba(255,255,255,0.9); }
+/* --- Family section overrides --- */
+<style id="ldcu-styles">
+.ldcu-hero{padding:80px 0;text-align:center}
+.ldcu-title{font-size:48px;font-weight:1000;letter-spacing:-.01em}
+.ldcu-sub{opacity:.9;margin-top:6px}
+.ldcu-cta{margin-top:18px}
+.ldcu-cta .btn{background:var(--accent);color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;text-decoration:none}
+.ldcu-grid{padding:56px 0}
+.ldcu-grid .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px}
+.ldcu-h2{font-size:24px;font-weight:900;margin-bottom:8px}
+@media (max-width:900px){.ldcu-title{font-size:36px}}
+form.ldcu-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+form.ldcu-form input{padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:inherit;min-width:260px}
+form.ldcu-form button{padding:12px 16px;border-radius:10px;border:none;background:var(--accent);color:#fff;font-weight:700;cursor:pointer}
+</style>
+<!-- pricing lead capture -->
+<style>
+/* pricing-lead-capture */
+#leadGate{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:9999; }
+#leadGate.show{ display:flex; }
+#leadGate .overlay{ position:absolute; inset:0; background:rgba(0,0,0,.55); backdrop-filter:blur(2px); }
+#leadGate .panel{ position:relative; width:min(520px, 92vw); border-radius:16px; padding:22px; background:rgba(20,23,33,.96);
+  border:1px solid rgba(255,255,255,.08); box-shadow: 0 20px 80px rgba(0,0,0,.45); }
+#leadGate h3{ margin:0 0 6px 0; font-size:22px; }
+#leadGate p{ margin:0 0 14px 0; opacity:.9; }
+#leadGate label{ display:block; font-size:14px; margin:10px 0 6px; }
+#leadGate input[type="email"], #leadGate input[type="text"]{
+  width:100%; padding:12px 12px; border-radius:10px; border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04); color:#fff; outline:none;
+}
+#leadGate .row{ display:flex; gap:10px; }
+#leadGate .row > *{ flex:1; }
+#leadGate .actions{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
+#leadGate .btn{ padding:12px 16px; border-radius:12px; text-decoration:none; font-weight:700; border:none; cursor:pointer; }
+#leadGate .btn-primary{ background:linear-gradient(180deg,#f4da79,#deb13e); color:#000; }
+#leadGate .btn-ghost{ background:rgba(255,255,255,.08); color:#fff; }
+#leadGate .muted{ font-size:12px; opacity:.75; margin-top:8px; }
+#leadGate .closeX{ position:absolute; right:10px; top:10px; background:transparent; border:none; color:#fff; font-size:22px; cursor:pointer; }
+</style>
+<style id="family-fix">
+/* Family section small patch */
+#family, #family h2, #family .fam-sub, #family .fam-card, #family * { color:#fff !important; }
+#family .fam-card { background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); color:#fff !important; border-radius:14px; }
+#family .fam-card .title, #family .fam-card .desc { color:#ffffff !important; }
+#family .fam-cta a { background: rgba(255,255,255,0.12) !important; color:#fff !important; border-radius:12px; padding:14px 18px; font-weight:700; }
+#family h2.section-title::after { content:' — Coming Soon'; color:#ffd975; font-weight:700; font-size:0.6em; margin-left:8px; vertical-align:baseline; }
+</style>
+<style>
+/* footer baseline */
+.site-footer{padding:40px 0 56px;border-top:1px solid rgba(255,255,255,.06);}
+.site-footer .wrap{max-width:1100px;margin:0 auto;text-align:center}
+.site-footer .footer-lines{margin:0 0 14px;color:#cfd7e0}
+.site-footer .footer-mark img{width:56px;height:56px;object-fit:contain;margin:8px auto 18px;opacity:.95}
+.site-footer .footer-socials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.site-footer .pill{display:inline-block;padding:10px 16px;border:1px solid rgba(255,255,255,.18);border-radius:12px;color:#e6ebf2;text-decoration:none}
+.site-footer .pill:hover{border-color:rgba(255,255,255,.28)}
+.site-footer .copy{margin:10px 0 6px;font-weight:500}
+.site-footer .footer-small{margin:0;color:#b6c0cc}
+@media (max-width:560px){
+  .site-footer{padding:36px 0 44px}
+  .site-footer .pill{font-size:14px}
+}
+</style>
+<link href="assets/css/dcn-comm-popup.css" rel="stylesheet"/></head>
+<body>
+<!-- NAV -->
+<div class="navbar">
+<div class="container row">
+<div class="logo" style="font-size:26px">✨Dream Chaser <span style="color:var(--brand)">Nation</span></div>
+<div style="display:flex;gap:16px;align-items:center;font-weight:700;font-size:14px;flex-wrap:nowrap;white-space:nowrap">
+  <a href="index.html#apparel" style="opacity:.9">Apparel</a>
+  <!-- Crusher Line removed -->
+  <a href="index.html#books" style="opacity:.9">Books</a>
+  <a href="index.html#coaching" style="opacity:.9">Dream Chaser University</a>
+  <a href="index.html#community" style="opacity:.9">Community</a>
+  <a href="about.html" style="opacity:.9">About</a>
+  <a href="faq.html" style="opacity:.9">FAQ/Support</a>
+  <a class="btn btn-ghost btn-small"
+   href="#newsletter"
+   data-dcn-open="dcn-newsletter">
+  Join Newsletter
+</a>
+
+  <a class="btn btn-primary btn-small" href="https://dreamchasernation.printify.me/" rel="noopener" target="_blank">Shop</a>
+</div>
+</div>
+</div>
+<!-- HERO -->
+<main>
+<section class="ldcu-hero">
+<div class="container">
+<div class="ldcu-title">Lil Dream Chaser U</div>
+<div class="ldcu-sub">Lil Dream Chaser University — <strong>Coming Soon</strong></div>
+</div>
+</section>
+<section class="ldcu-photo">
+  <div class="container">
+    <picture>
+      <img class="hero-img" src="assets/images/ldcu/family-sunset.png" alt="Dream Chaser family on the beach at sunset wearing DCN tees"/>
+    </picture>
+  </div>
+</section>
+
+<section class="ldcu-grid">
+<div class="container" style="display:grid;gap:18px;grid-template-columns:1fr 1fr">
+<div class="card">
+<div class="ldcu-h2">Our Mission</div><p>Lil Dream Chaser U exists to help families and kids learn the life skills schools don’t always teach — the freedom of designing your schedule, the basics of entrepreneurship, how money works, and what it really takes to build a dream.</p>
+<p>This isn’t a replacement for every path. If your dream is medicine, engineering, or any calling that requires traditional university training, we celebrate that — our society needs those paths. Lil Dream Chaser U simply adds another lane: practical knowledge, mindset, and action you can start using now.</p>
+</div>
+<div class="card">
+<div class="ldcu-h2">Our Goal</div><p>We’re building three free levels so every family can plug in:</p>
+<p>• Lil Dream Chaser U : curiosity, confidence, simple money and creativity basics.</p>
+<p>• JV Dream Chaser U : habits, time planning, beginner finance, first small projects.</p>
+<p>• Varsity Dream Chaser U : entrepreneurship fundamentals, selling with integrity, marketing, social media basics, lead generation, building a simple brand, and turning ideas into real projects.</p>
+<p>Designed to support homeschool families and to complement public and private school students, our goal is to give kids and parents tools they can use in real life — from planning for family time to starting a business that teaches responsibility and possibility.</p>
+<p>At Dream Chaser University and Lil Dream Chaser U, knowledge only matters when it becomes action. Learn, try, plant a seed, take another step, then come back and nurture what you started. Not too many seeds at once — but the right seed, cared for consistently, can change a life.</p>
+</div>
+</div>
+</section>
+
+<section class="ldcu-products">
+  <div class="container">
+    <div class="header">
+      <div class="ldcu-h2">Family Tees</div>
+      <a id="link-store" class="see-all" href="https://dreamchasernation.printify.me/" target="_blank" rel="noopener">See all →</a>
+    </div>
+    <div class="grid">
+      <div class="product-card">
+        <div class="img"><img src="assets/images/ldcu/tee-dad.jpg" alt="Men's Tee"/></div>
+        <div class="title">Men's Tee</div>
+        <div class="price">$25</div>
+        <a class="btn btn-primary" id="link-dad" href="https://dreamchasernation.printify.me/product/24119508/mens-performance-t-shirt-dream-chaser-nation-workout-tee-gym-top-fitness-apparel-activewear-motivational-gear" target="_blank" rel="noopener">Buy Now</a>
+      </div>
+      <div class="product-card">
+        <div class="img"><img src="assets/images/ldcu/tee-mom.jpg" alt="Women's Tee"/></div>
+        <div class="title">Women's Tee</div>
+        <div class="price">$25</div>
+        <a class="btn btn-primary" id="link-mom" href="https://dreamchasernation.printify.me/product/24119597/dream-chaser-womens-softstyle-tee-inspirational-t-shirt-motivational-apparel-gift-for-dreamers-everyday-fashion-dream-big-shirt" target="_blank" rel="noopener">Buy Now</a>
+      </div>
+      <div class="product-card">
+        <div class="img"><img src="assets/images/ldcu/tee-boy.jpg" alt="Youth Boys Tee"/></div>
+        <div class="title">Youth Boys Tee</div>
+        <div class="price">$19.99</div>
+        <a class="btn btn-primary" id="link-boy" href="https://dreamchasernation.printify.me/product/24119340/dream-chaser-nation-heavy-cotton-toddler-t-shirt" target="_blank" rel="noopener">Buy Now</a>
+      </div>
+      <div class="product-card">
+        <div class="img"><img src="assets/images/ldcu/tee-girl.jpg" alt="Youth Girls Tee"/></div>
+        <div class="title">Youth Girls Tee</div>
+        <div class="price">$19.99</div>
+        <a class="btn btn-primary" id="link-girl" href="https://dreamchasernation.printify.me/product/24119364/dream-chaser-nation-heavy-cotton-toddler-t-shirt" target="_blank" rel="noopener">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ldcu-grid">
+<div class="container" style="text-align:center">
+<a class="btn btn-primary" data-dcn-open="dcn-comm-lil" href="#">Stay updated here</a></div>
+</section>
+</main>
+<!-- FOOTER -->
+<script>
+  (function(){
+    const imgs = ["assets/hoodie_woman.png", "assets/ChatGPT_Image_Sep_12,_2025,_09_15_19_AM.png", "assets/ChatGPT_Image_Sep_12,_2025,_09_10_21_AM.png", "assets/Cyclist_in_Action__Dream_Crusher_Moment.png"];
+    const el = document.querySelector('.hero-photo');
+    if(!el || imgs.length<2) return;
+    let i=0;
+    setInterval(()=>{ i=(i+1)%imgs.length; el.src = imgs[i]; }, 5000);
+  })();
+</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+<script>
+/* leadGateJS */
+(function(){
+  const EXPIRY_DAYS = 30;
+  const storageKey = "leadCapturedAt";
+  const gate = document.getElementById('leadGate');
+  if(!gate) return;
+  const emailEl = document.getElementById('leadEmail');
+  const nameEl = document.getElementById('leadName');
+  const submitBtn = document.getElementById('leadSubmit');
+  const skipBtn = document.getElementById('leadSkip');
+  const closeX = gate.querySelector('.closeX');
+  const overlay = gate.querySelector('.overlay');
+
+  function isFresh(){
+    try{
+      const t = +localStorage.getItem(storageKey);
+      if(!t) return false;
+      const days = (Date.now() - t) / (1000*60*60*24);
+      return days < EXPIRY_DAYS;
+    }catch(e){ return false; }
+  }
+
+  function showGate(){ gate.classList.add('show'); emailEl.focus(); }
+  function hideGate(){ gate.classList.remove('show'); }
+
+  function captureAndGo(href){
+    // Save timestamp so we don't bug them again soon
+    try{ localStorage.setItem(storageKey, String(Date.now())); }catch(e){}
+    // Post to placeholder endpoint — swap this for your CRM endpoint later
+    const payload = {
+      email: emailEl.value.trim(),
+      name: nameEl.value.trim(),
+      source: document.location.pathname,
+      dest: href,
+      ts: new Date().toISOString()
+    };
+    // Replace this URL with your CRM endpoint (e.g., HubSpot Forms API, Zoho Webhook, etc.)
+    fetch("https://example.com/lead-capture", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      mode: "no-cors" // allow fire-and-forget until CRM is wired
+    }).catch(()=>{}).finally(()=>{
+      window.location.href = href;
+    });
+  }
+
+  function validEmail(v){
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  // Intercept clicks to pricing
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('a[href*="pricing.html"]');
+    if(!a) return;
+    // Let middle-click or modifier open normally
+    if(e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+    if(isFresh()) return; // recently captured — let through
+    e.preventDefault();
+    const href = a.getAttribute('href');
+    showGate();
+    const proceed = () => { hideGate(); captureAndGo(href); };
+    submitBtn.onclick = function(){
+      const em = emailEl.value.trim();
+      if(!validEmail(em)){ emailEl.focus(); emailEl.select(); return; }
+      proceed();
+    };
+    skipBtn.onclick = function(){ hideGate(); window.location.href = href; };
+    closeX.onclick = function(){ hideGate(); };
+    overlay.onclick = function(){ hideGate(); };
+  }, true);
+})();
+</script>
+<script>
+  (function(){
+    var yEl = document.getElementById('year');
+    if(yEl && !yEl.textContent) yEl.textContent = new Date().getFullYear();
+  })();
+</script>
+<div class="wrap" style="text-align:center;margin:28px 0;">
+<a class="pill" href="index.html" style="display:inline-block;padding:10px 18px;border:1px solid rgba(255,255,255,.2);border-radius:12px;background:rgba(255,255,255,.08);color:#fff;text-decoration:none;font-weight:600;">← Return to Home</a>
+</div>
+<footer class="site-footer"><div class="wrap"><p class="footer-lines">General inquiries: <a href="mailto:info@dreamchasernation.com">info@dreamchasernation.com</a><br/>Support: <a href="mailto:support@dreamchasernation.com">support@dreamchasernation.com</a></p><div class="footer-mark"><img alt="Dream Chaser Nation mark" src="assets/dcu-logo.png" style="width:56px;height:56px;object-fit:contain;display:block;margin:8px auto 18px;opacity:.95"/></div><div class="footer-socials"><a class="pill" href="#">YouTube</a><a class="pill" href="#">Instagram</a><a class="pill" href="#">TikTok — Dream Crusher Hub</a></div><div class="footer-talent"><a class="pill pill-soft" href="got-talent.html">Got Talent?</a></div><p class="copy">© 2025 Dream Chaser Nation, Inc. All Rights Reserved.</p><p class="footer-small">6 Liberty Square #2521, Boston, MA 02109</p></div></footer>
+<script src="/assets/js/printify-links.js"></script>
+<style>
+  /* === DCN uniform form spacing === */
+  .dcn-popup-body form .row { margin-top: 12px; margin-bottom: 12px; }
+  .dcn-popup-body form .row:first-child { margin-top: 0; }
+  .dcn-popup-body form .row:last-child  { margin-bottom: 0; }
+</style>
+<!-- Start of HubSpot Embed Code -->
+<script async="" defer="" id="hs-script-loader" src="https://js-na2.hs-scripts.com/243879652.js" type="text/javascript"></script>
+<!-- End of HubSpot Embed Code -->
+<script src="assets/js/dcn-comm-popup.js"></script>
+
+<!--
+  =====================================================================
+  ORIGINAL LIL DREAMERS MODAL (ARCHIVED BACKUP)
+  ---------------------------------------------------------------------
+  To RESTORE this original version in the future:
+
+  1) Delete or comment out the NEW modal block that appears
+     *after* this commented section.
+  2) Remove the opening "<!--" above and the closing "--" below
+     so this block becomes live HTML again.
+  3) Make sure the "data-dcn-open='dcn-comm-lil'" trigger button
+     elsewhere on the page still points to id="dcn-comm-lil".
+
+  This backup keeps your first version exactly as it was.
+  =====================================================================
+-->
+<!--
+<div aria-modal="true" class="dcn-popup-overlay" id="dcn-comm-lil" role="dialog">
+  <div class="dcn-popup" role="document">
+    <button aria-label="Close" class="dcn-close" data-dcn-close="dcn-comm-lil">✕</button>
+    <div class="dcn-popup-header">
+      <h2 class="dcn-popup-title" style="font-size:1.85rem;">🌟 Lil Dreamers — Updates for Parents</h2>
+    </div>
+    <div class="success-state">
+      <h3>Thank you for your interest in Lil Dreamer U!</h3>
+      <p class="dcn-bodycopy">We’re excited to share all new developments with you the moment they are released.</p>
+    </div>
+    <div class="dcn-popup-body form-state">
+      <p class="dcn-sub">We’re building Lil Dream Chaser U — a free resource hub for families to help kids learn life skills and entrepreneurship basics. Add your info to get early updates and pilot invites. If you’re also curious about adult community training and coaching, check the community options below.</p>
+      <p class="dcn-sub">🚀 Don’t get left behind — the only thing missing is you.</p>
+      <p class="dcn-bodycopy">Don’t Chase Alone. Inside the Nation, you’ll unlock FREE, EXCLUSIVE access to a fun and supportive community — where we celebrate wins, share lessons, and strategize in ways that never happen in public. Whether you join the conversation or listen in, you’ll find the inspiration and strategy to keep moving forward together.</p>
+      <form action="/thank-you.html" data-dcn-redirect-skool="" id="join-lil-form" method="POST" name="dcn-lil" target="dcn-submission">
+        <input id="choice" name="choice" type="hidden" value=""/>
+        <div class="dcn-row two">
+          <input class="dcn-input" name="firstname" placeholder="First name" required="True"/>
+          <input class="dcn-input" name="lastname" placeholder="Last name" required="True"/>
+        </div>
+        <div class="dcn-row">
+          <input class="dcn-input" name="email" placeholder="you@dreamchasernation.com" required="True" type="email"/>
+        </div>
+        <label class="dcn-bodycopy">Let us send you cool stuff. By subscribing, you agree to receive our monthly-ish newsletter and occasional updates. No clutter, no spam — just the good stuff: tools, inspiration, live event updates, and the occasional surprise opportunity. You can unsubscribe anytime.</label>
+        <div class="dcn-actions">
+          <button class="dcn-btn" style="" type="submit">Get FREE Community Access</button>
+        </div>
+        <div class="dcn-extra" style="margin-top:16px;margin-top:18px">
+          🌱 <strong>Joining the Nation is planting your first seed.</strong><br/>
+          Or maybe your seed is already in the ground — and this is the moment to give it what it needs to grow stronger, faster. Or maybe your tree has been growing, but you can feel it deep inside — it’s destined to <strong>rise even higher</strong>.<br/><br/>
+          With the right <strong>Growth Accelerator</strong>, you can fuel your tree to grow faster, broader, and to heights you never imagined possible. If you want that growth to happen <strong>EXPONENTIALLY FASTER</strong>, you can fuel it with <strong>ELITE TRAINING &amp; COACHING</strong> — from the books that <strong>lay the foundation</strong> to the <strong>HIGHEST levels of personalized mentorship</strong>.
+        </div>
+        <button class="dcn-btn" data-go="pricing" style="display:block;width:100%;margin-top:14px;background:linear-gradient(135deg,#5b4ae6 0%, #3a7bd5 100%);color:white;box-shadow:0 14px 34px rgba(91,74,230,0.38);padding:14px 18px;font-size:1rem" type="submit">Get FREE Community Access + See Elite Programs</button>
+        <div style="height:10px"></div>
+        <button class="dcn-btn" data-choice="Lil" style="" type="submit">Just Send Me the Lil Dreamer Updates</button>
+        <input id="interest_level_hidden" name="interest_level" type="hidden" value=""/>
+        <input id="choice_hidden" name="choice" type="hidden" value=""/>
+      </form>
+    </div>
+  </div>
+</div>
+-->
+
+<!-- 
+  ORIGINAL LIL DREAMERS MODAL (ARCHIVED BACKUP, SECOND COPY)
+  To restore this older version in the future:
+  1) Delete or comment out the NEW modal right after this block.
+  2) Remove the &lt;!-- and comment markers around this original block.
+-->
+<!--
+<div aria-modal="true" class="dcn-popup-overlay" id="dcn-comm-lil" role="dialog">
+  <div class="dcn-popup" role="document">
+    <button aria-label="Close" class="dcn-close" data-dcn-close="dcn-comm-lil">✕</button>
+    <div class="dcn-popup-header">
+      <h2 class="dcn-popup-title" style="font-size:1.85rem;">🌟 Lil Dreamers — Updates for Parents</h2>
+    </div>
+    <div class="success-state">
+      <h3>Thank you for your interest in Lil Dreamer U!</h3>
+      <p class="dcn-bodycopy">We’re excited to share all new developments with you the moment they are released.</p>
+    </div>
+    <div class="dcn-popup-body form-state">
+      <p class="dcn-sub">
+        We’re building Lil Dream Chaser U — a free resource hub for families to help kids learn life skills
+        and entrepreneurship basics. Add your info to get early updates and pilot invites. If you’re also
+        curious about adult community training and coaching, check the community options below.
+      </p>
+      <p class="dcn-sub">🚀 Don’t get left behind — the only thing missing is you.</p>
+      <p class="dcn-bodycopy">
+        Don’t Chase Alone. Inside the Nation, you’ll unlock FREE, EXCLUSIVE access to a fun and supportive
+        community — where we celebrate wins, share lessons, and strategize in ways that never happen in
+        public. Whether you join the conversation or listen in, you’ll find the inspiration and strategy
+        to keep moving forward together.
+      </p>
+
+      <form action="/thank-you.html" data-dcn-redirect-skool="" id="join-lil-form" method="POST" name="dcn-lil" target="dcn-submission">
+        <input id="choice" name="choice" type="hidden" value=""/>
+
+        <div class="dcn-row two">
+          <input class="dcn-input" name="firstname" placeholder="First name" required="True"/>
+          <input class="dcn-input" name="lastname" placeholder="Last name" required="True"/>
+        </div>
+
+        <div class="dcn-row">
+          <input class="dcn-input" name="email" placeholder="you@dreamchasernation.com" required="True" type="email"/>
+        </div>
+
+        <label class="dcn-bodycopy">
+          Let us send you cool stuff. By subscribing, you agree to receive our monthly-ish newsletter and
+          occasional updates. No clutter, no spam — just the good stuff: tools, inspiration, live event
+          updates, and the occasional surprise opportunity. You can unsubscribe anytime.
+        </label>
+
+        <div class="dcn-actions">
+          <button class="dcn-btn" type="submit">Get FREE Community Access</button>
+        </div>
+
+        <div class="dcn-extra" style="margin-top:18px;">
+          🌱 <strong>Joining the Nation is planting your first seed.</strong><br/>
+          Or maybe your seed is already in the ground — and this is the moment to give it what it needs to
+          grow stronger, faster. Or maybe your tree has been growing, but you can feel it deep inside —
+          it’s destined to <strong>rise even higher</strong>.<br/><br/>
+          With the right <strong>Growth Accelerator</strong>, you can fuel your tree to grow faster,
+          broader, and to heights you never imagined possible. If you want that growth to happen
+          <strong>EXPONENTIALLY FASTER</strong>, you can fuel it with <strong>ELITE TRAINING &amp; COACHING</strong> —
+          from the books that <strong>lay the foundation</strong> to the <strong>HIGHEST levels of personalized mentorship</strong>.
+        </div>
+
+        <button class="dcn-btn" data-go="pricing"
+          style="display:block;width:100%;margin-top:14px;background:linear-gradient(135deg,#5b4ae6 0%, #3a7bd5 100%);color:white;box-shadow:0 14px 34px rgba(91,74,230,0.38);padding:14px 18px;font-size:1rem"
+          type="submit">
+          Get FREE Community Access + See Elite Programs
+        </button>
+
+        <div style="height:10px"></div>
+
+        <button class="dcn-btn" data-choice="Lil" type="submit">Just Send Me the Lil Dreamer Updates</button>
+
+        <input id="interest_level_hidden" name="interest_level" type="hidden" value=""/>
+        <input id="choice_hidden" name="choice" type="hidden" value=""/>
+      </form>
+    </div>
+  </div>
+</div>
+-->
+
+<!-- NEW LIL DREAMERS MODAL (EMAIL + FORM → SNEAK PEEK → ADULT COPY → ADULT CTAs) -->
+<div aria-modal="true" class="dcn-popup-overlay" id="dcn-comm-lil" role="dialog">
+  <div class="dcn-popup" role="document">
+    <button aria-label="Close" class="dcn-close" data-dcn-close="dcn-comm-lil">✕</button>
+
+    <div class="dcn-popup-header">
+      <h2 class="dcn-popup-title" style="font-size:1.85rem;">🌟 Lil Dreamers — Updates for Parents</h2>
+    </div>
+
+    <div class="success-state">
+      <h3>Thank you for your interest in Lil Dreamer U!</h3>
+      <p class="dcn-bodycopy">We’re excited to share all new developments with you the moment they are released.</p>
+    </div>
+
+    <div class="dcn-popup-body form-state">
+      <!-- 1) Kid-focused intro -->
+      <p class="dcn-sub">
+        We’re building Lil Dream Chaser U — a free resource hub for families to help kids learn life skills
+        and entrepreneurship basics. Add your info to get early updates and pilot invites.
+      </p>
+
+      <!-- 1) FORM + EMAIL (still right under the kid intro) -->
+      <form action="/thank-you.html" data-dcn-redirect-skool="" id="join-lil-form" method="POST" name="dcn-lil" target="dcn-submission">
+        <input id="choice" name="choice" type="hidden" value=""/>
+
+        <div class="dcn-row two">
+          <input class="dcn-input" name="firstname" placeholder="First name" required="True"/>
+          <input class="dcn-input" name="lastname" placeholder="Last name" required="True"/>
+        </div>
+
+        <div class="dcn-row">
+          <input class="dcn-input" name="email" placeholder="you@dreamchasernation.com" required="True" type="email"/>
+        </div>
+
+        <label class="dcn-bodycopy">
+          Let us send you cool stuff. By subscribing, you agree to receive our monthly-ish newsletter and
+          occasional updates. No clutter, no spam — just the good stuff: tools, inspiration, live event
+          updates, and the occasional surprise opportunity. You can unsubscribe anytime.
+        </label>
+
+        <!-- 2) NEW: sneak peek section lives RIGHT AFTER the email capture -->
+        <div class="dcn-extra" style="margin-top:18px;margin-bottom:10px;">
+          Lil Dream Chaser U is still in the building stages, but if you’d like to get a sneak peek and see
+          what’s already in motion, you can explore the early build now. Create a <b>free</b> account to gain <b>free</b> access below 👇
+        </div>
+
+        <button
+          class="dcn-btn"
+          type="button"
+          style="display:block;width:100%;margin-bottom:18px;background:linear-gradient(135deg,#fbbf24,#ffe58a);color:#111827;font-weight:800;box-shadow:0 12px 28px rgba(250,204,21,0.35);"
+          onclick="window.location.href='https://dreamchaseru.com/signup.html'">
+          Sneak Peek: Check It Out Now
+        </button>
+
+        <!-- 3) Adult community segue + copy -->
+        <p class="dcn-sub" style="margin-top:4px;">
+          If you’re also curious about adult community training and coaching, check the community options below.
+        </p>
+        <p class="dcn-sub">🚀 Don’t get left behind — the only thing missing is you.</p>
+        <p class="dcn-bodycopy">
+          Don’t Chase Alone. Inside the Nation, you’ll unlock FREE, EXCLUSIVE access to a fun and supportive
+          community — where we celebrate wins, share lessons, and strategize in ways that never happen in
+          public. Whether you join the conversation or listen in, you’ll find the inspiration and strategy
+          to keep moving forward together.
+        </p>
+
+        <!-- 4) Adult CTAs (unchanged, just moved under the adult copy) -->
+        <div class="dcn-actions">
+          <button class="dcn-btn" type="submit">Get FREE Community Access</button>
+        </div>
+
+        <div class="dcn-extra" style="margin-top:18px;">
+          🌱 <strong>Joining the Nation is planting your first seed.</strong><br/>
+          Or maybe your seed is already in the ground — and this is the moment to give it what it needs to
+          grow stronger, faster. Or maybe your tree has been growing, but you can feel it deep inside —
+          it’s destined to <strong>rise even higher</strong>.<br/><br/>
+          With the right <strong>Growth Accelerator</strong>, you can fuel your tree to grow faster,
+          broader, and to heights you never imagined possible. If you want that growth to happen
+          <strong>EXPONENTIALLY FASTER</strong>, you can fuel it with <strong>ELITE TRAINING &amp; COACHING</strong> —
+          from the books that <strong>lay the foundation</strong> to the <strong>HIGHEST levels of personalized mentorship</strong>.
+        </div>
+
+        <button class="dcn-btn" data-go="pricing"
+          style="display:block;width:100%;margin-top:14px;background:linear-gradient(135deg,#5b4ae6 0%, #3a7bd5 100%);color:white;box-shadow:0 14px 34px rgba(91,74,230,0.38);padding:14px 18px;font-size:1rem"
+          type="submit">
+          Get FREE Community Access + See Elite Programs
+        </button>
+
+        <div style="height:10px"></div>
+
+        <button class="dcn-btn" data-choice="Lil" type="submit">
+          Just Send Me the Lil Dreamer Updates
+        </button>
+
+        <!-- Hidden fields for HubSpot mapping (live version) -->
+        <input id="interest_level_hidden" name="interest_level" type="hidden" value=""/>
+        <input id="choice_hidden" name="choice" type="hidden" value=""/>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE FIX FOR LIL DREAMERS MODAL -->
+<style>
+  @media (max-width: 600px){
+    .dcn-popup-overlay{
+      align-items:flex-start;
+      justify-content:center;
+      padding:16px 0;
+    }
+    .dcn-popup{
+      width:94vw !important;
+      max-width:94vw !important;
+      margin:16px auto !important;
+      max-height:90vh;
+      overflow-y:auto;
+    }
+  }
+</style>
+<style>
+  /* Hard mobile override for Lil Dreamers modal */
+  @media (max-width: 600px){
+    .dcn-popup-overlay{
+      /* DO NOT force display here so JS can hide/show it */
+      align-items:flex-start !important;
+      justify-content:center !important;
+      padding:16px 0 !important;
+    }
+    .dcn-popup{
+      position:relative !important;
+      left:auto !important;
+      top:auto !important;
+      transform:none !important;
+      width:94vw !important;
+      max-width:94vw !important;
+      margin:16px auto !important;
+      max-height:90vh !important;
+      overflow-y:auto !important;
+    }
+  }
+</style>
+
+<!-- SURGICAL CENTER + FULL-SCROLL MOBILE OVERRIDE (wins over above) -->
+<style id="lil-modal-mobile-center-fix">
+  @media (max-width: 600px){
+    .dcn-popup-overlay{
+      align-items:center !important;
+      justify-content:center !important;
+      padding:16px !important;
+      overflow-y:auto !important;
+    }
+    .dcn-popup{
+      margin:auto !important;
+      max-height:85vh !important;
+      overflow-y:auto !important; /* scrolls entire modal including header */
+    }
+    .dcn-popup-header{
+      position:static !important; /* prevent sticky header behavior on mobile */
+      top:auto !important;
+    }
+  }
+</style>
+
+<!-- ===================== SURGICAL MOBILE TWEAKS ONLY ===================== -->
+<style id="mobile-nav-and-cards-fix">
+  /* 1) NAVBAR: on mobile show ONLY the Dream Chaser Nation logo */
+  @media (max-width: 640px){
+    .navbar .row{
+      justify-content:center !important; /* center the logo row */
+    }
+    .navbar .row > div:last-child{
+      display:none !important; /* hide all nav links/buttons */
+    }
+  }
+
+  /* 2) Mission/Goal cards: stack on mobile */
+  @media (max-width: 980px){
+    .ldcu-grid .container{
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+<!-- ====================================================================== -->
+
+<!-- Newsletter / Community modal -->
+<div aria-modal="true"
+     class="dcn-popup-overlay"
+     id="dcn-newsletter"
+     role="dialog"
+     style="display:none;">
+  <div class="dcn-popup" role="document">
+    <button aria-label="Close"
+            class="dcn-close"
+            data-dcn-close="dcn-newsletter">✕</button>
+
+    <div class="dcn-popup-header">
+      <h2 class="dcn-popup-title" style="font-size:1.85rem;">
+        Join the newsletter — or consider our free community.
+      </h2>
+    </div>
+
+    <!-- Success state (hidden by default, handled by your JS/Hubsport) -->
+    <div class="success-state">
+      <h3>✨ You're in!</h3>
+      <p class="dcn-bodycopy">
+        We’ll send updates and tools to help you keep chasing.
+      </p>
+    </div>
+
+    <!-- Default form state -->
+    <div class="dcn-popup-body form-state">
+      <p class="dcn-sub">
+        Start with the newsletter, or jump right into the Nation.
+      </p>
+      <p class="dcn-bodycopy">
+        Drop your info below to get our monthly-ish newsletter with tools,
+        inspiration, and updates. If you’re ready for a little more, you can
+        also join our free Dream Chaser Nation community on Skool — no pressure,
+        just an open invite.
+      </p>
+
+      <form id="dcn-newsletter-form" method="post">
+        <div class="dcn-row two">
+          <input class="dcn-input"
+                 name="firstname"
+                 placeholder="First name"
+                 required>
+          <input class="dcn-input"
+                 name="lastname"
+                 placeholder="Last name">
+        </div>
+
+        <div class="dcn-row">
+          <input class="dcn-input"
+                 name="email"
+                 type="email"
+                 placeholder="you@dreamchasernation.com"
+                 required>
+        </div>
+
+        <label class="dcn-bodycopy">
+          By subscribing, you agree to receive our monthly-ish newsletter and
+          occasional updates. No clutter, no spam — just the good stuff. You can
+          unsubscribe anytime.
+        </label>
+
+        <div class="dcn-actions"
+             style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+          <!-- Left: Newsletter submit -->
+          <button class="dcn-btn"
+                  type="submit"
+                  style="flex:1;min-width:0;background:rgba(255,255,255,.06);
+                         color:#f9fafb;border:1px solid rgba(148,163,184,.6);
+                         box-shadow:none;">
+            Join the Newsletter
+          </button>
+
+          <!-- Right: Community (yellow Skool button) -->
+          <a class="dcn-btn"
+             href="https://www.skool.com/dreamseekers-4847/about?ref=a79141dd0a864cab8249aeeae5ab54bb"
+             target="_blank"
+             rel="noopener"
+             style="flex:1;min-width:0;text-align:center;">
+            Join the Community
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var form = document.getElementById("dcn-newsletter-form");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var popup = form.closest(".dcn-popup");
+    if (!popup) return;
+
+    var formState = popup.querySelector(".form-state");
+    var successState = popup.querySelector(".success-state");
+
+    if (formState) formState.style.display = "none";
+    if (successState) successState.style.display = "block";
+  });
+})();
+</script>
+
+
+</body>
+</html>

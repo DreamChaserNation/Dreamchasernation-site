@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>DREAM CHASER NATION — Pricing Page</title>
+<meta content="DREAM CHASER NATION — bigger, bolder static preview" name="description"/>
+<style>
+:root{
+  --bg:#0b1020;
+  --panel:#0f172a;
+  --ink:#e2e8f0;
+  --muted:#94a3b8;
+  --brand:#7c3aed;
+  --brand2:#22d3ee;
+  --accent:#fbbf24;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 22px;border-radius:18px;font-weight:900;letter-spacing:.2px;box-shadow:0 10px 24px rgba(0,0,0,.25);transition:transform .15s ease,opacity .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#ffe58a);color:#111827}
+.btn-ghost{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06)}
+.badge{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.12)}
+.section{padding:80px 0}
+.section-tight{padding:56px 0}
+.grid{display:grid;gap:22px}
+.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:24px;backdrop-filter:blur(6px)}
+.hero{position:relative;overflow:hidden}
+.hero .g1{position:absolute;inset:-20%;background:radial-gradient(800px 800px at 20% 10%, rgba(124,58,237,.5), transparent 60%), radial-gradient(900px 900px at 80% 0%, rgba(34,211,238,.45), transparent 60%), radial-gradient(800px 800px at 50% 80%, rgba(251,191,36,.35), transparent 60%);filter:blur(20px);}
+.hero .g2{position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.12) 1px, transparent 1px);background-size:20px 20px;opacity:.25}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.15), rgba(0,0,0,.4))}
+.hero .inner{position:relative;padding:110px 0 80px}
+h1{font-size:64px;line-height:1.05;margin:0;font-weight:1000;letter-spacing:.2px;text-shadow:0 2px 0 rgba(0,0,0,.3)}
+h2{font-size:36px;margin:0 0 10px;font-weight:900}
+p.lead{font-size:20px;color:var(--ink);opacity:.92;max-width:820px}
+.stat{display:grid;gap:4px;text-align:center}
+.stat .v{font-size:40px;font-weight:1000}
+.stat .l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.navbar{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.6);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.navbar .row{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+
+/* navbar hardening */
+.navbar .row > div:last-child{ display:flex; gap:16px; align-items:center; flex-wrap:nowrap!important; }
+.navbar .logo{ white-space:nowrap; }
+@media (max-width:1200px){
+  .navbar .row > div:last-child{ gap:12px; }
+}
+
+.logo{font-weight:1000;font-size:22px;letter-spacing:.2px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px}
+.img-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.img-grid .img{border-radius:20px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 10px 24px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.1)}
+.img-grid img{width:100%;height:100%;object-fit:contain;background:#000;display:block}
+.quote{font-size:20px;line-height:1.5}
+.quote b{font-weight:900}
+.tile{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 16px 36px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.1)}
+.tile .img{height:260px;background:#0b1020}
+.tile .img img{width:100%;height:100%;object-fit:contain;background:#000;display:block}
+.tile .overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.55), transparent 40%)}
+.tile .txt{position:absolute;left:20px;right:20px;bottom:20px}
+.kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.12);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.btn-small{padding:10px 14px;border-radius:12px;font-size:14px;font-weight:800}
+.footer{margin-top:60px;padding:28px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);text-align:center}
+input,textarea{width:100%;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);color:var(--ink)}
+form .row{display:grid;gap:14px}
+form .row.cols-2{grid-template-columns:1fr 1fr}
+@media (max-width:980px){
+  h1{font-size:48px}
+  .cols-2,.cols-3,.cols-4{grid-template-columns:1fr}
+  .img-grid{grid-template-columns:1fr 1fr}
+}
+
+.hero .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000 no-repeat center;opacity:.25;filter:saturate(115%) contrast(105%);}
+@media (max-width:640px){.hero .hero-photo{opacity:.28}}
+
+.navbar .container>div:last-child{flex-wrap:nowrap;white-space:nowrap;overflow:hidden}
+
+/* family section layout restore */
+.fam-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.fam-card{ padding:18px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); box-shadow:0 10px 24px rgba(0,0,0,.22); backdrop-filter: blur(6px); }
+.fam-card .title{ font-weight:800; margin-bottom:6px; }
+.fam-cta{ margin-top: 22px; }
+@media (max-width: 1000px){
+  .fam-grid{ grid-template-columns: 1fr; }
+}
+
+</style>
+<!-- Family section scoped styles (no Tailwind needed) -->
+<style>
+    /* Container */
+    /* Background layers */
+    /* Cards grid */
+    @media(min-width: 900px){ }
+    /* CTA */
+    </style>
+<style>
+/* Ensure Family cards are white boxes on dark background */
+    /* Force Family section fonts to white */
+    /* --- DCN: Reusable dark section styles --- */
+.dcn-dark-section, .dcn-dark-section * { color: #ffffff !important; }
+.dcn-card {
+  background: radial-gradient(100% 100% at 50% 0%, #0ea5a5 0%, #0f766e 60%, #0b5253 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.18), 0 2px 10px rgba(2,6,23,0.25);
+  color: #ffffff;
+}
+.dcn-card .title { color: #ffffff; font-weight: 800; letter-spacing: .2px; }
+.dcn-card .desc  { color: rgba(255,255,255,0.9); }
+/* --- Family section overrides --- */
+<style>
+/* Books grid responsive */
+.books-grid{
+  display:grid;
+  gap:22px;
+  grid-template-columns: repeat(5, minmax(160px,1fr));
+}
+@media (max-width: 1200px){
+  .books-grid{ grid-template-columns: repeat(3, minmax(160px,1fr)); }
+}
+@media (max-width: 700px){
+  .books-grid{ grid-template-columns: repeat(2, minmax(140px,1fr)); }
+}
+.book-card{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:center;
+  padding:14px;
+  border-radius:16px;
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.06);
+}
+.book-card .cover{
+  width:100%;
+  aspect-ratio: 3/4;
+  border-radius:14px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,.08);
+}
+/* Glow variants (non-yellow) */
+.glow-blue{ box-shadow: 0 12px 40px rgba(88,143,255,.35), 0 0 0 2px rgba(88,143,255,.18) inset; }
+.glow-purple{ box-shadow: 0 12px 40px rgba(170,120,255,.35), 0 0 0 2px rgba(170,120,255,.18) inset; }
+.glow-teal{ box-shadow: 0 12px 40px rgba(60,220,200,.35), 0 0 0 2px rgba(60,220,200,.18) inset; }
+.glow-pink{ box-shadow: 0 12px 40px rgba(255,120,200,.35), 0 0 0 2px rgba(255,120,200,.18) inset; }
+.glow-green{ box-shadow: 0 12px 40px rgba(110,220,140,.35), 0 0 0 2px rgba(110,220,140,.18) inset; }
+.book-card .title{ font-weight:700; text-align:center; }
+</style>
+<style>
+.books-strip{ display:flex; gap:24px; align-items:flex-end; flex-wrap:wrap; }
+.book-poster{ flex:1 1 280px; height:320px; border-radius:18px; border:1px solid rgba(255,255,255,.08); }
+.poster-blue{  background:linear-gradient(180deg,#bfe0ff 0%, #5a8cff 100%); box-shadow: 0 20px 50px rgba(90,140,255,.25); }
+.poster-purple{background:linear-gradient(180deg,#d9c2ff 0%, #a98aff 100%); box-shadow: 0 20px 50px rgba(169,138,255,.25); }
+.poster-green{ background:linear-gradient(180deg,#bff3d8 0%, #57c088 100%); box-shadow: 0 20px 50px rgba(87,192,136,.25); }
+@media (max-width: 800px){ .book-poster{ height:240px; } }
+</style>
+<style>
+.home-books-grid{
+  display:grid;
+  gap:18px;
+  grid-template-columns: repeat(5, minmax(120px,1fr));
+  align-items:start;
+  margin-top:8px;
+}
+@media (max-width:1200px){ .home-books-grid{ grid-template-columns: repeat(3, minmax(120px,1fr)); } }
+@media (max-width:700px){ .home-books-grid{ grid-template-columns: repeat(2, minmax(120px,1fr)); } }
+
+.cover-wrap{ display:block; text-decoration:none; }
+.home-book-cover{
+  width:100%; aspect-ratio: 3/4;
+  border-radius:14px;
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+/* Base glows */
+.glow-pink  { box-shadow: 0 10px 26px rgba(255,120,200,.32), 0 0 0 2px rgba(255,120,200,.18) inset; }
+.glow-blue  { box-shadow: 0 10px 26px rgba(88,143,255,.32), 0 0 0 2px rgba(88,143,255,.18) inset; }
+.glow-silver{ box-shadow: 0 10px 26px rgba(210,220,230,.36), 0 0 0 2px rgba(210,220,230,.20) inset; }
+.glow-teal  { box-shadow: 0 10px 26px rgba(60,220,200,.32), 0 0 0 2px rgba(60,220,200,.18) inset; }
+.glow-green { box-shadow: 0 10px 26px rgba(110,220,140,.32), 0 0 0 2px rgba(110,220,140,.18) inset; }
+/* Hover: slight lift + brighter glow */
+.cover-wrap:hover .home-book-cover{
+  transform: scale(1.05);
+}
+.cover-wrap:hover .glow-pink  { box-shadow: 0 16px 40px rgba(255,120,200,.46), 0 0 0 3px rgba(255,120,200,.22) inset; }
+.cover-wrap:hover .glow-blue  { box-shadow: 0 16px 40px rgba(88,143,255,.46), 0 0 0 3px rgba(88,143,255,.22) inset; }
+.cover-wrap:hover .glow-silver{ box-shadow: 0 16px 40px rgba(210,220,230,.52), 0 0 0 3px rgba(210,220,230,.26) inset; }
+.cover-wrap:hover .glow-teal  { box-shadow: 0 16px 40px rgba(60,220,200,.46), 0 0 0 3px rgba(60,220,200,.22) inset; }
+.cover-wrap:hover .glow-green { box-shadow: 0 16px 40px rgba(110,220,140,.46), 0 0 0 3px rgba(110,220,140,.22) inset; }
+</style>
+<!-- pricing lead capture -->
+<style>
+/* pricing-lead-capture */
+#leadGate{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:9999; }
+#leadGate.show{ display:flex; }
+#leadGate .overlay{ position:absolute; inset:0; background:rgba(0,0,0,.55); backdrop-filter:blur(2px); }
+#leadGate .panel{ position:relative; width:min(520px, 92vw); border-radius:16px; padding:22px; background:rgba(20,23,33,.96);
+  border:1px solid rgba(255,255,255,.08); box-shadow: 0 20px 80px rgba(0,0,0,.45); }
+#leadGate h3{ margin:0 0 6px 0; font-size:22px; }
+#leadGate p{ margin:0 0 14px 0; opacity:.9; }
+#leadGate label{ display:block; font-size:14px; margin:10px 0 6px; }
+#leadGate input[type="email"], #leadGate input[type="text"]{
+  width:100%; padding:12px 12px; border-radius:10px; border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04); color:#fff; outline:none;
+}
+#leadGate .row{ display:flex; gap:10px; }
+#leadGate .row > *{ flex:1; }
+#leadGate .actions{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
+#leadGate .btn{ padding:12px 16px; border-radius:12px; text-decoration:none; font-weight:700; border:none; cursor:pointer; }
+#leadGate .btn-primary{ background:linear-gradient(180deg,#f4da79,#deb13e); color:#000; }
+#leadGate .btn-ghost{ background:rgba(255,255,255,.08); color:#fff; }
+#leadGate .muted{ font-size:12px; opacity:.75; margin-top:8px; }
+#leadGate .closeX{ position:absolute; right:10px; top:10px; background:transparent; border:none; color:#fff; font-size:22px; cursor:pointer; }
+</style>
+<style id="family-fix">
+/* Family section small patch */
+#family, #family h2, #family .fam-sub, #family .fam-card, #family * { color:#fff !important; }
+#family .fam-card { background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); color:#fff !important; border-radius:14px; }
+#family .fam-card .title, #family .fam-card .desc { color:#ffffff !important; }
+#family .fam-cta a { background: rgba(255,255,255,0.12) !important; color:#fff !important; border-radius:12px; padding:14px 18px; font-weight:700; }
+#family h2.section-title::after { content:' — Coming Soon'; color:#ffd975; font-weight:700; font-size:0.6em; margin-left:8px; vertical-align:baseline; }
+</style>
+<style>
+/* footer baseline */
+.site-footer{padding:40px 0 56px;border-top:1px solid rgba(255,255,255,.06);}
+.site-footer .wrap{max-width:1100px;margin:0 auto;text-align:center}
+.site-footer .footer-lines{margin:0 0 14px;color:#cfd7e0}
+.site-footer .footer-mark img{width:56px;height:56px;object-fit:contain;margin:8px auto 18px;opacity:.95}
+.site-footer .footer-socials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.site-footer .pill{display:inline-block;padding:10px 16px;border:1px solid rgba(255,255,255,.18);border-radius:12px;color:#e6ebf2;text-decoration:none}
+.site-footer .pill:hover{border-color:rgba(255,255,255,.28)}
+.site-footer .copy{margin:10px 0 6px;font-weight:500}
+.site-footer .footer-small{margin:0;color:#b6c0cc}
+@media (max-width:560px){
+  .site-footer{padding:36px 0 44px}
+  .site-footer .pill{font-size:14px}
+}
+</style>
+<style>.site-footer .pill-soft{background:rgba(255,255,255,.06)!important;border-color:rgba(255,255,255,.14)!important;color:#cfd7e0!important}</style>
+
+<!-- =============================== -->
+<!-- SURGICAL MOBILE HEADER RESTORE  -->
+<!-- =============================== -->
+<style>
+/* mobile brand bar (shown only on phones) */
+.mobile-brandbar{
+  display:none;
+  padding:14px 16px 6px;
+  font-weight:1000;
+  font-size:22px;
+  letter-spacing:.2px;
+}
+.mobile-brandbar .nation{ color: var(--brand); }
+
+@media (max-width: 640px){
+  .navbar{
+    display:none !important;  /* HIDE NAV BAR ENTIRELY ON MOBILE */
+  }
+  .mobile-brandbar{
+    display:block;            /* SHOW ONLY THE “Dream Chaser Nation” HEADER */
+  }
+}
+</style>
+<!-- =============================== -->
+<!-- END SURGICAL FIX                -->
+<!-- =============================== -->
+<link rel="stylesheet" href="assets/css/dcn-comm-popup.css"/>
+</head><body>
+
+<!-- MOBILE BRAND HEADER (phones only) -->
+<div class="mobile-brandbar">
+  ✨Dream Chaser <span class="nation">Nation</span>
+</div>
+
+<div class="navbar">
+<div class="container row">
+<div class="logo" style="font-size:26px">✨Dream Chaser <span style="color:var(--brand)">Nation</span></div>
+<div style="display:flex;gap:16px;align-items:center;font-weight:700;font-size:14px;flex-wrap:nowrap;white-space:nowrap">
+  <a href="index.html#apparel" style="opacity:.9">Apparel</a>
+  <a href="index.html#books" style="opacity:.9">Books</a>
+  <a href="index.html#coaching" style="opacity:.9">Dream Chaser University</a>
+  <a href="index.html#community" style="opacity:.9">Community</a>
+  <a href="about.html" style="opacity:.9">About</a>
+  <a href="faq.html" style="opacity:.9">FAQ/Support</a>
+  <a class="btn btn-ghost btn-small"
+     href="#newsletter"
+     data-dcn-open="dcn-newsletter">
+    Join Newsletter
+  </a>
+  <a class="btn btn-primary btn-small" href="https://dreamchasernation.printify.me/" rel="noopener" target="_blank">Shop</a>
+</div>
+</div>
+</div><main><div class="container" style="max-width: 820px; margin: 0 auto; width: 100%; text-align: center; padding-top: 48px;"><h1 style="font-size: clamp(28px,3vw,40px); line-height:1.15;">Got Talent?</h1><h2 style="margin-top:6px;font-size:26px;color:#cbd7e6">Current Opportunities</h2><ul style="line-height:1.8; font-size:18px; margin-top:8px; padding-left: 0; list-style-position: inside; text-align: center; display: inline-block; margin-left: auto; margin-right: auto;"><li>Tech Partner — Hybrid/Remote</li><li>Affiliate Partner — Remote</li><li>Child Educator — Hybrid/Remote</li></ul><p class="lead">If interested in one of these positions, please submit your resume to careers@dreamchasernation.com</p><div style="margin:16px 0 28px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;"><p style="margin:16px 0;font-size:18px;">Click the button below to join the Dream Chaser Nation Talent Pool and be notified of any available opportunities.</p><a class="btn btn-primary"
+   href="#talent-pool"
+   data-dcn-open="dcn-talent-pool"
+   style="display: inline-block; margin-left: auto; margin-right: auto;">Join the Talent Pool</a></div></div></main><script>(function(){var y=document.getElementById('year'); if(y) y.textContent=(new Date()).getFullYear();})();</script>
+<div class="wrap" style="text-align:center;margin:28px 0;">
+<a class="pill" href="index.html" style="display:inline-block;padding:10px 18px;border:1px solid rgba(255,255,255,.2);border-radius:12px;background:rgba(255,255,255,.08);color:#fff;text-decoration:none;font-weight:600;">← Return to Home</a>
+</div>
+<footer class="site-footer"><div class="wrap"><p class="footer-lines">General inquiries: <a href="mailto:info@dreamchasernation.com">info@dreamchasernation.com</a><br/>Support: <a href="mailto:support@dreamchasernation.com">support@dreamchasernation.com</a></p><div class="footer-mark"><img alt="Dream
+ Chaser Nation mark" src="assets/dcu-logo.png" style="width:56px;height:56px;object-fit:contain;display:block;margin:8px auto 18px;opacity:.95"/></div><div class="footer-socials"><a class="pill" href="#">YouTube</a><a class="pill" href="#">Instagram</a><a class="pill" href="#">TikTok — Dream Crusher Hub</a></div><div class="footer-talent"><a class="pill pill-soft" href="got-talent.html">Got Talent?</a></div><p class="copy">© 2025 Dream Chaser Nation, Inc. All Rights Reserved.</p><p class="footer-small">6 Liberty Square #2521, Boston, MA 02109 </p></div></footer>
+<script src="/assets/js/printify-links.js"></script>
+<style>
+  /* === DCN uniform form spacing === */
+  .dcn-popup-body form .row { margin-top: 12px; margin-bottom: 12px; }
+  .dcn-popup-body form .row:first-child { margin-top: 0; }
+  .dcn-popup-body form .row:last-child  { margin-bottom: 0; }
+</style>
+<!-- Start of HubSpot Embed Code -->
+<script async="" defer="" id="hs-script-loader" src="https://js-na2.hs-scripts.com/243879652.js" type="text/javascript"></script>
+<!-- End of HubSpot Embed Code -->
+<script src="assets/js/dcn-comm-popup.js"></script>
+
+<!-- Newsletter / Community modal -->
+<div aria-modal="true"
+     class="dcn-popup-overlay"
+     id="dcn-newsletter"
+     role="dialog"
+     style="display:none;">
+  <div class="dcn-popup" role="document">
+    <button aria-label="Close"
+            class="dcn-close"
+            data-dcn-close="dcn-newsletter">✕</button>
+
+    <div class="dcn-popup-header">
+      <h2 class="dcn-popup-title" style="font-size:1.85rem;">
+        Join the newsletter — or consider our free community.
+      </h2>
+    </div>
+
+    <!-- Success state (hidden by default, handled by your JS/Hubsport) -->
+    <div class="success-state">
+      <h3>✨ You're in!</h3>
+      <p class="dcn-bodycopy">
+        We’ll send updates and tools to help you keep chasing.
+      </p>
+    </div>
+
+    <!-- Default form state -->
+    <div class="dcn-popup-body form-state">
+      <p class="dcn-sub">
+        Start with the newsletter, or jump right into the Nation.
+      </p>
+      <p class="dcn-bodycopy">
+        Drop your info below to get our monthly-ish newsletter with tools,
+        inspiration, and updates. If you’re ready for a little more, you can
+        also join our free Dream Chaser Nation community on Skool — no pressure,
+        just an open invite.
+      </p>
+
+      <form id="dcn-newsletter-form" method="post">
+        <div class="dcn-row two">
+          <input class="dcn-input"
+                 name="firstname"
+                 placeholder="First name"
+                 required>
+          <input class="dcn-input"
+                 name="lastname"
+                 placeholder="Last name">
+        </div>
+
+        <div class="dcn-row">
+          <input class="dcn-input"
+                 name="email"
+                 type="email"
+                 placeholder="you@dreamchasernation.com"
+                 required>
+        </div>
+
+        <label class="dcn-bodycopy">
+          By subscribing, you agree to receive our monthly-ish newsletter and
+          occasional updates. No clutter, no spam — just the good stuff. You can
+          unsubscribe anytime.
+        </label>
+
+        <div class="dcn-actions"
+             style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+          <!-- Left: Newsletter submit -->
+          <button class="dcn-btn"
+                  type="submit"
+                  style="flex:1;min-width:0;background:rgba(255,255,255,.06);
+                         color:#f9fafb;border:1px solid rgba(148,163,184,.6);
+                         box-shadow:none;">
+            Join the Newsletter
+          </button>
+
+          <!-- Right: Community (yellow Skool button) -->
+          <a class="dcn-btn"
+             href="https://www.skool.com/dreamseekers-4847/about?ref=a79141dd0a864cab8249aeeae5ab54bb"
+             target="_blank"
+             rel="noopener"
+             style="flex:1;min-width:0;text-align:center;">
+            Join the Community
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Talent Pool modal -->
+<div aria-modal="true"
+     class="dcn-popup-overlay"
+     id="dcn-talent-pool"
+     role="dialog"
+     style="display:none;">
+  <div class="dcn-popup" role="document">
+    <button aria-label="Close"
+            class="dcn-close"
+            data-dcn-close="dcn-talent-pool">✕</button>
+
+    <div class="dcn-popup-header">
+      <h2 class="dcn-popup-title" style="font-size:1.85rem;">
+        Join the Dream Chaser Nation Talent Pool
+      </h2>
+    </div>
+
+    <!-- Success state (hidden by default, handled by your JS/HubSpot) -->
+    <div class="success-state">
+      <h3>✨ Thank you for your interest in joining our Talent Pool!</h3>
+      <p class="dcn-bodycopy">
+        TWe’ll use this list to share opportunities as they come up.
+      </p>
+    </div>
+
+    <!-- Default form state -->
+    <div class="dcn-popup-body form-state">
+      <p class="dcn-sub">
+        Share a few details so we can contact you about future roles.
+      </p>
+      <p class="dcn-bodycopy">
+        This adds you to our Talent Pool only — it’s not a formal application,
+        but it lets us reach out about Dream Chaser Nation opportunities as
+        they come up.
+      </p>
+
+      <form id="dcn-talent-pool-form" method="post">
+        <div class="dcn-row two">
+          <input class="dcn-input"
+                 name="firstname"
+                 placeholder="First name"
+                 required>
+          <input class="dcn-input"
+                 name="lastname"
+                 placeholder="Last name"
+                 required>
+        </div>
+
+        <div class="dcn-row">
+          <input class="dcn-input"
+                 name="email"
+                 type="email"
+                 placeholder="you@dreamchasernation.com"
+                 required>
+        </div>
+
+        <div class="dcn-row">
+          <input class="dcn-input"
+                 name="phone"
+                 type="tel"
+                 placeholder="Phone number"
+                 required>
+        </div>
+
+        <label class="dcn-bodycopy">
+          By submitting, you agree that we may contact you about relevant
+          Dream Chaser Nation opportunities. Your info stays private and you
+          can ask to be removed at any time.
+        </label>
+
+        <div class="dcn-actions"
+             style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+          <button class="dcn-btn"
+                  type="submit"
+                  style="flex:1;min-width:0;
+                         background:linear-gradient(135deg,var(--accent),#ffe58a);
+                         color:#111827;
+                         border:none;
+                         box-shadow:0 10px 24px rgba(0,0,0,.25);">
+            Join the Talent Pool
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function () {
+  function wireModalForm(formId) {
+    var form = document.getElementById(formId);
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Find the closest popup container
+      var popup = form.closest(".dcn-popup");
+      if (!popup) return;
+
+      var formState = popup.querySelector(".form-state");
+      var successState = popup.querySelector(".success-state");
+
+      if (formState) formState.style.display = "none";
+      if (successState) successState.style.display = "block";
+    });
+  }
+
+  // Wire both modals: newsletter + talent pool
+  wireModalForm("dcn-newsletter-form");
+  wireModalForm("dcn-talent-pool-form");
+})();
+</script>
+
+</body></html>
