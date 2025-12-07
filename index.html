@@ -1534,9 +1534,9 @@ function tagButtons(form) {
       var il = form.querySelector('#interest_level_hidden');
       var choice = (il && il.value) ? il.value : (submitChoice || 'Community');
       if (choice === 'Elite') {
-        setTimeout(function(){ try { window.location.href = ELITE_URL; } catch(e) {} }, 1500);
+        setTimeout(function(){ try { window.location.href = ELITE_URL; } catch(e) {} }, 3500);
       } else if (choice === 'Community') {
-        setTimeout(function(){ try { window.location.href = SKOOL_URL; } catch(e) {} }, 1500);
+        setTimeout(function(){ try { window.location.href = SKOOL_URL; } catch(e) {} }, 3500);
       } else {
         // For 'Lil' or other choices, do not redirect; remain on success state.
       }
@@ -2104,7 +2104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(function () {
       try { window.location.href = target; } catch (e) {}
-    }, 2500); // slightly longer delay so they actually see the thank-you state
+    }, 3500); // slightly longer delay so they actually see the thank-you state
   });
 })();
 </script>
@@ -2113,11 +2113,12 @@ document.addEventListener("DOMContentLoaded", () => {
 (function () {
   // Same endpoint + headers you’re already using for the pricing modal
   var ENDPOINT = "https://btuaxkjjtdvnelbbwlqo.supabase.co/functions/v1/skool-interest";
-  var HEADERS = {
+   var HEADERS = {
     "Content-Type": "application/json",
-    "apikey": "YOUR_SUPABASE_ANON_KEY_HERE",
-    "Authorization": "Bearer YOUR_SUPABASE_ANON_KEY_HERE"
+    "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ0dWF4a2pqdGR2bmVsYmJ3bHFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA3MDI2NTMsImV4cCI6MjA3NjI3ODY1M30.vQTTj913oMmsIzym2HCv12M8Rm4zdB4ugYyLYOw1-hk",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ0dWF4a2pqdGR2bmVsYmJ3bHFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA3MDI2NTMsImV4cCI6MjA3NjI3ODY1M30.vQTTj913oMmsIzym2HCv12M8Rm4zdB4ugYyLYOw1-hk"
   };
+
 
   function wireCommunityForm() {
     var form = document.getElementById("join-the-nation-form");
@@ -2161,6 +2162,67 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("DOMContentLoaded", wireCommunityForm);
 })();
 </script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modalId = "dcn-crusher-notify";
+  const form = document.getElementById("dcn-crusher-notify-form");
+  if (!form) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // stop the POST to pricing.html
+
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+    const formState = modal.querySelector(".form-state");
+    const successState = modal.querySelector(".success-state");
+
+    // Hide the form view, show the thank-you view
+    if (formState) formState.style.display = "none";
+    if (successState) successState.style.display = "block";
+
+    // (Later we’ll add the fetch → edge function + error handling here)
+  });
+});
+</script>
+
+
+
+
+<script>
+// --- DIFFERENT SUCCESS MESSAGE FOR JOIN-THE-NATION PURPLE BUTTON ONLY ---
+document.addEventListener("DOMContentLoaded", function () {
+  // Only the Join-the-Nation modal
+  var modal = document.getElementById("dcn-comm");
+  if (!modal) return;
+
+  var form  = document.getElementById("join-the-nation-form");
+  if (!form) return;
+
+  // Purple "Elite" button INSIDE that form only
+  var purpleBtn   = form.querySelector('button[data-go="pricing"]');
+  var successState = modal.querySelector(".success-state");
+  if (!purpleBtn || !successState) return;
+
+  // Runs ONLY when that purple button is clicked
+  purpleBtn.addEventListener("click", function () {
+    successState.innerHTML = `
+      <h3>✨ You're In — Check Your Email!</h3>
+      <p class="dcn-bodycopy">
+        The link to create your free community account is being sent to your email right now!
+        (if you don’t see it, peek in spam or promotions)<br> </br>
+	<br>Stay here and you will be redirected to Elite Programs and Pricing!</br>
+      </p>
+    `;
+  }, true); // capture = true so this fires before submit handler
+});
+</script>
+
+
+
 
 
 </body>
