@@ -50,7 +50,7 @@ document.addEventListener('submit', (e)=>{
     setTimeout(()=>{
       if(goPricing){ window.location.href = 'pricing.html'; }
     }, 700);
-  }, 300);
+  }, 5500);
 });
 
 
@@ -61,5 +61,5 @@ document.addEventListener('submit', (e)=>{
   const goPricing = submitter && submitter.dataset && submitter.dataset.go === 'pricing';
   setTimeout(()=>{
     if(goPricing){ window.location.href = 'pricing.html'; }
-  }, 300);
+  }, 5500);
 });
